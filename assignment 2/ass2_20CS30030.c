@@ -1,4 +1,3 @@
-#include<stdio.h>
 #include"myl.h"
 
 #define BUFFER 20
@@ -17,7 +16,7 @@ int readStr(char *str){
         "movq $0, %%rdi \n\t"
         "syscall \n\t"
         : "=a"(length)
-        :"S"(str), "d"(BUFFER));
+        :"S"(str), "d"(BUFFER*2));
     return length;
 }
 
@@ -65,10 +64,10 @@ int printInt(int num){
 }
 
 int readInt(int * numptr){
-    char str[BUFFER];
+    char str[BUFFER*2];
     int length;
     length = readStr(str);
-    if(length < 0){
+    if(length < 0 || length > BUFFER){
         // printf("Error in length\n");
         return ERR;
     }
@@ -106,11 +105,11 @@ int readInt(int * numptr){
 }
 
 int readFlt(float * numptr){
-    char str[BUFFER];
+    char str[BUFFER*2];
     int length;
     length = readStr(str);
-    if(length < 0){
-        printf("Error due to length\n");
+    if(length < 0 || length > BUFFER){
+        // printf("Error due to length\n");
         return ERR;
     }
         
@@ -124,6 +123,7 @@ int readFlt(float * numptr){
         i++;
     
     float ans = 0.F;
+    long integer_part = 0;
     while(i < length && (str[i] != '.' && str[i] != '\n')){
         if(str[i] < '0' || str[i] > '9'){
             // printf("Error due to str[i]");
@@ -132,8 +132,15 @@ int readFlt(float * numptr){
         int digit = (int)(str[i] - '0');
         ans*= 10;
         ans += digit;
+        integer_part *= 10;
+        integer_part += digit; 
         i++;
     }
+
+    if(integer_part > INT_MAX || integer_part < INT_MIN){
+        return ERR;
+    }
+        
     if(i < length && str[i] == '.'){
         int div = 10.F;
         i++;

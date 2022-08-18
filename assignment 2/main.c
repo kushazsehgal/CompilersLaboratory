@@ -3,7 +3,7 @@
 int main(){
     printStr("**************Testing myl.h library functions***********\n");
 
-    printStr("1) Testing printStr \n");
+    printStr("***********1) Testing printStr*********** \n");
     char* str1 = "This is a sample sentence to test printStr!";
     int len1 = printStr(str1);
     printStr("\n");
@@ -17,7 +17,7 @@ int main(){
     printInt(len2);
     printStr("\n");
 
-    printStr("2) Testing printInt\n");
+    printStr("***********2) Testing printInt***********\n");
     int num1 = -59124;
     len1 = printInt(num1);
     printStr("\n");
@@ -31,7 +31,7 @@ int main(){
     printInt(len2);
     printStr("\n\n");
 
-    printStr("3) Testing readInt\n");
+    printStr("***********3) Testing readInt***********\n");
     printStr("Enter a number: ");
     int num=0;
     if(readInt(&num)==OK){
@@ -39,7 +39,7 @@ int main(){
         printInt(num);
         printStr("\n");
     }else{
-        printStr("Recieved an Error while reading number\n");
+        printStr("Recieved an Error while reading integer\n");
     }
     printStr("Enter a number out of range of int : ");
     printStr("\n");
@@ -48,7 +48,7 @@ int main(){
         printInt(num);
         printStr("\n");
     }else{
-        printStr("Recieved an Error while reading number\n");
+        printStr("Recieved an Error while reading integer\n");
     }
     printStr("\n\n");
 
@@ -66,7 +66,7 @@ int main(){
     printInt(len2);
     printStr("\n\n");
 
-    printStr("5) Testing readFlt\n");
+    printStr("***********5) Testing readFlt***********\n");
     printStr("Enter a float: ");
     float f=0;
     if(readFlt(&f)==OK){
@@ -74,7 +74,7 @@ int main(){
         printFlt(f);
         printStr("\n");
     }else{
-        printStr("Recieved an Error while reading number\n");
+        printStr("Recieved an Error while reading float\n");
     }
 
 }
