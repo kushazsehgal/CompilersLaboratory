@@ -1,11 +1,12 @@
 #include<stdio.h>
 #include "definitions.h"
+
 extern char* yytext;
 extern int yylex();
 
 int main(){
     int token;
-    while(token == yylex()){
+    while(token = yylex()){
         switch(token){
             case KEYWORD:
                 printf("<KEYWORD, %d, %s>\n", token, yytext); 
