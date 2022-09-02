@@ -1,49 +1,59 @@
 /* C Declarations and Definitions */
 %{
-    #include<stdio.h>
-    #define KEYWORD 10
-    #define IDENTIFIER 11
-    #define INTEGER_CONST 12
-    #define FLOATING_CONST 13
-    #define ENUM_CONST 14
-    #define CHAR_CONST 15
-    #define STRING_LITERAL 16
-    #define SINGLE_LINE_COMMENT_S 17
-    #define SINGLE_LINE_COMMENT_E 18
-    #define PUNCTUATOR 19
-    #define INVALID_TOKEN 20
+    #include "definitions.h"
 %}
 
 %x  SINGLE_LINE_COMMENT
 %x  MULTI_LINE_COMMENT
 /* Regular Expression Definitions */
 %%
-KEYWORD                 "auto"|"break"|"case"|"char"|"const"|"continue"|"default"|"do"|"double"|"else"|"enum"|"extern"|"float"|"for"|"goto"|"if"|"inline"|"int"|"long"|"register"|"restrict"|"return"|"short"|"signed"|"sizeof"|"static"|"struct"|"switch"|"typedef"|"union"|"unsigned"|"void"|"volatile"|"while"|"_Bool"|"_Complex"|"_Imaginary"
-ESCAPE_SEQUENCE         "\\\'"|"\\\""|"\\?"|"\\\\"|"\\a"|"\\b"|"\\f"|"\\n"|"\\r"|"\\t"|"\\v"
-PUNCTUATOR              "["|"++"|"/"|"?"|"="|","|"]"|"("|"{"|"}"|"."|"->"|"*"|"+"|"-"|"~"|"!"|"%"|"<<"|">>"|"<"|">"|"<="|">="|":"|";"|"..."|"*="|"/="|"%="|"+="|"-="|"<<="|"#"|"--"|")"|"&"|"=="|"^"|"|"|"&&"|">>="|"!="|"&="|"^="|"||"|"|"
+KEYWORD                         "auto"|"break"|"case"|"char"|"const"|"continue"|"default"|"do"|"double"|"else"|"enum"|"extern"|"float"|"for"|"goto"|"if"|"inline"|"int"|"long"|"register"|"restrict"|"return"|"short"|"signed"|"sizeof"|"static"|"struct"|"switch"|"typedef"|"union"|"unsigned"|"void"|"volatile"|"while"|"_Bool"|"_Complex"|"_Imaginary"
+ESCAPE_SEQUENCE                 "\\\'"|"\\\""|"\\?"|"\\\\"|"\\a"|"\\b"|"\\f"|"\\n"|"\\r"|"\\t"|"\\v"
+PUNCTUATOR                      "["|"++"|"/"|"?"|"="|","|"]"|"("|"{"|"}"|"."|"->"|"*"|"+"|"-"|"~"|"!"|"%"|"<<"|">>"|"<"|">"|"<="|">="|":"|";"|"..."|"*="|"/="|"%="|"+="|"-="|"<<="|"#"|"--"|")"|"&"|"=="|"^"|"|"|"&&"|">>="|"!="|"&="|"^="|"||"|"|"
 
-DIGIT                   [0-9]
-NON_ZERO_DIGIT          [1-9]
-IDENTIFIER_NON_DIGIT    [a-z]|[A-Z]|"_"
-DIGIT_SEQUENCE          {DIGIT}+
-IDENTIFIER              {IDENTIFIER_NON_DIGIT}({IDENTIFIER_NON_DIGIT}|{DIGIT})*
+DIGIT                           [0-9]
+NON_ZERO_DIGIT                  [1-9]
+IDENTIFIER_NON_DIGIT            [a-z]|[A-Z]|"_"
+DIGIT_SEQUENCE                  {DIGIT}+
+IDENTIFIER                      {IDENTIFIER_NON_DIGIT}({IDENTIFIER_NON_DIGIT}|{DIGIT})*
 
-INTEGER_CONSTANT        "0"|({NON_ZERO_DIGIT}{DIGIT}*)
-SIGN                     "+"|"-"
-EXP_PART                [eE]{SIGN}?{DIGIT_SEQUENCE}
-FRACTIONAL_CONSTANT     ({DIGIT_SEQUENCE}?"."{DIGIT_SEQUENCE})|{DIGIT_SEQUENCE}"."
-FLOATING_CONST          (FRACTIONAL_CONSTANT{EXP_PART}?)|({DIGIT_SEQUENCE}{EXP_PART})
-ENUM_CONST              {IDENTIFIER}
+INTEGER_CONSTANT                "0"|({NON_ZERO_DIGIT}{DIGIT}*)
+SIGN                            "+"|"-"
+EXP_PART                        [eE]{SIGN}?{DIGIT_SEQUENCE}
+FRACTIONAL_CONSTANT             ({DIGIT_SEQUENCE}?"."{DIGIT_SEQUENCE})|{DIGIT_SEQUENCE}"."
+FLOAT_CONST                     (FRACTIONAL_CONSTANT{EXP_PART}?)|({DIGIT_SEQUENCE}{EXP_PART})
+ENUM_CONST                      {IDENTIFIER}
 
-C_CHAR                  [^\'\n\\]|{ESCAPE_SEQUENCE}
-C_CHAR_SEQUENCE         {C_CHAR}+
-CHAR_CONST              \'({C_CHAR_SEQUENCE}*)\'
+C_CHAR                          [^\'\n\\]|{ESCAPE_SEQUENCE}
+C_CHAR_SEQUENCE                 {C_CHAR}+
+CHAR_CONST                      \'({C_CHAR_SEQUENCE}*)\'
 
-S_CHAR                  [^\"\n\\]|{ESCAPE_SEQUENCE}
-S_CHAR_SEQUENCE         {S_CHAR}+
-STRING_LITERAL          \"({S_CHAR_SEQUENCE}?)\"
+S_CHAR                          [^\"\n\\]|{ESCAPE_SEQUENCE}
+S_CHAR_SEQUENCE                 {S_CHAR}+
+STRING_LITERAL                  \"({S_CHAR_SEQUENCE}?)\"
 
-WHITESPACE              [ \n\t]
+WHITESPACE                      [ \n\t]
+
+%%
+
+{KEYWORD}                       {return KEYWORD;}
+{IDENTIFIER}                    {return IDENTIFIER;}
+{INTEGER_CONST}                 {return INTEGER_CONST;}
+{FLOAT_CONST}                   {return FLOATING_CONST;}
+{CHAR_CONST}                    {return CHAR_CONST;}
+{STRING_LITERAL}                {return STRING_LITERAL;}
+
+"/*"                            { BEGIN(MULTI_LINE_COMMENT_BODY); }
+<MULTI_LINE_COMMENT_BODY>"*/"   { BEGIN(INITIAL); return MULTI_LINE_COMMENT; }
+<MULTI_LINE_COMMENT_BODY>.      {/* getting comment content*/} 
+<MULTI_LINE_COMMENT_BODY>"\n"   {/* getting comment content */}
+
+"//"                            { BEGIN(SINGLE_LINE_COMMENT_BODY); }
+<SINGLE_LINE_COMMENT_BODY>"\n"  { BEGIN(INITIAL); return SINGLE_LINE_COMMENT; }
+<SINGLE_LINE_COMMENT_BODY>.     { /* getting comment content */ }
+
+{WHITESPACE}
+.                       {return INVALID_TOKEN;}
 
 %%
 
