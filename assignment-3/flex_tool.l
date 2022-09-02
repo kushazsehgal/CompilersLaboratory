@@ -42,6 +42,7 @@ WHITESPACE                      [ \n\t]
 {FLOAT_CONST}                   {return FLOAT_CONST;}
 {CHAR_CONST}                    {return CHAR_CONST;}
 {STRING_LITERAL}                {return STRING_LITERAL;}
+{PUNCTUATOR}                    {return PUNCTUATOR;}
 
 "/*"                               { BEGIN(MULTI_LINE_COMMENT_CONTENT); }
 <MULTI_LINE_COMMENT_CONTENT>"*/"   { BEGIN(INITIAL); return MULTI_LINE_COMMENT; }
