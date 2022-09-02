@@ -1,10 +1,11 @@
-output.txt: parser trial_test.c 
-	./parser < trial_test > output.txt
+output.txt: parse trial_test.c 
+	./parse < trial_test.c > output.txt
 
-parser: lex.yy.c parser.c
+parse: lex.yy.c parser.c definitions.h
 	gcc lex.yy.c parser.c -lfl -o parse
-lex.yy.c: flex_tool.l 
-	flex flex_tool.l 
+
+lex.yy.c: flex_tool.l
+	flex flex_tool.l
 
 clean: 
-	rm parser lex.yy.c output.txt
+	rm ./parse lex.yy.c output.txt
