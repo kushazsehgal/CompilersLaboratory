@@ -569,8 +569,8 @@ char *yytext;
 #line 570 "lex.yy.c"
 
 #define INITIAL 0
-#define SINGLE_LINE_COMMENT 1
-#define MULTI_LINE_COMMENT 2
+#define SINGLE_LINE_COMMENT_CONTENT 1
+#define MULTI_LINE_COMMENT_CONTENT 2
 
 #ifndef YY_NO_UNISTD_H
 /* Special case for "unistd.h", since it is non-ANSI. We include it way

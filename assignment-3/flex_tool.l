@@ -3,8 +3,8 @@
     #include "definitions.h"
 %}
 
-%x  SINGLE_LINE_COMMENT
-%x  MULTI_LINE_COMMENT
+%x  SINGLE_LINE_COMMENT_CONTENT
+%x  MULTI_LINE_COMMENT_CONTENT
 /* Regular Expression Definitions */
 %%
 KEYWORD                         "auto"|"break"|"case"|"char"|"const"|"continue"|"default"|"do"|"double"|"else"|"enum"|"extern"|"float"|"for"|"goto"|"if"|"inline"|"int"|"long"|"register"|"restrict"|"return"|"short"|"signed"|"sizeof"|"static"|"struct"|"switch"|"typedef"|"union"|"unsigned"|"void"|"volatile"|"while"|"_Bool"|"_Complex"|"_Imaginary"
@@ -43,17 +43,20 @@ WHITESPACE                      [ \n\t]
 {CHAR_CONST}                    {return CHAR_CONST;}
 {STRING_LITERAL}                {return STRING_LITERAL;}
 
-"/*"                            { BEGIN(MULTI_LINE_COMMENT_BODY); }
-<MULTI_LINE_COMMENT_BODY>"*/"   { BEGIN(INITIAL); return MULTI_LINE_COMMENT; }
-<MULTI_LINE_COMMENT_BODY>.      {/* getting comment content*/} 
-<MULTI_LINE_COMMENT_BODY>"\n"   {/* getting comment content */}
+"/*"                               { BEGIN(MULTI_LINE_COMMENT_CONTENT); }
+<MULTI_LINE_COMMENT_CONTENT>"*/"   { BEGIN(INITIAL); return MULTI_LINE_COMMENT; }
+<MULTI_LINE_COMMENT_CONTENT>.      {/* getting comment content*/} 
+<MULTI_LINE_COMMENT_CONTENT>"\n"   {/* getting comment content */}
 
-"//"                            { BEGIN(SINGLE_LINE_COMMENT_BODY); }
-<SINGLE_LINE_COMMENT_BODY>"\n"  { BEGIN(INITIAL); return SINGLE_LINE_COMMENT; }
-<SINGLE_LINE_COMMENT_BODY>.     { /* getting comment content */ }
+"//"                               { BEGIN(SINGLE_LINE_COMMENT_CONTENT); }
+<SINGLE_LINE_COMMENT_CONTENT>"\n"  { BEGIN(INITIAL); return SINGLE_LINE_COMMENT; }
+<SINGLE_LINE_COMMENT_CONTENT>.     { /* getting comment content */ }
 
 {WHITESPACE}
 .                       {return INVALID_TOKEN;}
 
 %%
 
+int yywrap(void){
+    return 1;
+}
