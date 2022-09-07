@@ -29,7 +29,6 @@ int main(){
 
     char a_char_array[47];
 
-    cout << a << ' ' << d << ' ';
     printf("a = %d, d= %d",a,d);
     if(b > 0){
         b >> 1;
