@@ -1,5 +1,5 @@
-output.txt: parse.out trial_test.c 
-	./parse.out < trial_test.c > output.txt
+output.txt: parse.out test.c 
+	./parse.out < test.c > output.txt
 
 parse.out: lex.yy.c parser.c definitions.h
 	gcc lex.yy.c parser.c -lfl -o parse.out
