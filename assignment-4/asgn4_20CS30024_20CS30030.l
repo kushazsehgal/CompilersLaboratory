@@ -3,7 +3,6 @@
     #include <stdio.h>
     #include <stdlib.h>
     #include "y.tab.h"
-    int line_count = 1;
 %}
 
 %option yylineno
@@ -29,7 +28,7 @@ ENUM_CONST                      {IDENTIFIER}
 
 C_CHAR                          [^\'\n\\]|{ESCAPE_SEQUENCE}
 C_CHAR_SEQUENCE                 {C_CHAR}+
-CHAR_CONST                      \'({C_CHAR_SEQUENCE}*)\'
+CHAR_CONST                      \'({C_CHAR_SEQUENCE})\'
 
 S_CHAR                          [^\"\n\\]|{ESCAPE_SEQUENCE}
 S_CHAR_SEQUENCE                 {S_CHAR}+
@@ -78,11 +77,11 @@ NEWLINE							\n
 "_Complex"                      { return _COMPLEX; }
 "_Imaginary"                    { return _IMAGINARY; }
 
-{IDENTIFIER}                    { return IDENTIFIER; }
-{INTEGER_CONST}                 { return INTEGER_CONST; }
-{FLOAT_CONST}                   { return FLOAT_CONST; }
-{CHAR_CONST}                    { return CHAR_CONST; }
-{STRING_LITERAL}                { return STRING_LITERAL; }
+{IDENTIFIER}                    { yylval.identifier_val = strdup(yytext);return IDENTIFIER; }
+{INTEGER_CONST}                 { yylval.int_val = atoi(yytext);return INTEGER_CONST; }
+{FLOAT_CONST}                   { yylval.float_val = atof(yytext);return FLOAT_CONST; }
+{CHAR_CONST}                    { yylval.char_val = strdup(yytext);return CHAR_CONST; }
+{STRING_LITERAL}                { yylval.string_val = strdup(yytext);return STRING_LITERAL; }
 
 "["                             { return LEFT_SQUARE_BRACKET; }
 "++"                            { return INCREMENT; }

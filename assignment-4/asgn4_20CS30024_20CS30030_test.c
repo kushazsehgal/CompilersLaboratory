@@ -4,8 +4,7 @@
 *   // Kushaz Sehgal - 20CS30030
 *   // Jay Kumar Thakur - 20CS30024
 ************************************/
-
-inline char lower_case(char ch){return ch;}
+inline char lower_case(char ch){ch = ch + 32;return ch;}
 
 const char some_function(volatile int a){
     const char b = 'a';
@@ -67,7 +66,7 @@ int main(){
    for(short i = 0;i < 47;i++){
 
         if(i == 47)
-            a_char = '\0';
+            a_char = 'c';
         else if(i%2){
             a_char = 'a';
         }
