@@ -1,17 +1,17 @@
 %{
 	#include <stdio.h>
 	extern int yylex();
-	extern int lineCount;
+	extern int yylineno;
 	void yyerror(char *);
 	void yyinfo(char *);
 %}
 
 %union {
-	int intVal;
-	float floatVal;
-	char *charVal;
-	char *stringVal;
-	char *identifierVal;
+	int int_val;
+	float float_val;
+	char *char_val;
+	char *string_val;
+	char *identifier_val;
 }
 
 %token AUTO
@@ -52,11 +52,11 @@
 %token _COMPLEX
 %token _IMAGINARY
 
-%token<stringVal> IDENTIFIER
-%token<intVal> INTEGER_CONST
-%token<floatVal> FLOAT_CONST
-%token<charVal> CHAR_CONST
-%token<stringVal> STRING_LITERAL
+%token<string_val> IDENTIFIER
+%token<int_val> INTEGER_CONST
+%token<float_val> FLOAT_CONST
+%token<char_val> CHAR_CONST
+%token<string_val> STRING_LITERAL
 
 %token LEFT_SQUARE_BRACKET
 %token INCREMENT
@@ -111,11 +111,12 @@
 %nonassoc RIGHT_PARENTHESES
 %nonassoc ELSE
 
-%start translation_unit
+/* Defining Start Symbol */
+%start translation_unit			
 
 %%
 
-/* Expressions */
+/*********************************** Expressions ************************************/
 
 primary_expression: 
 	IDENTIFIER 
@@ -341,7 +342,7 @@ constant_expression:
 		{ yyinfo("constant_expression => conditional_expression"); }
 	;
 
-/* Declarations */
+/********************************** Declarations ************************************/
 
 declaration:
 	declaration_specifiers init_declarator_list_opt SEMI_COLON
@@ -626,7 +627,7 @@ designator:
 		{ yyinfo("designator => . IDENTIFIER"); printf("\t\t\t\tIDENTIFIER = %s\n", $2); }   
 	;
 
-/* Statements */
+/************************************* Statements **********************************/
 
 statement:
 	labeled_statement
@@ -721,7 +722,7 @@ jump_statement:
 		{ yyinfo("jump_statement => return expression_opt ;"); }
 	;
 
-/* External definitions */
+/******************************** External definitions *****************************/
 
 translation_unit:
 	external_declaration
@@ -759,9 +760,9 @@ declaration_list:
 %%
 
 void yyerror(char* s) {
-	printf("ERROR [Line #%d] : %s\n", lineCount, s);
+	printf("error occured at line #%d : %s\n", yylineno, s);
 }
 
 void yyinfo(char* s) {
-	printf("INFO [Line #%d] : %s\n", lineCount, s);
+	printf("line #%d : %s\n", yylineno, s);
 }

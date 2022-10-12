@@ -1,3 +1,1579 @@
-Parsing Line #1...
+Parsing Test File..
 
-ERROR [Line #1] : syntax error
+
+Parsing line #2...
+
+
+Parsing line #3...
+
+
+Parsing line #4...
+
+
+Parsing line #5...
+
+
+Parsing line #6...
+
+
+Parsing line #7...
+
+
+Parsing line #8...
+
+line #8 : function_specifier => inline
+line #8 : type_specifier => char
+line #8 : declaration_specifiers_opt => epsilon 
+line #8 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #8 : declaration_specifiers_opt => declaration_specifiers
+line #8 : declaration_specifiers => function_specifier declaration_specifiers_opt
+line #8 : pointer_opt => epsilon
+line #8 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #8 : type_specifier => char
+line #8 : declaration_specifiers_opt => epsilon 
+line #8 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #8 : pointer_opt => epsilon
+line #8 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #8 : declarator => pointer_opt direct_declarator
+line #8 : parameter_declaration => declaration_specifiers declarator
+line #8 : parameter_list => parameter_declaration
+line #8 : parameter_type_list => parameter_list
+line #8 : direct_declarator => direct_declarator ( parameter_type_list )
+line #8 : declarator => pointer_opt direct_declarator
+line #8 : declaration_list_opt => epsilon
+line #8 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #8 : postfix_expression => primary_expression
+line #8 : unary_expression => postfix_expression
+line #8 : cast_expression => unary_expression
+line #8 : multiplicative_expression => cast_expression
+line #8 : additive_expression => multiplicative_expression
+line #8 : shift_expression => additive_expression
+line #8 : relational_expression => shift_expression
+line #8 : equality_expression => relational_expression
+line #8 : AND_expression => equality_expression
+line #8 : exclusive_OR_expression => AND_expression
+line #8 : inclusive_OR_expression => exclusive_OR_expression
+line #8 : logical_AND_expression => inclusive_OR_expression
+line #8 : logical_OR_expression => logical_AND_expression
+line #8 : conditional_expression => logical_OR_expression
+line #8 : assignment_expression => conditional_expression
+line #8 : expression => assignment_expression
+line #8 : expression_opt => expression
+line #8 : jump_statement => return expression_opt ;
+line #8 : statement => jump_statement
+line #8 : block_item => statement
+line #8 : block_item_list => block_item
+line #8 : block_item_list_opt => block_item_list
+line #8 : compound_statement => { block_item_list_opt }
+line #8 : function_definition => declaration_specifiers declarator declaration_list_opt compound_statement
+line #8 : external_declaration => function_definition
+line #8 : translation_unit => external_declaration
+
+Parsing line #9...
+
+
+Parsing line #10...
+
+line #10 : type_qualifier => const
+line #10 : type_specifier => char
+line #10 : declaration_specifiers_opt => epsilon 
+line #10 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #10 : declaration_specifiers_opt => declaration_specifiers
+line #10 : declaration_specifiers => type_qualifier declaration_specifiers_opt
+line #10 : pointer_opt => epsilon
+line #10 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #10 : type_qualifier => volatile
+line #10 : type_specifier => int
+line #10 : declaration_specifiers_opt => epsilon 
+line #10 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #10 : declaration_specifiers_opt => declaration_specifiers
+line #10 : declaration_specifiers => type_qualifier declaration_specifiers_opt
+line #10 : pointer_opt => epsilon
+line #10 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #10 : declarator => pointer_opt direct_declarator
+line #10 : parameter_declaration => declaration_specifiers declarator
+line #10 : parameter_list => parameter_declaration
+line #10 : parameter_type_list => parameter_list
+line #10 : direct_declarator => direct_declarator ( parameter_type_list )
+line #10 : declarator => pointer_opt direct_declarator
+line #10 : declaration_list_opt => epsilon
+
+Parsing line #11...
+
+line #11 : type_qualifier => const
+line #11 : type_specifier => char
+line #11 : declaration_specifiers_opt => epsilon 
+line #11 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #11 : declaration_specifiers_opt => declaration_specifiers
+line #11 : declaration_specifiers => type_qualifier declaration_specifiers_opt
+line #11 : pointer_opt => epsilon
+line #11 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #11 : declarator => pointer_opt direct_declarator
+line #11 : primary_expression => CHARACTER_CONSTANT
+				CHARACTER_CONSTANT = (null)
+line #11 : postfix_expression => primary_expression
+line #11 : unary_expression => postfix_expression
+line #11 : cast_expression => unary_expression
+line #11 : multiplicative_expression => cast_expression
+line #11 : additive_expression => multiplicative_expression
+line #11 : shift_expression => additive_expression
+line #11 : relational_expression => shift_expression
+line #11 : equality_expression => relational_expression
+line #11 : AND_expression => equality_expression
+line #11 : exclusive_OR_expression => AND_expression
+line #11 : inclusive_OR_expression => exclusive_OR_expression
+line #11 : logical_AND_expression => inclusive_OR_expression
+line #11 : logical_OR_expression => logical_AND_expression
+line #11 : conditional_expression => logical_OR_expression
+line #11 : assignment_expression => conditional_expression
+line #11 : initialiser => assignment_expression
+line #11 : init_declarator => declarator = initialiser
+line #11 : init_declarator_list => init_declarator
+line #11 : init_declarator_list_opt => init_declarator_list
+line #11 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #11 : block_item => declaration
+line #11 : block_item_list => block_item
+
+Parsing line #12...
+
+line #12 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #12 : postfix_expression => primary_expression
+line #12 : unary_expression => postfix_expression
+line #12 : cast_expression => unary_expression
+line #12 : multiplicative_expression => cast_expression
+line #12 : additive_expression => multiplicative_expression
+line #12 : shift_expression => additive_expression
+line #12 : relational_expression => shift_expression
+line #12 : equality_expression => relational_expression
+line #12 : AND_expression => equality_expression
+line #12 : exclusive_OR_expression => AND_expression
+line #12 : inclusive_OR_expression => exclusive_OR_expression
+line #12 : logical_AND_expression => inclusive_OR_expression
+line #12 : logical_OR_expression => logical_AND_expression
+line #12 : conditional_expression => logical_OR_expression
+line #12 : assignment_expression => conditional_expression
+line #12 : expression => assignment_expression
+line #12 : expression_opt => expression
+line #12 : jump_statement => return expression_opt ;
+line #12 : statement => jump_statement
+line #12 : block_item => statement
+line #12 : block_item_list => block_item_list block_item
+
+Parsing line #13...
+
+line #13 : block_item_list_opt => block_item_list
+line #13 : compound_statement => { block_item_list_opt }
+line #13 : function_definition => declaration_specifiers declarator declaration_list_opt compound_statement
+line #13 : external_declaration => function_definition
+line #13 : translation_unit => translation_unit external_declaration
+
+Parsing line #14...
+
+
+Parsing line #15...
+
+line #15 : identifier_opt => IDENTIFIER
+				IDENTIFIER = (null)
+
+Parsing line #16...
+
+line #16 : enumerator => ENUMERATION_CONSTANT
+				ENUMERATION_CONSTANT = (null)
+line #16 : enumerator_list => enumerator
+
+Parsing line #17...
+
+line #17 : enumerator => ENUMERATION_CONSTANT
+				ENUMERATION_CONSTANT = (null)
+line #17 : enumerator_list => enumerator_list , enumerator
+
+Parsing line #18...
+
+line #18 : enumerator => ENUMERATION_CONSTANT
+				ENUMERATION_CONSTANT = (null)
+line #18 : enumerator_list => enumerator_list , enumerator
+
+Parsing line #19...
+
+line #19 : enumerator => ENUMERATION_CONSTANT
+				ENUMERATION_CONSTANT = (null)
+line #19 : enumerator_list => enumerator_list , enumerator
+
+Parsing line #20...
+
+line #20 : enumerator => ENUMERATION_CONSTANT
+				ENUMERATION_CONSTANT = (null)
+line #20 : enumerator_list => enumerator_list , enumerator
+
+Parsing line #21...
+
+line #21 : enumerator => ENUMERATION_CONSTANT
+				ENUMERATION_CONSTANT = (null)
+line #21 : enumerator_list => enumerator_list , enumerator
+
+Parsing line #22...
+
+
+Parsing line #23...
+
+line #23 : enumerator => ENUMERATION_CONSTANT
+				ENUMERATION_CONSTANT = (null)
+line #23 : enumerator_list => enumerator_list , enumerator
+line #23 : enum_specifier => enum identifier_opt { enumerator_list }
+line #23 : type_specifier => enum_specifier
+line #23 : declaration_specifiers_opt => epsilon 
+line #23 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #23 : init_declarator_list_opt => epsilon
+line #23 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #23 : external_declaration => declaration
+line #23 : translation_unit => translation_unit external_declaration
+
+Parsing line #24...
+
+
+Parsing line #25...
+
+line #25 : type_specifier => int
+line #25 : declaration_specifiers_opt => epsilon 
+line #25 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #25 : pointer_opt => epsilon
+line #25 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #25 : identifier_list_opt => epsilon
+line #25 : direct_declarator => direct_declarator ( identifier_list_opt )
+line #25 : declarator => pointer_opt direct_declarator
+line #25 : declaration_list_opt => epsilon
+
+Parsing line #26...
+
+line #26 : type_specifier => int
+line #26 : declaration_specifiers_opt => epsilon 
+line #26 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #26 : pointer_opt => epsilon
+line #26 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #26 : type_qualifier_list_opt => epsilon
+line #26 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #26 : postfix_expression => primary_expression
+line #26 : unary_expression => postfix_expression
+line #26 : cast_expression => unary_expression
+line #26 : multiplicative_expression => cast_expression
+line #26 : additive_expression => multiplicative_expression
+line #26 : shift_expression => additive_expression
+line #26 : relational_expression => shift_expression
+line #26 : equality_expression => relational_expression
+line #26 : AND_expression => equality_expression
+line #26 : exclusive_OR_expression => AND_expression
+line #26 : inclusive_OR_expression => exclusive_OR_expression
+line #26 : logical_AND_expression => inclusive_OR_expression
+line #26 : logical_OR_expression => logical_AND_expression
+line #26 : conditional_expression => logical_OR_expression
+line #26 : assignment_expression => conditional_expression
+line #26 : assignment_expression_opt => assignment_expression
+line #26 : direct_declarator => direct_declarator [ type_qualifier_list_opt assignment_expression_opt ]
+line #26 : declarator => pointer_opt direct_declarator
+line #26 : designation_opt => epsilon
+line #26 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #26 : postfix_expression => primary_expression
+line #26 : unary_expression => postfix_expression
+line #26 : cast_expression => unary_expression
+line #26 : multiplicative_expression => cast_expression
+line #26 : additive_expression => multiplicative_expression
+line #26 : shift_expression => additive_expression
+line #26 : relational_expression => shift_expression
+line #26 : equality_expression => relational_expression
+line #26 : AND_expression => equality_expression
+line #26 : exclusive_OR_expression => AND_expression
+line #26 : inclusive_OR_expression => exclusive_OR_expression
+line #26 : logical_AND_expression => inclusive_OR_expression
+line #26 : logical_OR_expression => logical_AND_expression
+line #26 : conditional_expression => logical_OR_expression
+line #26 : assignment_expression => conditional_expression
+line #26 : initialiser => assignment_expression
+line #26 : initialiser_list => designation_opt initialiser
+line #26 : designation_opt => epsilon
+line #26 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #26 : postfix_expression => primary_expression
+line #26 : unary_expression => postfix_expression
+line #26 : cast_expression => unary_expression
+line #26 : multiplicative_expression => cast_expression
+line #26 : additive_expression => multiplicative_expression
+line #26 : shift_expression => additive_expression
+line #26 : relational_expression => shift_expression
+line #26 : equality_expression => relational_expression
+line #26 : AND_expression => equality_expression
+line #26 : exclusive_OR_expression => AND_expression
+line #26 : inclusive_OR_expression => exclusive_OR_expression
+line #26 : logical_AND_expression => inclusive_OR_expression
+line #26 : logical_OR_expression => logical_AND_expression
+line #26 : conditional_expression => logical_OR_expression
+line #26 : assignment_expression => conditional_expression
+line #26 : initialiser => assignment_expression
+line #26 : initialiser_list => initialiser_list , designation_opt initialiser
+line #26 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #26 : postfix_expression => primary_expression
+line #26 : unary_expression => postfix_expression
+line #26 : cast_expression => unary_expression
+line #26 : multiplicative_expression => cast_expression
+line #26 : additive_expression => multiplicative_expression
+line #26 : shift_expression => additive_expression
+line #26 : relational_expression => shift_expression
+line #26 : equality_expression => relational_expression
+line #26 : AND_expression => equality_expression
+line #26 : exclusive_OR_expression => AND_expression
+line #26 : inclusive_OR_expression => exclusive_OR_expression
+line #26 : logical_AND_expression => inclusive_OR_expression
+line #26 : logical_OR_expression => logical_AND_expression
+line #26 : conditional_expression => logical_OR_expression
+line #26 : constant_expression => conditional_expression
+line #26 : designator => [ constant_expression ]
+line #26 : designator_list => designator
+line #26 : designation => designator_list =
+line #26 : designation_opt => designation
+line #26 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #26 : postfix_expression => primary_expression
+line #26 : unary_expression => postfix_expression
+line #26 : cast_expression => unary_expression
+line #26 : multiplicative_expression => cast_expression
+line #26 : additive_expression => multiplicative_expression
+line #26 : shift_expression => additive_expression
+line #26 : relational_expression => shift_expression
+line #26 : equality_expression => relational_expression
+line #26 : AND_expression => equality_expression
+line #26 : exclusive_OR_expression => AND_expression
+line #26 : inclusive_OR_expression => exclusive_OR_expression
+line #26 : logical_AND_expression => inclusive_OR_expression
+line #26 : logical_OR_expression => logical_AND_expression
+line #26 : conditional_expression => logical_OR_expression
+line #26 : assignment_expression => conditional_expression
+line #26 : initialiser => assignment_expression
+line #26 : initialiser_list => initialiser_list , designation_opt initialiser
+line #26 : initialiser => { initialiser_list }
+line #26 : init_declarator => declarator = initialiser
+line #26 : init_declarator_list => init_declarator
+line #26 : init_declarator_list_opt => init_declarator_list
+line #26 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #26 : block_item => declaration
+line #26 : block_item_list => block_item
+
+Parsing line #27...
+
+line #27 : type_specifier => char
+line #27 : declaration_specifiers_opt => epsilon 
+line #27 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #27 : pointer_opt => epsilon
+line #27 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #27 : type_qualifier_list_opt => epsilon
+line #27 : assignment_expression_opt => epsilon
+line #27 : direct_declarator => direct_declarator [ type_qualifier_list_opt assignment_expression_opt ]
+line #27 : declarator => pointer_opt direct_declarator
+line #27 : primary_expression => STRING_LITERAL
+				STRING_LITERAL = (null)
+line #27 : postfix_expression => primary_expression
+line #27 : unary_expression => postfix_expression
+line #27 : cast_expression => unary_expression
+line #27 : multiplicative_expression => cast_expression
+line #27 : additive_expression => multiplicative_expression
+line #27 : shift_expression => additive_expression
+line #27 : relational_expression => shift_expression
+line #27 : equality_expression => relational_expression
+line #27 : AND_expression => equality_expression
+line #27 : exclusive_OR_expression => AND_expression
+line #27 : inclusive_OR_expression => exclusive_OR_expression
+line #27 : logical_AND_expression => inclusive_OR_expression
+line #27 : logical_OR_expression => logical_AND_expression
+line #27 : conditional_expression => logical_OR_expression
+line #27 : assignment_expression => conditional_expression
+line #27 : initialiser => assignment_expression
+line #27 : init_declarator => declarator = initialiser
+line #27 : init_declarator_list => init_declarator
+line #27 : init_declarator_list_opt => init_declarator_list
+line #27 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #27 : block_item => declaration
+line #27 : block_item_list => block_item_list block_item
+
+Parsing line #28...
+
+line #28 : type_specifier => char
+line #28 : declaration_specifiers_opt => epsilon 
+line #28 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #28 : pointer_opt => epsilon
+line #28 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #28 : declarator => pointer_opt direct_declarator
+line #28 : primary_expression => CHARACTER_CONSTANT
+				CHARACTER_CONSTANT = (null)
+line #28 : postfix_expression => primary_expression
+line #28 : unary_expression => postfix_expression
+line #28 : cast_expression => unary_expression
+line #28 : multiplicative_expression => cast_expression
+line #28 : additive_expression => multiplicative_expression
+line #28 : shift_expression => additive_expression
+line #28 : relational_expression => shift_expression
+line #28 : equality_expression => relational_expression
+line #28 : AND_expression => equality_expression
+line #28 : exclusive_OR_expression => AND_expression
+line #28 : inclusive_OR_expression => exclusive_OR_expression
+line #28 : logical_AND_expression => inclusive_OR_expression
+line #28 : logical_OR_expression => logical_AND_expression
+line #28 : conditional_expression => logical_OR_expression
+line #28 : assignment_expression => conditional_expression
+line #28 : initialiser => assignment_expression
+line #28 : init_declarator => declarator = initialiser
+line #28 : init_declarator_list => init_declarator
+line #28 : init_declarator_list_opt => init_declarator_list
+line #28 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #28 : block_item => declaration
+line #28 : block_item_list => block_item_list block_item
+
+Parsing line #29...
+
+line #29 : type_specifier => char
+line #29 : declaration_specifiers_opt => epsilon 
+line #29 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #29 : type_qualifier_list_opt => epsilon
+line #29 : pointer => * type_qualifier_list_opt
+line #29 : pointer_opt => pointer
+line #29 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #29 : declarator => pointer_opt direct_declarator
+line #29 : unary_operator => &
+line #29 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #29 : postfix_expression => primary_expression
+line #29 : unary_expression => postfix_expression
+line #29 : cast_expression => unary_expression
+line #29 : unary_expression => unary_operator cast_expression
+line #29 : cast_expression => unary_expression
+line #29 : multiplicative_expression => cast_expression
+line #29 : additive_expression => multiplicative_expression
+line #29 : shift_expression => additive_expression
+line #29 : relational_expression => shift_expression
+line #29 : equality_expression => relational_expression
+line #29 : AND_expression => equality_expression
+line #29 : exclusive_OR_expression => AND_expression
+line #29 : inclusive_OR_expression => exclusive_OR_expression
+line #29 : logical_AND_expression => inclusive_OR_expression
+line #29 : logical_OR_expression => logical_AND_expression
+line #29 : conditional_expression => logical_OR_expression
+line #29 : assignment_expression => conditional_expression
+line #29 : initialiser => assignment_expression
+line #29 : init_declarator => declarator = initialiser
+line #29 : init_declarator_list => init_declarator
+line #29 : init_declarator_list_opt => init_declarator_list
+line #29 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #29 : block_item => declaration
+line #29 : block_item_list => block_item_list block_item
+
+Parsing line #30...
+
+line #30 : type_specifier => float
+line #30 : declaration_specifiers_opt => epsilon 
+line #30 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #30 : pointer_opt => epsilon
+line #30 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #30 : declarator => pointer_opt direct_declarator
+line #30 : primary_expression => FLOATING_CONSTANT
+				FLOATING_CONSTANT = 0.000000
+line #30 : postfix_expression => primary_expression
+line #30 : unary_expression => postfix_expression
+line #30 : cast_expression => unary_expression
+line #30 : multiplicative_expression => cast_expression
+line #30 : additive_expression => multiplicative_expression
+line #30 : shift_expression => additive_expression
+line #30 : relational_expression => shift_expression
+line #30 : equality_expression => relational_expression
+line #30 : AND_expression => equality_expression
+line #30 : exclusive_OR_expression => AND_expression
+line #30 : inclusive_OR_expression => exclusive_OR_expression
+line #30 : logical_AND_expression => inclusive_OR_expression
+line #30 : logical_OR_expression => logical_AND_expression
+line #30 : conditional_expression => logical_OR_expression
+line #30 : assignment_expression => conditional_expression
+line #30 : initialiser => assignment_expression
+line #30 : init_declarator => declarator = initialiser
+line #30 : init_declarator_list => init_declarator
+line #30 : init_declarator_list_opt => init_declarator_list
+line #30 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #30 : block_item => declaration
+line #30 : block_item_list => block_item_list block_item
+
+Parsing line #31...
+
+line #31 : type_specifier => unsigned
+line #31 : type_specifier => short
+line #31 : declaration_specifiers_opt => epsilon 
+line #31 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #31 : declaration_specifiers_opt => declaration_specifiers
+line #31 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #31 : pointer_opt => epsilon
+line #31 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #31 : declarator => pointer_opt direct_declarator
+line #31 : unary_operator => +
+line #31 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #31 : postfix_expression => primary_expression
+line #31 : unary_expression => postfix_expression
+line #31 : cast_expression => unary_expression
+line #31 : unary_expression => unary_operator cast_expression
+line #31 : cast_expression => unary_expression
+line #31 : multiplicative_expression => cast_expression
+line #31 : additive_expression => multiplicative_expression
+line #31 : shift_expression => additive_expression
+line #31 : relational_expression => shift_expression
+line #31 : equality_expression => relational_expression
+line #31 : AND_expression => equality_expression
+line #31 : exclusive_OR_expression => AND_expression
+line #31 : inclusive_OR_expression => exclusive_OR_expression
+line #31 : logical_AND_expression => inclusive_OR_expression
+line #31 : logical_OR_expression => logical_AND_expression
+line #31 : conditional_expression => logical_OR_expression
+line #31 : assignment_expression => conditional_expression
+line #31 : initialiser => assignment_expression
+line #31 : init_declarator => declarator = initialiser
+line #31 : init_declarator_list => init_declarator
+line #31 : init_declarator_list_opt => init_declarator_list
+line #31 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #31 : block_item => declaration
+line #31 : block_item_list => block_item_list block_item
+
+Parsing line #32...
+
+line #32 : type_specifier => char
+line #32 : declaration_specifiers_opt => epsilon 
+line #32 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #32 : pointer_opt => epsilon
+line #32 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #32 : declarator => pointer_opt direct_declarator
+line #32 : primary_expression => CHARACTER_CONSTANT
+				CHARACTER_CONSTANT = (null)
+line #32 : postfix_expression => primary_expression
+line #32 : unary_expression => postfix_expression
+line #32 : cast_expression => unary_expression
+line #32 : multiplicative_expression => cast_expression
+line #32 : additive_expression => multiplicative_expression
+line #32 : shift_expression => additive_expression
+line #32 : relational_expression => shift_expression
+line #32 : equality_expression => relational_expression
+line #32 : AND_expression => equality_expression
+line #32 : exclusive_OR_expression => AND_expression
+line #32 : inclusive_OR_expression => exclusive_OR_expression
+line #32 : logical_AND_expression => inclusive_OR_expression
+line #32 : logical_OR_expression => logical_AND_expression
+line #32 : conditional_expression => logical_OR_expression
+line #32 : assignment_expression => conditional_expression
+line #32 : initialiser => assignment_expression
+line #32 : init_declarator => declarator = initialiser
+line #32 : init_declarator_list => init_declarator
+line #32 : init_declarator_list_opt => init_declarator_list
+line #32 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #32 : block_item => declaration
+line #32 : block_item_list => block_item_list block_item
+
+Parsing line #33...
+
+line #33 : type_specifier => long
+line #33 : declaration_specifiers_opt => epsilon 
+line #33 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #33 : pointer_opt => epsilon
+line #33 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #33 : declarator => pointer_opt direct_declarator
+line #33 : unary_operator => ~
+line #33 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #33 : postfix_expression => primary_expression
+line #33 : unary_expression => postfix_expression
+line #33 : cast_expression => unary_expression
+line #33 : unary_expression => unary_operator cast_expression
+line #33 : cast_expression => unary_expression
+line #33 : multiplicative_expression => cast_expression
+line #33 : additive_expression => multiplicative_expression
+line #33 : shift_expression => additive_expression
+line #33 : relational_expression => shift_expression
+line #33 : equality_expression => relational_expression
+line #33 : AND_expression => equality_expression
+line #33 : exclusive_OR_expression => AND_expression
+line #33 : inclusive_OR_expression => exclusive_OR_expression
+line #33 : logical_AND_expression => inclusive_OR_expression
+line #33 : logical_OR_expression => logical_AND_expression
+line #33 : conditional_expression => logical_OR_expression
+line #33 : assignment_expression => conditional_expression
+line #33 : initialiser => assignment_expression
+line #33 : init_declarator => declarator = initialiser
+line #33 : init_declarator_list => init_declarator
+line #33 : init_declarator_list_opt => init_declarator_list
+line #33 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #33 : block_item => declaration
+line #33 : block_item_list => block_item_list block_item
+
+Parsing line #34...
+
+
+Parsing line #35...
+
+line #35 : type_specifier => int
+line #35 : declaration_specifiers_opt => epsilon 
+line #35 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #35 : pointer_opt => epsilon
+line #35 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #35 : declarator => pointer_opt direct_declarator
+line #35 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #35 : postfix_expression => primary_expression
+line #35 : unary_expression => postfix_expression
+line #35 : cast_expression => unary_expression
+line #35 : multiplicative_expression => cast_expression
+line #35 : type_specifier => char
+line #35 : specifier_qualifier_list_opt => epsilon
+line #35 : specifier_qualifier_list => type_specifier specifier_qualifier_list_opt
+line #35 : type_name => specifier_qualifier_list
+line #35 : unary_expression => sizeof ( type_name )
+line #35 : cast_expression => unary_expression
+line #35 : multiplicative_expression => multiplicative_expression * cast_expression
+line #35 : additive_expression => multiplicative_expression
+line #35 : shift_expression => additive_expression
+line #35 : relational_expression => shift_expression
+line #35 : equality_expression => relational_expression
+line #35 : AND_expression => equality_expression
+line #35 : exclusive_OR_expression => AND_expression
+line #35 : inclusive_OR_expression => exclusive_OR_expression
+line #35 : logical_AND_expression => inclusive_OR_expression
+line #35 : logical_OR_expression => logical_AND_expression
+line #35 : conditional_expression => logical_OR_expression
+line #35 : assignment_expression => conditional_expression
+line #35 : initialiser => assignment_expression
+line #35 : init_declarator => declarator = initialiser
+line #35 : init_declarator_list => init_declarator
+line #35 : init_declarator_list_opt => init_declarator_list
+line #35 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #35 : block_item => declaration
+line #35 : block_item_list => block_item_list block_item
+
+Parsing line #36...
+
+line #36 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #36 : postfix_expression => primary_expression
+line #36 : unary_expression => postfix_expression
+line #36 : assignment_operator => *=
+line #36 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #36 : postfix_expression => primary_expression
+line #36 : unary_expression => postfix_expression
+line #36 : cast_expression => unary_expression
+line #36 : multiplicative_expression => cast_expression
+line #36 : additive_expression => multiplicative_expression
+line #36 : shift_expression => additive_expression
+line #36 : relational_expression => shift_expression
+line #36 : equality_expression => relational_expression
+line #36 : AND_expression => equality_expression
+line #36 : exclusive_OR_expression => AND_expression
+line #36 : inclusive_OR_expression => exclusive_OR_expression
+line #36 : logical_AND_expression => inclusive_OR_expression
+line #36 : logical_OR_expression => logical_AND_expression
+line #36 : conditional_expression => logical_OR_expression
+line #36 : assignment_expression => conditional_expression
+line #36 : assignment_expression => unary_expression assignment_operator assignment_expression
+line #36 : expression => assignment_expression
+line #36 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #36 : postfix_expression => primary_expression
+line #36 : unary_expression => postfix_expression
+line #36 : assignment_operator => /=
+line #36 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #36 : postfix_expression => primary_expression
+line #36 : unary_expression => postfix_expression
+line #36 : cast_expression => unary_expression
+line #36 : multiplicative_expression => cast_expression
+line #36 : additive_expression => multiplicative_expression
+line #36 : shift_expression => additive_expression
+line #36 : relational_expression => shift_expression
+line #36 : equality_expression => relational_expression
+line #36 : AND_expression => equality_expression
+line #36 : exclusive_OR_expression => AND_expression
+line #36 : inclusive_OR_expression => exclusive_OR_expression
+line #36 : logical_AND_expression => inclusive_OR_expression
+line #36 : logical_OR_expression => logical_AND_expression
+line #36 : conditional_expression => logical_OR_expression
+line #36 : assignment_expression => conditional_expression
+line #36 : assignment_expression => unary_expression assignment_operator assignment_expression
+line #36 : expression => expression , assignment_expression
+line #36 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #36 : postfix_expression => primary_expression
+line #36 : unary_expression => postfix_expression
+line #36 : assignment_operator => %=
+line #36 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #36 : postfix_expression => primary_expression
+line #36 : unary_expression => postfix_expression
+line #36 : cast_expression => unary_expression
+line #36 : multiplicative_expression => cast_expression
+line #36 : additive_expression => multiplicative_expression
+line #36 : shift_expression => additive_expression
+line #36 : relational_expression => shift_expression
+line #36 : equality_expression => relational_expression
+line #36 : AND_expression => equality_expression
+line #36 : exclusive_OR_expression => AND_expression
+line #36 : inclusive_OR_expression => exclusive_OR_expression
+line #36 : logical_AND_expression => inclusive_OR_expression
+line #36 : logical_OR_expression => logical_AND_expression
+line #36 : conditional_expression => logical_OR_expression
+line #36 : assignment_expression => conditional_expression
+line #36 : assignment_expression => unary_expression assignment_operator assignment_expression
+line #36 : expression => expression , assignment_expression
+line #36 : expression_opt => expression
+line #36 : expression_statement => expression_opt ;
+line #36 : statement => expression_statement
+line #36 : block_item => statement
+line #36 : block_item_list => block_item_list block_item
+
+Parsing line #37...
+
+line #37 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #37 : postfix_expression => primary_expression
+line #37 : unary_expression => postfix_expression
+line #37 : assignment_operator => += 
+line #37 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #37 : postfix_expression => primary_expression
+line #37 : unary_expression => postfix_expression
+line #37 : assignment_operator => -= 
+line #37 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #37 : postfix_expression => primary_expression
+line #37 : unary_expression => postfix_expression
+line #37 : cast_expression => unary_expression
+line #37 : multiplicative_expression => cast_expression
+line #37 : additive_expression => multiplicative_expression
+line #37 : shift_expression => additive_expression
+line #37 : relational_expression => shift_expression
+line #37 : equality_expression => relational_expression
+line #37 : AND_expression => equality_expression
+line #37 : exclusive_OR_expression => AND_expression
+line #37 : inclusive_OR_expression => exclusive_OR_expression
+line #37 : logical_AND_expression => inclusive_OR_expression
+line #37 : logical_OR_expression => logical_AND_expression
+line #37 : conditional_expression => logical_OR_expression
+line #37 : assignment_expression => conditional_expression
+line #37 : assignment_expression => unary_expression assignment_operator assignment_expression
+line #37 : expression => assignment_expression
+line #37 : primary_expression => ( expression )
+line #37 : postfix_expression => primary_expression
+line #37 : unary_expression => postfix_expression
+line #37 : cast_expression => unary_expression
+line #37 : multiplicative_expression => cast_expression
+line #37 : additive_expression => multiplicative_expression
+line #37 : shift_expression => additive_expression
+line #37 : relational_expression => shift_expression
+line #37 : equality_expression => relational_expression
+line #37 : AND_expression => equality_expression
+line #37 : exclusive_OR_expression => AND_expression
+line #37 : inclusive_OR_expression => exclusive_OR_expression
+line #37 : logical_AND_expression => inclusive_OR_expression
+line #37 : logical_OR_expression => logical_AND_expression
+line #37 : conditional_expression => logical_OR_expression
+line #37 : assignment_expression => conditional_expression
+line #37 : assignment_expression => unary_expression assignment_operator assignment_expression
+line #37 : expression => assignment_expression
+line #37 : expression_opt => expression
+line #37 : expression_statement => expression_opt ;
+line #37 : statement => expression_statement
+line #37 : block_item => statement
+line #37 : block_item_list => block_item_list block_item
+
+Parsing line #38...
+
+line #38 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #38 : postfix_expression => primary_expression
+line #38 : unary_expression => postfix_expression
+line #38 : assignment_operator => <<=
+line #38 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #38 : postfix_expression => primary_expression
+line #38 : unary_expression => postfix_expression
+line #38 : assignment_operator => >>=
+line #38 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #38 : postfix_expression => primary_expression
+line #38 : unary_expression => postfix_expression
+line #38 : cast_expression => unary_expression
+line #38 : multiplicative_expression => cast_expression
+line #38 : additive_expression => multiplicative_expression
+line #38 : shift_expression => additive_expression
+line #38 : relational_expression => shift_expression
+line #38 : equality_expression => relational_expression
+line #38 : AND_expression => equality_expression
+line #38 : exclusive_OR_expression => AND_expression
+line #38 : inclusive_OR_expression => exclusive_OR_expression
+line #38 : logical_AND_expression => inclusive_OR_expression
+line #38 : logical_OR_expression => logical_AND_expression
+line #38 : conditional_expression => logical_OR_expression
+line #38 : assignment_expression => conditional_expression
+line #38 : assignment_expression => unary_expression assignment_operator assignment_expression
+line #38 : expression => assignment_expression
+line #38 : primary_expression => ( expression )
+line #38 : postfix_expression => primary_expression
+line #38 : unary_expression => postfix_expression
+line #38 : cast_expression => unary_expression
+line #38 : multiplicative_expression => cast_expression
+line #38 : additive_expression => multiplicative_expression
+line #38 : shift_expression => additive_expression
+line #38 : relational_expression => shift_expression
+line #38 : equality_expression => relational_expression
+line #38 : AND_expression => equality_expression
+line #38 : exclusive_OR_expression => AND_expression
+line #38 : inclusive_OR_expression => exclusive_OR_expression
+line #38 : logical_AND_expression => inclusive_OR_expression
+line #38 : logical_OR_expression => logical_AND_expression
+line #38 : conditional_expression => logical_OR_expression
+line #38 : assignment_expression => conditional_expression
+line #38 : assignment_expression => unary_expression assignment_operator assignment_expression
+line #38 : expression => assignment_expression
+line #38 : expression_opt => expression
+line #38 : expression_statement => expression_opt ;
+line #38 : statement => expression_statement
+line #38 : block_item => statement
+line #38 : block_item_list => block_item_list block_item
+
+Parsing line #39...
+
+line #39 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #39 : postfix_expression => primary_expression
+line #39 : unary_expression => postfix_expression
+line #39 : assignment_operator => &=
+line #39 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #39 : postfix_expression => primary_expression
+line #39 : unary_expression => postfix_expression
+line #39 : assignment_operator => |=
+line #39 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #39 : postfix_expression => primary_expression
+line #39 : unary_expression => postfix_expression
+line #39 : assignment_operator => ^=
+line #39 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #39 : postfix_expression => primary_expression
+line #39 : unary_expression => postfix_expression
+line #39 : cast_expression => unary_expression
+line #39 : multiplicative_expression => cast_expression
+line #39 : additive_expression => multiplicative_expression
+line #39 : shift_expression => additive_expression
+line #39 : relational_expression => shift_expression
+line #39 : equality_expression => relational_expression
+line #39 : AND_expression => equality_expression
+line #39 : exclusive_OR_expression => AND_expression
+line #39 : inclusive_OR_expression => exclusive_OR_expression
+line #39 : logical_AND_expression => inclusive_OR_expression
+line #39 : logical_OR_expression => logical_AND_expression
+line #39 : conditional_expression => logical_OR_expression
+line #39 : assignment_expression => conditional_expression
+line #39 : assignment_expression => unary_expression assignment_operator assignment_expression
+line #39 : assignment_expression => unary_expression assignment_operator assignment_expression
+line #39 : assignment_expression => unary_expression assignment_operator assignment_expression
+line #39 : expression => assignment_expression
+line #39 : expression_opt => expression
+line #39 : expression_statement => expression_opt ;
+line #39 : statement => expression_statement
+line #39 : block_item => statement
+line #39 : block_item_list => block_item_list block_item
+
+Parsing line #40...
+
+line #40 : type_qualifier => const
+line #40 : type_specifier => long
+line #40 : declaration_specifiers_opt => epsilon 
+line #40 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #40 : declaration_specifiers_opt => declaration_specifiers
+line #40 : declaration_specifiers => type_qualifier declaration_specifiers_opt
+line #40 : pointer_opt => epsilon
+line #40 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #40 : declarator => pointer_opt direct_declarator
+line #40 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #40 : postfix_expression => primary_expression
+line #40 : unary_expression => postfix_expression
+line #40 : cast_expression => unary_expression
+line #40 : multiplicative_expression => cast_expression
+line #40 : additive_expression => multiplicative_expression
+line #40 : shift_expression => additive_expression
+line #40 : relational_expression => shift_expression
+line #40 : equality_expression => relational_expression
+line #40 : AND_expression => equality_expression
+line #40 : exclusive_OR_expression => AND_expression
+line #40 : inclusive_OR_expression => exclusive_OR_expression
+line #40 : logical_AND_expression => inclusive_OR_expression
+line #40 : logical_OR_expression => logical_AND_expression
+line #40 : conditional_expression => logical_OR_expression
+line #40 : assignment_expression => conditional_expression
+line #40 : initialiser => assignment_expression
+line #40 : init_declarator => declarator = initialiser
+line #40 : init_declarator_list => init_declarator
+line #40 : init_declarator_list_opt => init_declarator_list
+line #40 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #40 : block_item => declaration
+line #40 : block_item_list => block_item_list block_item
+
+Parsing line #41...
+
+line #41 : type_qualifier => const
+line #41 : type_specifier => long
+line #41 : declaration_specifiers_opt => epsilon 
+line #41 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #41 : declaration_specifiers_opt => declaration_specifiers
+line #41 : declaration_specifiers => type_qualifier declaration_specifiers_opt
+line #41 : pointer_opt => epsilon
+line #41 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #41 : declarator => pointer_opt direct_declarator
+line #41 : unary_operator => -
+line #41 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #41 : postfix_expression => primary_expression
+line #41 : unary_expression => postfix_expression
+line #41 : cast_expression => unary_expression
+line #41 : unary_expression => unary_operator cast_expression
+line #41 : cast_expression => unary_expression
+line #41 : multiplicative_expression => cast_expression
+line #41 : additive_expression => multiplicative_expression
+line #41 : shift_expression => additive_expression
+line #41 : relational_expression => shift_expression
+line #41 : equality_expression => relational_expression
+line #41 : AND_expression => equality_expression
+line #41 : exclusive_OR_expression => AND_expression
+line #41 : inclusive_OR_expression => exclusive_OR_expression
+line #41 : logical_AND_expression => inclusive_OR_expression
+line #41 : logical_OR_expression => logical_AND_expression
+line #41 : conditional_expression => logical_OR_expression
+line #41 : assignment_expression => conditional_expression
+line #41 : initialiser => assignment_expression
+line #41 : init_declarator => declarator = initialiser
+line #41 : init_declarator_list => init_declarator
+line #41 : init_declarator_list_opt => init_declarator_list
+line #41 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #41 : block_item => declaration
+line #41 : block_item_list => block_item_list block_item
+
+Parsing line #42...
+
+
+Parsing line #43...
+
+
+Parsing line #44...
+
+
+Parsing line #45...
+
+
+Parsing line #46...
+
+line #46 : type_specifier => int
+line #46 : declaration_specifiers_opt => epsilon 
+line #46 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #46 : pointer_opt => epsilon
+line #46 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #46 : type_qualifier_list_opt => epsilon
+line #46 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #46 : postfix_expression => primary_expression
+line #46 : unary_expression => postfix_expression
+line #46 : cast_expression => unary_expression
+line #46 : multiplicative_expression => cast_expression
+line #46 : additive_expression => multiplicative_expression
+line #46 : shift_expression => additive_expression
+line #46 : relational_expression => shift_expression
+line #46 : equality_expression => relational_expression
+line #46 : AND_expression => equality_expression
+line #46 : exclusive_OR_expression => AND_expression
+line #46 : inclusive_OR_expression => exclusive_OR_expression
+line #46 : logical_AND_expression => inclusive_OR_expression
+line #46 : logical_OR_expression => logical_AND_expression
+line #46 : conditional_expression => logical_OR_expression
+line #46 : assignment_expression => conditional_expression
+line #46 : assignment_expression_opt => assignment_expression
+line #46 : direct_declarator => direct_declarator [ type_qualifier_list_opt assignment_expression_opt ]
+line #46 : declarator => pointer_opt direct_declarator
+line #46 : init_declarator => declarator
+line #46 : init_declarator_list => init_declarator
+line #46 : init_declarator_list_opt => init_declarator_list
+line #46 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #46 : block_item => declaration
+line #46 : block_item_list => block_item_list block_item
+
+Parsing line #47...
+
+
+Parsing line #48...
+
+line #48 : type_specifier => char
+line #48 : declaration_specifiers_opt => epsilon 
+line #48 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #48 : pointer_opt => epsilon
+line #48 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #48 : type_qualifier_list_opt => epsilon
+line #48 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #48 : postfix_expression => primary_expression
+line #48 : unary_expression => postfix_expression
+line #48 : cast_expression => unary_expression
+line #48 : multiplicative_expression => cast_expression
+line #48 : additive_expression => multiplicative_expression
+line #48 : shift_expression => additive_expression
+line #48 : relational_expression => shift_expression
+line #48 : equality_expression => relational_expression
+line #48 : AND_expression => equality_expression
+line #48 : exclusive_OR_expression => AND_expression
+line #48 : inclusive_OR_expression => exclusive_OR_expression
+line #48 : logical_AND_expression => inclusive_OR_expression
+line #48 : logical_OR_expression => logical_AND_expression
+line #48 : conditional_expression => logical_OR_expression
+line #48 : assignment_expression => conditional_expression
+line #48 : assignment_expression_opt => assignment_expression
+line #48 : direct_declarator => direct_declarator [ type_qualifier_list_opt assignment_expression_opt ]
+line #48 : declarator => pointer_opt direct_declarator
+line #48 : init_declarator => declarator
+line #48 : init_declarator_list => init_declarator
+line #48 : init_declarator_list_opt => init_declarator_list
+line #48 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #48 : block_item => declaration
+line #48 : block_item_list => block_item_list block_item
+
+Parsing line #49...
+
+
+Parsing line #50...
+
+line #50 : enum_specifier => enum IDENTIFIER
+				IDENTIFIER = (null)
+line #50 : type_specifier => enum_specifier
+line #50 : declaration_specifiers_opt => epsilon 
+line #50 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #50 : pointer_opt => epsilon
+line #50 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #50 : declarator => pointer_opt direct_declarator
+line #50 : init_declarator => declarator
+line #50 : init_declarator_list => init_declarator
+line #50 : init_declarator_list_opt => init_declarator_list
+line #50 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #50 : block_item => declaration
+line #50 : block_item_list => block_item_list block_item
+
+Parsing line #51...
+
+line #51 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #51 : postfix_expression => primary_expression
+line #51 : unary_expression => postfix_expression
+line #51 : assignment_operator => =
+line #51 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #51 : postfix_expression => primary_expression
+line #51 : unary_expression => postfix_expression
+line #51 : cast_expression => unary_expression
+line #51 : multiplicative_expression => cast_expression
+line #51 : additive_expression => multiplicative_expression
+line #51 : shift_expression => additive_expression
+line #51 : relational_expression => shift_expression
+line #51 : equality_expression => relational_expression
+line #51 : AND_expression => equality_expression
+line #51 : exclusive_OR_expression => AND_expression
+line #51 : inclusive_OR_expression => exclusive_OR_expression
+line #51 : logical_AND_expression => inclusive_OR_expression
+line #51 : logical_OR_expression => logical_AND_expression
+line #51 : conditional_expression => logical_OR_expression
+line #51 : assignment_expression => conditional_expression
+line #51 : assignment_expression => unary_expression assignment_operator assignment_expression
+line #51 : expression => assignment_expression
+line #51 : expression_opt => expression
+line #51 : expression_statement => expression_opt ;
+line #51 : statement => expression_statement
+line #51 : block_item => statement
+line #51 : block_item_list => block_item_list block_item
+
+Parsing line #52...
+
+line #52 : type_specifier => float
+line #52 : declaration_specifiers_opt => epsilon 
+line #52 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #52 : pointer_opt => epsilon
+line #52 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #52 : declarator => pointer_opt direct_declarator
+line #52 : init_declarator => declarator
+line #52 : init_declarator_list => init_declarator
+line #52 : init_declarator_list_opt => init_declarator_list
+line #52 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #52 : block_item => declaration
+line #52 : block_item_list => block_item_list block_item
+
+Parsing line #53...
+
+
+Parsing line #54...
+
+line #54 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #54 : postfix_expression => primary_expression
+line #54 : unary_expression => postfix_expression
+line #54 : cast_expression => unary_expression
+line #54 : multiplicative_expression => cast_expression
+line #54 : additive_expression => multiplicative_expression
+line #54 : shift_expression => additive_expression
+line #54 : relational_expression => shift_expression
+line #54 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #54 : postfix_expression => primary_expression
+line #54 : unary_expression => postfix_expression
+line #54 : cast_expression => unary_expression
+line #54 : multiplicative_expression => cast_expression
+line #54 : additive_expression => multiplicative_expression
+line #54 : shift_expression => additive_expression
+line #54 : relational_expression => relational_expression > shift_expression
+line #54 : equality_expression => relational_expression
+line #54 : AND_expression => equality_expression
+line #54 : exclusive_OR_expression => AND_expression
+line #54 : inclusive_OR_expression => exclusive_OR_expression
+line #54 : logical_AND_expression => inclusive_OR_expression
+line #54 : logical_OR_expression => logical_AND_expression
+line #54 : conditional_expression => logical_OR_expression
+line #54 : assignment_expression => conditional_expression
+line #54 : expression => assignment_expression
+
+Parsing line #55...
+
+line #55 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #55 : postfix_expression => primary_expression
+line #55 : unary_expression => postfix_expression
+line #55 : cast_expression => unary_expression
+line #55 : multiplicative_expression => cast_expression
+line #55 : additive_expression => multiplicative_expression
+line #55 : shift_expression => additive_expression
+line #55 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #55 : postfix_expression => primary_expression
+line #55 : unary_expression => postfix_expression
+line #55 : cast_expression => unary_expression
+line #55 : multiplicative_expression => cast_expression
+line #55 : additive_expression => multiplicative_expression
+line #55 : shift_expression => shift_expression >> additive_expression
+line #55 : relational_expression => shift_expression
+line #55 : equality_expression => relational_expression
+line #55 : AND_expression => equality_expression
+line #55 : exclusive_OR_expression => AND_expression
+line #55 : inclusive_OR_expression => exclusive_OR_expression
+line #55 : logical_AND_expression => inclusive_OR_expression
+line #55 : logical_OR_expression => logical_AND_expression
+line #55 : conditional_expression => logical_OR_expression
+line #55 : assignment_expression => conditional_expression
+line #55 : expression => assignment_expression
+line #55 : expression_opt => expression
+line #55 : expression_statement => expression_opt ;
+line #55 : statement => expression_statement
+line #55 : block_item => statement
+line #55 : block_item_list => block_item
+
+Parsing line #56...
+
+line #56 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #56 : postfix_expression => primary_expression
+line #56 : unary_expression => postfix_expression
+line #56 : cast_expression => unary_expression
+line #56 : multiplicative_expression => cast_expression
+line #56 : additive_expression => multiplicative_expression
+line #56 : shift_expression => additive_expression
+line #56 : relational_expression => shift_expression
+line #56 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #56 : postfix_expression => primary_expression
+line #56 : unary_expression => postfix_expression
+line #56 : cast_expression => unary_expression
+line #56 : multiplicative_expression => cast_expression
+line #56 : additive_expression => multiplicative_expression
+line #56 : shift_expression => additive_expression
+line #56 : relational_expression => relational_expression > shift_expression
+line #56 : equality_expression => relational_expression
+line #56 : AND_expression => equality_expression
+line #56 : exclusive_OR_expression => AND_expression
+line #56 : inclusive_OR_expression => exclusive_OR_expression
+line #56 : logical_AND_expression => inclusive_OR_expression
+line #56 : logical_OR_expression => logical_AND_expression
+line #56 : conditional_expression => logical_OR_expression
+line #56 : assignment_expression => conditional_expression
+line #56 : expression => assignment_expression
+
+Parsing line #57...
+
+line #57 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #57 : postfix_expression => primary_expression
+line #57 : postfix_expression => postfix_expression ++
+line #57 : unary_expression => postfix_expression
+line #57 : cast_expression => unary_expression
+line #57 : multiplicative_expression => cast_expression
+line #57 : additive_expression => multiplicative_expression
+line #57 : shift_expression => additive_expression
+line #57 : relational_expression => shift_expression
+line #57 : equality_expression => relational_expression
+line #57 : AND_expression => equality_expression
+line #57 : exclusive_OR_expression => AND_expression
+line #57 : inclusive_OR_expression => exclusive_OR_expression
+line #57 : logical_AND_expression => inclusive_OR_expression
+line #57 : logical_OR_expression => logical_AND_expression
+line #57 : conditional_expression => logical_OR_expression
+line #57 : assignment_expression => conditional_expression
+line #57 : expression => assignment_expression
+line #57 : expression_opt => expression
+line #57 : expression_statement => expression_opt ;
+line #57 : statement => expression_statement
+line #57 : block_item => statement
+line #57 : block_item_list => block_item
+
+Parsing line #58...
+
+line #58 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #58 : postfix_expression => primary_expression
+line #58 : postfix_expression => postfix_expression --
+line #58 : unary_expression => postfix_expression
+line #58 : cast_expression => unary_expression
+line #58 : multiplicative_expression => cast_expression
+line #58 : additive_expression => multiplicative_expression
+line #58 : shift_expression => additive_expression
+line #58 : relational_expression => shift_expression
+line #58 : equality_expression => relational_expression
+line #58 : AND_expression => equality_expression
+line #58 : exclusive_OR_expression => AND_expression
+line #58 : inclusive_OR_expression => exclusive_OR_expression
+line #58 : logical_AND_expression => inclusive_OR_expression
+line #58 : logical_OR_expression => logical_AND_expression
+line #58 : conditional_expression => logical_OR_expression
+line #58 : assignment_expression => conditional_expression
+line #58 : expression => assignment_expression
+line #58 : expression_opt => expression
+line #58 : expression_statement => expression_opt ;
+line #58 : statement => expression_statement
+line #58 : block_item => statement
+line #58 : block_item_list => block_item_list block_item
+
+Parsing line #59...
+
+line #59 : block_item_list_opt => block_item_list
+line #59 : compound_statement => { block_item_list_opt }
+line #59 : statement => compound_statement
+line #59 : iteration_statement => while ( expression ) statement
+line #59 : statement => iteration_statement
+line #59 : block_item => statement
+line #59 : block_item_list => block_item_list block_item
+
+Parsing line #60...
+
+line #60 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #60 : postfix_expression => primary_expression
+line #60 : unary_expression => postfix_expression
+line #60 : assignment_operator => =
+line #60 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #60 : postfix_expression => primary_expression
+line #60 : unary_expression => postfix_expression
+line #60 : cast_expression => unary_expression
+line #60 : multiplicative_expression => cast_expression
+line #60 : additive_expression => multiplicative_expression
+line #60 : shift_expression => additive_expression
+line #60 : relational_expression => shift_expression
+line #60 : equality_expression => relational_expression
+line #60 : AND_expression => equality_expression
+line #60 : exclusive_OR_expression => AND_expression
+line #60 : inclusive_OR_expression => exclusive_OR_expression
+line #60 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #60 : postfix_expression => primary_expression
+line #60 : unary_expression => postfix_expression
+line #60 : cast_expression => unary_expression
+line #60 : multiplicative_expression => cast_expression
+line #60 : additive_expression => multiplicative_expression
+line #60 : shift_expression => additive_expression
+line #60 : relational_expression => shift_expression
+line #60 : equality_expression => relational_expression
+line #60 : AND_expression => equality_expression
+line #60 : exclusive_OR_expression => AND_expression
+line #60 : inclusive_OR_expression => inclusive_OR_expression | exclusive_OR_expression
+line #60 : logical_AND_expression => inclusive_OR_expression
+line #60 : logical_OR_expression => logical_AND_expression
+line #60 : conditional_expression => logical_OR_expression
+line #60 : assignment_expression => conditional_expression
+line #60 : assignment_expression => unary_expression assignment_operator assignment_expression
+line #60 : expression => assignment_expression
+line #60 : expression_opt => expression
+line #60 : expression_statement => expression_opt ;
+line #60 : statement => expression_statement
+line #60 : block_item => statement
+line #60 : block_item_list => block_item_list block_item
+
+Parsing line #61...
+
+line #61 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #61 : postfix_expression => primary_expression
+line #61 : unary_expression => postfix_expression
+line #61 : cast_expression => unary_expression
+line #61 : multiplicative_expression => cast_expression
+line #61 : additive_expression => multiplicative_expression
+line #61 : shift_expression => additive_expression
+line #61 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #61 : postfix_expression => primary_expression
+line #61 : unary_expression => postfix_expression
+line #61 : cast_expression => unary_expression
+line #61 : multiplicative_expression => cast_expression
+line #61 : additive_expression => multiplicative_expression
+line #61 : shift_expression => shift_expression << additive_expression
+line #61 : relational_expression => shift_expression
+line #61 : equality_expression => relational_expression
+line #61 : AND_expression => equality_expression
+line #61 : exclusive_OR_expression => AND_expression
+line #61 : inclusive_OR_expression => exclusive_OR_expression
+line #61 : logical_AND_expression => inclusive_OR_expression
+line #61 : logical_OR_expression => logical_AND_expression
+line #61 : conditional_expression => logical_OR_expression
+line #61 : assignment_expression => conditional_expression
+line #61 : expression => assignment_expression
+line #61 : expression_opt => expression
+line #61 : expression_statement => expression_opt ;
+line #61 : statement => expression_statement
+line #61 : block_item => statement
+line #61 : block_item_list => block_item_list block_item
+
+Parsing line #62...
+
+
+Parsing line #63...
+
+line #63 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #63 : postfix_expression => primary_expression
+line #63 : unary_expression => postfix_expression
+line #63 : assignment_operator => =
+line #63 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #63 : postfix_expression => primary_expression
+line #63 : unary_expression => postfix_expression
+line #63 : cast_expression => unary_expression
+line #63 : multiplicative_expression => cast_expression
+line #63 : additive_expression => multiplicative_expression
+line #63 : shift_expression => additive_expression
+line #63 : relational_expression => shift_expression
+line #63 : equality_expression => relational_expression
+line #63 : AND_expression => equality_expression
+line #63 : type_specifier => long
+line #63 : specifier_qualifier_list_opt => epsilon
+line #63 : specifier_qualifier_list => type_specifier specifier_qualifier_list_opt
+line #63 : type_name => specifier_qualifier_list
+line #63 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #63 : postfix_expression => primary_expression
+line #63 : unary_expression => postfix_expression
+line #63 : cast_expression => unary_expression
+line #63 : cast_expression => ( type_name ) cast_expression
+line #63 : multiplicative_expression => cast_expression
+line #63 : additive_expression => multiplicative_expression
+line #63 : shift_expression => additive_expression
+line #63 : relational_expression => shift_expression
+line #63 : equality_expression => relational_expression
+line #63 : AND_expression => AND_expression & equality_expression
+line #63 : exclusive_OR_expression => AND_expression
+line #63 : inclusive_OR_expression => exclusive_OR_expression
+line #63 : logical_AND_expression => inclusive_OR_expression
+line #63 : logical_OR_expression => logical_AND_expression
+line #63 : conditional_expression => logical_OR_expression
+line #63 : assignment_expression => conditional_expression
+line #63 : assignment_expression => unary_expression assignment_operator assignment_expression
+line #63 : expression => assignment_expression
+line #63 : expression_opt => expression
+line #63 : expression_statement => expression_opt ;
+line #63 : statement => expression_statement
+line #63 : block_item => statement
+line #63 : block_item_list => block_item_list block_item
+
+Parsing line #64...
+
+line #64 : block_item_list_opt => block_item_list
+line #64 : compound_statement => { block_item_list_opt }
+line #64 : statement => compound_statement
+
+Parsing line #65...
+
+
+Parsing line #66...
+
+line #66 : selection_statement => if ( expression ) statement
+line #66 : statement => selection_statement
+line #66 : block_item => statement
+line #66 : block_item_list => block_item_list block_item
+line #66 : type_specifier => char
+line #66 : declaration_specifiers_opt => epsilon 
+line #66 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #66 : pointer_opt => epsilon
+line #66 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #66 : declarator => pointer_opt direct_declarator
+line #66 : init_declarator => declarator
+line #66 : init_declarator_list => init_declarator
+line #66 : init_declarator_list_opt => init_declarator_list
+line #66 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #66 : block_item => declaration
+line #66 : block_item_list => block_item_list block_item
+
+Parsing line #67...
+
+line #67 : type_specifier => short
+line #67 : declaration_specifiers_opt => epsilon 
+line #67 : declaration_specifiers => type_specifier declaration_specifiers_opt
+line #67 : pointer_opt => epsilon
+line #67 : direct_declarator => IDENTIFIER
+				IDENTIFIER = (null)
+line #67 : declarator => pointer_opt direct_declarator
+line #67 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #67 : postfix_expression => primary_expression
+line #67 : unary_expression => postfix_expression
+line #67 : cast_expression => unary_expression
+line #67 : multiplicative_expression => cast_expression
+line #67 : additive_expression => multiplicative_expression
+line #67 : shift_expression => additive_expression
+line #67 : relational_expression => shift_expression
+line #67 : equality_expression => relational_expression
+line #67 : AND_expression => equality_expression
+line #67 : exclusive_OR_expression => AND_expression
+line #67 : inclusive_OR_expression => exclusive_OR_expression
+line #67 : logical_AND_expression => inclusive_OR_expression
+line #67 : logical_OR_expression => logical_AND_expression
+line #67 : conditional_expression => logical_OR_expression
+line #67 : assignment_expression => conditional_expression
+line #67 : initialiser => assignment_expression
+line #67 : init_declarator => declarator = initialiser
+line #67 : init_declarator_list => init_declarator
+line #67 : init_declarator_list_opt => init_declarator_list
+line #67 : declaration => declaration_specifiers init_declarator_list_opt ;
+line #67 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #67 : postfix_expression => primary_expression
+line #67 : unary_expression => postfix_expression
+line #67 : cast_expression => unary_expression
+line #67 : multiplicative_expression => cast_expression
+line #67 : additive_expression => multiplicative_expression
+line #67 : shift_expression => additive_expression
+line #67 : relational_expression => shift_expression
+line #67 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #67 : postfix_expression => primary_expression
+line #67 : unary_expression => postfix_expression
+line #67 : cast_expression => unary_expression
+line #67 : multiplicative_expression => cast_expression
+line #67 : additive_expression => multiplicative_expression
+line #67 : shift_expression => additive_expression
+line #67 : relational_expression => relational_expression < shift_expression
+line #67 : equality_expression => relational_expression
+line #67 : AND_expression => equality_expression
+line #67 : exclusive_OR_expression => AND_expression
+line #67 : inclusive_OR_expression => exclusive_OR_expression
+line #67 : logical_AND_expression => inclusive_OR_expression
+line #67 : logical_OR_expression => logical_AND_expression
+line #67 : conditional_expression => logical_OR_expression
+line #67 : assignment_expression => conditional_expression
+line #67 : expression => assignment_expression
+line #67 : expression_opt => expression
+line #67 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #67 : postfix_expression => primary_expression
+line #67 : postfix_expression => postfix_expression ++
+line #67 : unary_expression => postfix_expression
+line #67 : cast_expression => unary_expression
+line #67 : multiplicative_expression => cast_expression
+line #67 : additive_expression => multiplicative_expression
+line #67 : shift_expression => additive_expression
+line #67 : relational_expression => shift_expression
+line #67 : equality_expression => relational_expression
+line #67 : AND_expression => equality_expression
+line #67 : exclusive_OR_expression => AND_expression
+line #67 : inclusive_OR_expression => exclusive_OR_expression
+line #67 : logical_AND_expression => inclusive_OR_expression
+line #67 : logical_OR_expression => logical_AND_expression
+line #67 : conditional_expression => logical_OR_expression
+line #67 : assignment_expression => conditional_expression
+line #67 : expression => assignment_expression
+line #67 : expression_opt => expression
+
+Parsing line #68...
+
+
+Parsing line #69...
+
+line #69 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #69 : postfix_expression => primary_expression
+line #69 : unary_expression => postfix_expression
+line #69 : cast_expression => unary_expression
+line #69 : multiplicative_expression => cast_expression
+line #69 : additive_expression => multiplicative_expression
+line #69 : shift_expression => additive_expression
+line #69 : relational_expression => shift_expression
+line #69 : equality_expression => relational_expression
+line #69 : primary_expression => INTEGER_CONSTANT
+				INTEGER_CONSTANT = 0
+line #69 : postfix_expression => primary_expression
+line #69 : unary_expression => postfix_expression
+line #69 : cast_expression => unary_expression
+line #69 : multiplicative_expression => cast_expression
+line #69 : additive_expression => multiplicative_expression
+line #69 : shift_expression => additive_expression
+line #69 : relational_expression => shift_expression
+line #69 : equality_expression => equality_expression == relational_expression
+line #69 : AND_expression => equality_expression
+line #69 : exclusive_OR_expression => AND_expression
+line #69 : inclusive_OR_expression => exclusive_OR_expression
+line #69 : logical_AND_expression => inclusive_OR_expression
+line #69 : logical_OR_expression => logical_AND_expression
+line #69 : conditional_expression => logical_OR_expression
+line #69 : assignment_expression => conditional_expression
+line #69 : expression => assignment_expression
+
+Parsing line #70...
+
+line #70 : primary_expression => IDENTIFIER
+				IDENTIFIER = (null)
+line #70 : postfix_expression => primary_expression
+line #70 : unary_expression => postfix_expression
+line #70 : assignment_operator => =
+error occured at line #70 : Invalid token '
+error occured at line #70 : syntax error

@@ -3,8 +3,10 @@
     #include <stdio.h>
     #include <stdlib.h>
     #include "y.tab.h"
-    int lineCount = 1;
+    int line_count = 1;
 %}
+
+%option yylineno
 
 %x  SINGLE_LINE_COMMENT_CONTENT
 %x  MULTI_LINE_COMMENT_CONTENT
@@ -133,15 +135,15 @@ NEWLINE							\n
 "/*"                               { BEGIN(MULTI_LINE_COMMENT_CONTENT); }
 <MULTI_LINE_COMMENT_CONTENT>"*/"   { BEGIN(INITIAL); }
 <MULTI_LINE_COMMENT_CONTENT>.      { } 
-<MULTI_LINE_COMMENT_CONTENT>"\n"   { lineCount++; printf("\nParsing Line #%d...\n\n", lineCount); }
+<MULTI_LINE_COMMENT_CONTENT>"\n"   { printf("\nParsing line #%d...\n\n", yylineno); }
 
 "//"                               { BEGIN(SINGLE_LINE_COMMENT_CONTENT); }
 <SINGLE_LINE_COMMENT_CONTENT>.     { }
-<SINGLE_LINE_COMMENT_CONTENT>"\n"  { BEGIN(INITIAL); lineCount++; printf("\nParsing Line #%d...\n\n", lineCount); }
+<SINGLE_LINE_COMMENT_CONTENT>"\n"  { BEGIN(INITIAL); printf("\nParsing line #%d...\n\n", yylineno); }
 
 {WHITESPACE}					{ }
-{NEWLINE}						{ lineCount++; printf("\nParsing Line #%d...\n\n", lineCount); }
-.                       		{ printf("ERROR [Line #%d] : Invalid token %s\n", lineCount, yytext); return INVALID_TOKEN; }
+{NEWLINE}						{ printf("\nParsing line #%d...\n\n", yylineno); }
+.                       		{ printf("error occured at line #%d : Invalid token %s\n", yylineno, yytext); return INVALID_TOKEN; }
 
 %%
 
