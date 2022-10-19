@@ -1,5 +1,5 @@
 #include"myl.h"
-
+#include<stdio.h>
 #define BUFFER 20
 #define DECIMAL 6
 #define charzero '0'
@@ -120,10 +120,12 @@ int readInt(int * numptr){
     }
     ans *= sign;                            // Updating value based on sign
     // Checking out of bounds error
+    
     if(ans > INT_MAX || ans < INT_MIN){
         return ERR;
     }
-    *numptr = (int)ans;                  
+    *numptr = (int)ans;   
+
     return OK;   
 }
 /**
