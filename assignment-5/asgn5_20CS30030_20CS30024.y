@@ -7,7 +7,7 @@
 	void yyinfo(string);
 %}
 /*
-identifierVal = name of identifier in symbol table
+identifier_val = name of identifier in symbol table
 instruction_number for backpatching
 parameter_count = number of parameters passed to function
 symbolType = recent most type encountered
