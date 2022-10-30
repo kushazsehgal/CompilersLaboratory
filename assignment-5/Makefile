@@ -27,11 +27,11 @@ clean:
 	rm -f asgn5_20CS30030_20CS30024_translator.o lex.yy.* y.tab.* *.out
 
 test: parser.out
-	@echo "Running test 1 (Arithmetic, shift, and bit expressions)"
+	@echo "Running test 1 (Unary expressions and operators)"
 	./parser.out < asgn5_20CS30030_20CS30024_test1.c > asgn5_20CS30030_20CS30024_quads1.out
 	@echo "Test 1 complete\n"
-
-	@echo "Running test 2 (Unary expressions and operators)"
+	
+	@echo "Running test 2 (Arithmetic, shift, and bit expressions)"
 	./parser.out < asgn5_20CS30030_20CS30024_test2.c > asgn5_20CS30030_20CS30024_quads2.out
 	@echo "Test 2 complete\n"
 

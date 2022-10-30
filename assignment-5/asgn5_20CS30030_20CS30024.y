@@ -202,7 +202,7 @@ primary_expression:
     IDENTIFIER 
         { 
             yyinfo("primary_expression => IDENTIFIER");
-            $$ = new Expression(); // create new non boolean expression and symbol is the identifier
+            $$ = new Expression();
             $$->symbol = $1;
             $$->type = Expression::NONBOOLEAN; 
         }
@@ -256,10 +256,10 @@ postfix_expression:
             // this is an array expression, create a new array
             yyinfo("postfix_expression => postfix_expression [ expression ]"); 
             $$ = new Array();
-            $$->symbol = $1->symbol;    // same symbol as before
+            $$->symbol = $1->symbol;
             $$->subArrayType = $1->subArrayType->arrayType; // as we are indexing we go one level deeper
             $$->temp = gentemp(SymbolType::INT); // temporary to compute location
-            $$->type = Array::ARRAY;    // type will be array
+            $$->type = Array::ARRAY;
 
             if($1->type == Array::ARRAY) {
                 // postfix_expression is already array so multiply size of subarray with expression and add
@@ -273,7 +273,6 @@ postfix_expression:
         }
     | postfix_expression LEFT_PARENTHESES argument_expression_list_opt RIGHT_PARENTHESES
         { 
-            // function call, number of parameters stored in argument_expression_list_opt
             yyinfo("postfix_expression => postfix_expression ( argument_expression_list_opt )"); 
             $$ = new Array();
             $$->symbol = gentemp($1->symbol->type->type);
@@ -448,7 +447,7 @@ cast_expression:
             yyinfo("cast_expression => unary_expression"); 
             $$ = $1;
         }
-    | LEFT_PARENTHESES type_name RIGHT_PARENTHESES cast_expression /* can be ignored */
+    | LEFT_PARENTHESES type_name RIGHT_PARENTHESES cast_expression
         { 
             yyinfo("cast_expression => ( type_name ) cast_expression"); 
             $$ = new Array();
@@ -1044,10 +1043,8 @@ init_declarator:
     | declarator ASSIGNMENT initialiser
         { 
             yyinfo("init_declarator => declarator = initialiser");
-            // if there is some initial value assign it 
             if($3->initialValue != "") 
                 $1->initialValue = $3->initialValue;
-            // = assignment
             emit("=", $1->name, $3->name);
         }
     ;
@@ -1282,12 +1279,12 @@ direct_declarator:
                 it2 = it1;
                 it1 = it1->arrayType;
             }
-            if(it2 != NULL) { // nested array case
+            if(it2 != NULL) {
                 // another level of nesting with base as it1 and width the value of assignment_expression
                 it2->arrayType =  new SymbolType(SymbolType::ARRAY, it1, atoi($3->symbol->initialValue.c_str()));	
                 $$ = $1->update($1->type);
             }
-            else { // fresh array
+            else {
                 // create a new array with base as type of direct_declarator and width the value of assignment_expression
                 $$ = $1->update(new SymbolType(SymbolType::ARRAY, $1->type, atoi($3->symbol->initialValue.c_str())));
             }
@@ -1301,12 +1298,12 @@ direct_declarator:
                 it2 = it1;
                 it1 = it1->arrayType;
             }
-            if(it2 != NULL) { // nested array case
+            if(it2 != NULL) {
                 // another level of nesting with base as it1 and width the value of assignment_expression
                 it2->arrayType =  new SymbolType(SymbolType::ARRAY, it1, 0);	
                 $$ = $1->update($1->type);
             }
-            else { // fresh array
+            else {
                 // create a new array with base as type of direct_declarator and width the value of assignment_expression
                 $$ = $1->update(new SymbolType(SymbolType::ARRAY, $1->type, 0));
             }
@@ -1337,7 +1334,6 @@ direct_declarator:
             // function declaration
             currentTable->name = $1->name;
             if($1->type->type != SymbolType::VOID) {
-                // set type of return value
                 currentTable->lookup("return")->update($1->type);
             }
             // move back to the global table and set the nested table for the function
@@ -1572,10 +1568,6 @@ labeled_statement:
         }
     ;
 
-/*
-Used to change the symbol table when a new block is encountered
-Helps create a hierarchy of symbol tables
-*/
 change_block: 
         {
             string name = currentTable->name + "_" + toString(tableCount);
