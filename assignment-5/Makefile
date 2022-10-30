@@ -17,7 +17,7 @@ y.tab.c y.tab.h: asgn5_20CS30030_20CS30024.y
 	bison -dty asgn5_20CS30030_20CS30024.y
 
 clean:
-	rm parser.out asgn5_20CS30030_20CS30024_translator.o lex.yy.* y.tab.* *.out
+	rm -f asgn5_20CS30030_20CS30024_translator.o lex.yy.* y.tab.* *.out
 
 test: parser.out
 	@echo "Running test 1 (Arithmetic, shift, and bit expressions)"

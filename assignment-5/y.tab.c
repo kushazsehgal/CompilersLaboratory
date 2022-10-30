@@ -914,28 +914,28 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int16 yyrline[] =
 {
-       0,   206,   206,   213,   220,   227,   234,   241,   249,   258,
-     278,   286,   290,   294,   303,   312,   316,   325,   331,   339,
-     346,   356,   361,   368,   375,   402,   406,   417,   422,   427,
-     432,   437,   442,   450,   455,   474,   490,   513,   536,   562,
-     567,   578,   592,   597,   608,   629,   634,   648,   662,   676,
-     693,   698,   714,   742,   747,   760,   765,   778,   783,   803,
-     810,   847,   852,   866,   871,   885,   890,   910,   915,   936,
-     940,   944,   948,   952,   956,   960,   964,   968,   972,   976,
-     983,   988,   995,  1004,  1011,  1016,  1022,  1026,  1030,  1034,
-    1041,  1046,  1052,  1056,  1063,  1068,  1080,  1084,  1088,  1092,
-    1099,  1104,  1109,  1113,  1118,  1122,  1127,  1131,  1135,  1139,
-    1143,  1147,  1151,  1158,  1162,  1169,  1174,  1180,  1184,  1188,
-    1195,  1200,  1206,  1210,  1217,  1221,  1228,  1232,  1236,  1243,
-    1250,  1259,  1266,  1282,  1288,  1293,  1297,  1301,  1319,  1338,
-    1342,  1346,  1350,  1354,  1358,  1373,  1377,  1395,  1400,  1433,
-    1439,  1448,  1452,  1459,  1463,  1470,  1474,  1481,  1485,  1492,
-    1496,  1503,  1510,  1515,  1519,  1526,  1530,  1537,  1542,  1548,
-    1555,  1559,  1566,  1570,  1579,  1583,  1588,  1594,  1599,  1604,
-    1612,  1616,  1620,  1632,  1643,  1652,  1658,  1665,  1670,  1680,
-    1685,  1693,  1701,  1707,  1727,  1735,  1744,  1770,  1780,  1789,
-    1800,  1807,  1811,  1815,  1819,  1834,  1838,  1845,  1849,  1857,
-    1867,  1872,  1878,  1882
+       0,   201,   201,   208,   215,   222,   229,   236,   244,   253,
+     273,   281,   285,   289,   298,   307,   311,   320,   326,   334,
+     341,   351,   356,   363,   370,   397,   401,   412,   417,   422,
+     427,   432,   437,   445,   450,   460,   476,   499,   522,   548,
+     553,   564,   578,   583,   594,   609,   614,   628,   642,   656,
+     673,   678,   694,   715,   720,   733,   738,   751,   756,   769,
+     776,   787,   792,   806,   811,   825,   830,   850,   855,   876,
+     880,   884,   888,   892,   896,   900,   904,   908,   912,   916,
+     923,   928,   935,   944,   951,   956,   962,   966,   970,   974,
+     981,   986,   992,   996,  1003,  1008,  1020,  1024,  1028,  1032,
+    1039,  1044,  1049,  1053,  1058,  1062,  1067,  1071,  1075,  1079,
+    1083,  1087,  1091,  1098,  1102,  1109,  1114,  1120,  1124,  1128,
+    1135,  1140,  1146,  1150,  1157,  1161,  1168,  1172,  1176,  1183,
+    1190,  1199,  1206,  1222,  1228,  1233,  1237,  1241,  1259,  1278,
+    1282,  1286,  1290,  1294,  1298,  1313,  1317,  1335,  1340,  1346,
+    1352,  1361,  1365,  1372,  1376,  1383,  1387,  1394,  1398,  1405,
+    1409,  1416,  1423,  1428,  1432,  1439,  1443,  1450,  1455,  1461,
+    1468,  1472,  1479,  1483,  1492,  1496,  1501,  1507,  1512,  1517,
+    1525,  1529,  1533,  1541,  1552,  1561,  1567,  1574,  1579,  1589,
+    1594,  1602,  1610,  1616,  1624,  1632,  1641,  1650,  1660,  1669,
+    1680,  1687,  1691,  1695,  1699,  1714,  1718,  1725,  1729,  1736,
+    1746,  1751,  1757,  1761
 };
 #endif
 
@@ -1917,7 +1917,7 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* primary_expression: IDENTIFIER  */
-#line 207 "asgn5_20CS30030_20CS30024.y"
+#line 202 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("primary_expression => IDENTIFIER");
             (yyval.expression) = new Expression(); // create new non boolean expression and symbol is the identifier
@@ -1928,7 +1928,7 @@ yyreduce:
     break;
 
   case 3: /* primary_expression: INTEGER_CONST  */
-#line 214 "asgn5_20CS30030_20CS30024.y"
+#line 209 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("primary_expression => INTEGER_CONST"); 
             (yyval.expression) = new Expression();
@@ -1939,7 +1939,7 @@ yyreduce:
     break;
 
   case 4: /* primary_expression: FLOAT_CONST  */
-#line 221 "asgn5_20CS30030_20CS30024.y"
+#line 216 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("primary_expression => FLOAT_CONST"); 
             (yyval.expression) = new Expression();
@@ -1950,7 +1950,7 @@ yyreduce:
     break;
 
   case 5: /* primary_expression: CHAR_CONST  */
-#line 228 "asgn5_20CS30030_20CS30024.y"
+#line 223 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("primary_expression => CHAR_CONST"); 
             (yyval.expression) = new Expression();
@@ -1961,7 +1961,7 @@ yyreduce:
     break;
 
   case 6: /* primary_expression: STRING_LITERAL  */
-#line 235 "asgn5_20CS30030_20CS30024.y"
+#line 230 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("primary_expression => STRING_LITERAL"); 
             (yyval.expression) = new Expression();
@@ -1972,7 +1972,7 @@ yyreduce:
     break;
 
   case 7: /* primary_expression: LEFT_PARENTHESES expression RIGHT_PARENTHESES  */
-#line 242 "asgn5_20CS30030_20CS30024.y"
+#line 237 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("primary_expression => ( expression )"); 
             (yyval.expression) = (yyvsp[-1].expression);
@@ -1981,7 +1981,7 @@ yyreduce:
     break;
 
   case 8: /* postfix_expression: primary_expression  */
-#line 250 "asgn5_20CS30030_20CS30024.y"
+#line 245 "asgn5_20CS30030_20CS30024.y"
         { 
             // create new array with the same symbol as the primary expression
             yyinfo("postfix_expression => primary_expression"); 
@@ -1994,7 +1994,7 @@ yyreduce:
     break;
 
   case 9: /* postfix_expression: postfix_expression LEFT_SQUARE_BRACKET expression RIGHT_SQUARE_BRACKET  */
-#line 259 "asgn5_20CS30030_20CS30024.y"
+#line 254 "asgn5_20CS30030_20CS30024.y"
         { 
             // this is an array expression, create a new array
             yyinfo("postfix_expression => postfix_expression [ expression ]"); 
@@ -2018,7 +2018,7 @@ yyreduce:
     break;
 
   case 10: /* postfix_expression: postfix_expression LEFT_PARENTHESES argument_expression_list_opt RIGHT_PARENTHESES  */
-#line 279 "asgn5_20CS30030_20CS30024.y"
+#line 274 "asgn5_20CS30030_20CS30024.y"
         { 
             // function call, number of parameters stored in argument_expression_list_opt
             yyinfo("postfix_expression => postfix_expression ( argument_expression_list_opt )"); 
@@ -2030,7 +2030,7 @@ yyreduce:
     break;
 
   case 11: /* postfix_expression: postfix_expression DOT IDENTIFIER  */
-#line 287 "asgn5_20CS30030_20CS30024.y"
+#line 282 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("postfix_expression => postfix_expression . IDENTIFIER"); 
         }
@@ -2038,7 +2038,7 @@ yyreduce:
     break;
 
   case 12: /* postfix_expression: postfix_expression ARROW IDENTIFIER  */
-#line 291 "asgn5_20CS30030_20CS30024.y"
+#line 286 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("postfix_expression => postfix_expression -> IDENTIFIER"); 
         }
@@ -2046,7 +2046,7 @@ yyreduce:
     break;
 
   case 13: /* postfix_expression: postfix_expression INCREMENT  */
-#line 295 "asgn5_20CS30030_20CS30024.y"
+#line 290 "asgn5_20CS30030_20CS30024.y"
         { 
             // post increment, first generate temporary with old value, then add 1
             yyinfo("postfix_expression => postfix_expression ++");
@@ -2059,7 +2059,7 @@ yyreduce:
     break;
 
   case 14: /* postfix_expression: postfix_expression DECREMENT  */
-#line 304 "asgn5_20CS30030_20CS30024.y"
+#line 299 "asgn5_20CS30030_20CS30024.y"
         { 
             // post decrement, first generate temporary with old value, then subtract 1
             yyinfo("postfix_expression => postfix_expression --"); 
@@ -2072,7 +2072,7 @@ yyreduce:
     break;
 
   case 15: /* postfix_expression: LEFT_PARENTHESES type_name RIGHT_PARENTHESES LEFT_CURLY_BRACKET initialiser_list RIGHT_CURLY_BRACKET  */
-#line 313 "asgn5_20CS30030_20CS30024.y"
+#line 308 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("postfix_expression => ( type_name ) { initialiser_list }"); 
         }
@@ -2080,7 +2080,7 @@ yyreduce:
     break;
 
   case 16: /* postfix_expression: LEFT_PARENTHESES type_name RIGHT_PARENTHESES LEFT_CURLY_BRACKET initialiser_list COMMA RIGHT_CURLY_BRACKET  */
-#line 317 "asgn5_20CS30030_20CS30024.y"
+#line 312 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("postfix_expression => ( type_name ) { initialiser_list , }"); 
         }
@@ -2088,7 +2088,7 @@ yyreduce:
     break;
 
   case 17: /* argument_expression_list_opt: argument_expression_list  */
-#line 326 "asgn5_20CS30030_20CS30024.y"
+#line 321 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("argument_expression_list_opt => argument_expression_list"); 
             (yyval.parameter_count) = (yyvsp[0].parameter_count);
@@ -2097,7 +2097,7 @@ yyreduce:
     break;
 
   case 18: /* argument_expression_list_opt: %empty  */
-#line 331 "asgn5_20CS30030_20CS30024.y"
+#line 326 "asgn5_20CS30030_20CS30024.y"
         { 
             // empty so 0 params
             yyinfo("argument_expression_list_opt => epsilon");
@@ -2107,7 +2107,7 @@ yyreduce:
     break;
 
   case 19: /* argument_expression_list: assignment_expression  */
-#line 340 "asgn5_20CS30030_20CS30024.y"
+#line 335 "asgn5_20CS30030_20CS30024.y"
         { 
             // first param, initialise param count to 1
             yyinfo("argument_expression_list => assignment_expression"); 
@@ -2118,7 +2118,7 @@ yyreduce:
     break;
 
   case 20: /* argument_expression_list: argument_expression_list COMMA assignment_expression  */
-#line 347 "asgn5_20CS30030_20CS30024.y"
+#line 342 "asgn5_20CS30030_20CS30024.y"
         { 
             // one new param, add 1 to param count
             yyinfo("argument_expression_list => argument_expression_list , assignment_expression");
@@ -2129,7 +2129,7 @@ yyreduce:
     break;
 
   case 21: /* unary_expression: postfix_expression  */
-#line 357 "asgn5_20CS30030_20CS30024.y"
+#line 352 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("unary_expression => postfix_expression"); 
             (yyval.array) = (yyvsp[0].array);
@@ -2138,7 +2138,7 @@ yyreduce:
     break;
 
   case 22: /* unary_expression: INCREMENT unary_expression  */
-#line 362 "asgn5_20CS30030_20CS30024.y"
+#line 357 "asgn5_20CS30030_20CS30024.y"
         { 
             // pre increment, no new temporary simply add 1
             yyinfo("unary_expression => ++ unary_expression"); 
@@ -2149,7 +2149,7 @@ yyreduce:
     break;
 
   case 23: /* unary_expression: DECREMENT unary_expression  */
-#line 369 "asgn5_20CS30030_20CS30024.y"
+#line 364 "asgn5_20CS30030_20CS30024.y"
         { 
             // pre decrement, no new temporary simply subtract 1
             yyinfo("unary_expression => -- unary_expression"); 
@@ -2160,7 +2160,7 @@ yyreduce:
     break;
 
   case 24: /* unary_expression: unary_operator cast_expression  */
-#line 376 "asgn5_20CS30030_20CS30024.y"
+#line 371 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("unary_expression => unary_operator cast_expression");
             if(strcmp((yyvsp[-1].unary_operator), "&") == 0) {
@@ -2191,7 +2191,7 @@ yyreduce:
     break;
 
   case 25: /* unary_expression: SIZEOF unary_expression  */
-#line 403 "asgn5_20CS30030_20CS30024.y"
+#line 398 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("unary_expression => sizeof unary_expression"); 
         }
@@ -2199,7 +2199,7 @@ yyreduce:
     break;
 
   case 26: /* unary_expression: SIZEOF LEFT_PARENTHESES type_name RIGHT_PARENTHESES  */
-#line 407 "asgn5_20CS30030_20CS30024.y"
+#line 402 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("unary_expression => sizeof ( type_name )"); 
         }
@@ -2207,7 +2207,7 @@ yyreduce:
     break;
 
   case 27: /* unary_operator: BITWISE_AND  */
-#line 418 "asgn5_20CS30030_20CS30024.y"
+#line 413 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("unary_operator => &"); 
             (yyval.unary_operator) = strdup("&"); 
@@ -2216,7 +2216,7 @@ yyreduce:
     break;
 
   case 28: /* unary_operator: ASTERISK  */
-#line 423 "asgn5_20CS30030_20CS30024.y"
+#line 418 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("unary_operator => *"); 
             (yyval.unary_operator) = strdup("*"); 
@@ -2225,7 +2225,7 @@ yyreduce:
     break;
 
   case 29: /* unary_operator: PLUS  */
-#line 428 "asgn5_20CS30030_20CS30024.y"
+#line 423 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("unary_operator => +"); 
             (yyval.unary_operator) = strdup("+"); 
@@ -2234,7 +2234,7 @@ yyreduce:
     break;
 
   case 30: /* unary_operator: MINUS  */
-#line 433 "asgn5_20CS30030_20CS30024.y"
+#line 428 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("unary_operator => -"); 
             (yyval.unary_operator) = strdup("=-"); 
@@ -2243,7 +2243,7 @@ yyreduce:
     break;
 
   case 31: /* unary_operator: TILDE  */
-#line 438 "asgn5_20CS30030_20CS30024.y"
+#line 433 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("unary_operator => ~"); 
             (yyval.unary_operator) = strdup("~"); 
@@ -2252,7 +2252,7 @@ yyreduce:
     break;
 
   case 32: /* unary_operator: EXCLAMATION  */
-#line 443 "asgn5_20CS30030_20CS30024.y"
+#line 438 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("unary_operator => !"); 
             (yyval.unary_operator) = strdup("!"); 
@@ -2261,7 +2261,7 @@ yyreduce:
     break;
 
   case 33: /* cast_expression: unary_expression  */
-#line 451 "asgn5_20CS30030_20CS30024.y"
+#line 446 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("cast_expression => unary_expression"); 
             (yyval.array) = (yyvsp[0].array);
@@ -2270,7 +2270,7 @@ yyreduce:
     break;
 
   case 34: /* cast_expression: LEFT_PARENTHESES type_name RIGHT_PARENTHESES cast_expression  */
-#line 456 "asgn5_20CS30030_20CS30024.y"
+#line 451 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("cast_expression => ( type_name ) cast_expression"); 
             (yyval.array) = new Array();
@@ -2280,7 +2280,7 @@ yyreduce:
     break;
 
   case 35: /* multiplicative_expression: cast_expression  */
-#line 475 "asgn5_20CS30030_20CS30024.y"
+#line 461 "asgn5_20CS30030_20CS30024.y"
         { 
             SymbolType *baseType = (yyvsp[0].array)->symbol->type;
             while(baseType->arrayType)
@@ -2300,7 +2300,7 @@ yyreduce:
     break;
 
   case 36: /* multiplicative_expression: multiplicative_expression ASTERISK cast_expression  */
-#line 491 "asgn5_20CS30030_20CS30024.y"
+#line 477 "asgn5_20CS30030_20CS30024.y"
         { 
             SymbolType *baseType = (yyvsp[0].array)->symbol->type;
             while(baseType->arrayType)
@@ -2327,7 +2327,7 @@ yyreduce:
     break;
 
   case 37: /* multiplicative_expression: multiplicative_expression SLASH cast_expression  */
-#line 514 "asgn5_20CS30030_20CS30024.y"
+#line 500 "asgn5_20CS30030_20CS30024.y"
         { 
             SymbolType *baseType = (yyvsp[0].array)->symbol->type;
             while(baseType->arrayType)
@@ -2354,7 +2354,7 @@ yyreduce:
     break;
 
   case 38: /* multiplicative_expression: multiplicative_expression MODULO cast_expression  */
-#line 537 "asgn5_20CS30030_20CS30024.y"
+#line 523 "asgn5_20CS30030_20CS30024.y"
         { 
             SymbolType *baseType = (yyvsp[0].array)->symbol->type;
             while(baseType->arrayType)
@@ -2381,7 +2381,7 @@ yyreduce:
     break;
 
   case 39: /* additive_expression: multiplicative_expression  */
-#line 563 "asgn5_20CS30030_20CS30024.y"
+#line 549 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("additive_expression => multiplicative_expression"); 
             (yyval.expression) = (yyvsp[0].expression);
@@ -2390,7 +2390,7 @@ yyreduce:
     break;
 
   case 40: /* additive_expression: additive_expression PLUS multiplicative_expression  */
-#line 568 "asgn5_20CS30030_20CS30024.y"
+#line 554 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("additive_expression => additive_expression + multiplicative_expression"); 
             if(typeCheck((yyvsp[-2].expression)->symbol, (yyvsp[0].expression)->symbol)) {
@@ -2405,7 +2405,7 @@ yyreduce:
     break;
 
   case 41: /* additive_expression: additive_expression MINUS multiplicative_expression  */
-#line 579 "asgn5_20CS30030_20CS30024.y"
+#line 565 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("additive_expression => additive_expression - multiplicative_expression"); 
             if(typeCheck((yyvsp[-2].expression)->symbol, (yyvsp[0].expression)->symbol)) {
@@ -2420,7 +2420,7 @@ yyreduce:
     break;
 
   case 42: /* shift_expression: additive_expression  */
-#line 593 "asgn5_20CS30030_20CS30024.y"
+#line 579 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("shift_expression => additive_expression");
             (yyval.expression) = (yyvsp[0].expression);
@@ -2429,7 +2429,7 @@ yyreduce:
     break;
 
   case 43: /* shift_expression: shift_expression LEFT_SHIFT additive_expression  */
-#line 598 "asgn5_20CS30030_20CS30024.y"
+#line 584 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("shift_expression => shift_expression << additive_expression"); 
             if((yyvsp[0].expression)->symbol->type->type == SymbolType::INT) {
@@ -2444,7 +2444,7 @@ yyreduce:
     break;
 
   case 44: /* shift_expression: shift_expression RIGHT_SHIFT additive_expression  */
-#line 609 "asgn5_20CS30030_20CS30024.y"
+#line 595 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("shift_expression => shift_expression >> additive_expression"); 
             if((yyvsp[0].expression)->symbol->type->type == SymbolType::INT) {
@@ -2459,7 +2459,7 @@ yyreduce:
     break;
 
   case 45: /* relational_expression: shift_expression  */
-#line 630 "asgn5_20CS30030_20CS30024.y"
+#line 610 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("relational_expression => shift_expression"); 
             (yyval.expression) = (yyvsp[0].expression);
@@ -2468,7 +2468,7 @@ yyreduce:
     break;
 
   case 46: /* relational_expression: relational_expression LESS_THAN shift_expression  */
-#line 635 "asgn5_20CS30030_20CS30024.y"
+#line 615 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("relational_expression => relational_expression < shift_expression"); 
             if(typeCheck((yyvsp[-2].expression)->symbol, (yyvsp[0].expression)->symbol)) {
@@ -2486,7 +2486,7 @@ yyreduce:
     break;
 
   case 47: /* relational_expression: relational_expression GREATER_THAN shift_expression  */
-#line 649 "asgn5_20CS30030_20CS30024.y"
+#line 629 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("relational_expression => relational_expression > shift_expression"); 
             if(typeCheck((yyvsp[-2].expression)->symbol, (yyvsp[0].expression)->symbol)) {
@@ -2504,7 +2504,7 @@ yyreduce:
     break;
 
   case 48: /* relational_expression: relational_expression LESS_EQUAL_THAN shift_expression  */
-#line 663 "asgn5_20CS30030_20CS30024.y"
+#line 643 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("relational_expression => relational_expression <= shift_expression"); 
             if(typeCheck((yyvsp[-2].expression)->symbol, (yyvsp[0].expression)->symbol)) {
@@ -2522,7 +2522,7 @@ yyreduce:
     break;
 
   case 49: /* relational_expression: relational_expression GREATER_EQUAL_THAN shift_expression  */
-#line 677 "asgn5_20CS30030_20CS30024.y"
+#line 657 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("relational_expression => relational_expression >= shift_expression"); 
             if(typeCheck((yyvsp[-2].expression)->symbol, (yyvsp[0].expression)->symbol)) {
@@ -2540,7 +2540,7 @@ yyreduce:
     break;
 
   case 50: /* equality_expression: relational_expression  */
-#line 694 "asgn5_20CS30030_20CS30024.y"
+#line 674 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("equality_expression => relational_expression"); 
             (yyval.expression) = (yyvsp[0].expression);
@@ -2549,7 +2549,7 @@ yyreduce:
     break;
 
   case 51: /* equality_expression: equality_expression EQUALS relational_expression  */
-#line 699 "asgn5_20CS30030_20CS30024.y"
+#line 679 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("equality_expression => equality_expression == relational_expression"); 
             if(typeCheck((yyvsp[-2].expression)->symbol, (yyvsp[0].expression)->symbol)) {
@@ -2569,7 +2569,7 @@ yyreduce:
     break;
 
   case 52: /* equality_expression: equality_expression NOT_EQUALS relational_expression  */
-#line 715 "asgn5_20CS30030_20CS30024.y"
+#line 695 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("equality_expression => equality_expression != relational_expression"); 
             if(typeCheck((yyvsp[-2].expression)->symbol, (yyvsp[0].expression)->symbol)) {
@@ -2589,7 +2589,7 @@ yyreduce:
     break;
 
   case 53: /* AND_expression: equality_expression  */
-#line 743 "asgn5_20CS30030_20CS30024.y"
+#line 716 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("AND_expression => equality_expression"); 
             (yyval.expression) = (yyvsp[0].expression);
@@ -2598,7 +2598,7 @@ yyreduce:
     break;
 
   case 54: /* AND_expression: AND_expression BITWISE_AND equality_expression  */
-#line 748 "asgn5_20CS30030_20CS30024.y"
+#line 721 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("AND_expression => AND_expression & equality_expression"); 
             (yyvsp[-2].expression)->toInt();
@@ -2612,7 +2612,7 @@ yyreduce:
     break;
 
   case 55: /* exclusive_OR_expression: AND_expression  */
-#line 761 "asgn5_20CS30030_20CS30024.y"
+#line 734 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("exclusive_OR_expression => AND_expression"); 
             (yyval.expression) = (yyvsp[0].expression);
@@ -2621,7 +2621,7 @@ yyreduce:
     break;
 
   case 56: /* exclusive_OR_expression: exclusive_OR_expression BITWISE_XOR AND_expression  */
-#line 766 "asgn5_20CS30030_20CS30024.y"
+#line 739 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("exclusive_OR_expression => exclusive_OR_expression ^ AND_expression"); 
             (yyvsp[-2].expression)->toInt();
@@ -2635,7 +2635,7 @@ yyreduce:
     break;
 
   case 57: /* inclusive_OR_expression: exclusive_OR_expression  */
-#line 779 "asgn5_20CS30030_20CS30024.y"
+#line 752 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("inclusive_OR_expression => exclusive_OR_expression"); 
             (yyval.expression) = (yyvsp[0].expression);
@@ -2644,7 +2644,7 @@ yyreduce:
     break;
 
   case 58: /* inclusive_OR_expression: inclusive_OR_expression BITWISE_OR exclusive_OR_expression  */
-#line 784 "asgn5_20CS30030_20CS30024.y"
+#line 757 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("inclusive_OR_expression => inclusive_OR_expression | exclusive_OR_expression"); 
             (yyvsp[-2].expression)->toInt();
@@ -2658,7 +2658,7 @@ yyreduce:
     break;
 
   case 59: /* M: %empty  */
-#line 803 "asgn5_20CS30030_20CS30024.y"
+#line 769 "asgn5_20CS30030_20CS30024.y"
         {
             yyinfo("M => epsilon");
             (yyval.instruction_number) = nextInstruction();
@@ -2667,7 +2667,7 @@ yyreduce:
     break;
 
   case 60: /* N: %empty  */
-#line 810 "asgn5_20CS30030_20CS30024.y"
+#line 776 "asgn5_20CS30030_20CS30024.y"
         {
             yyinfo("N => epsilon");
             (yyval.statement) = new Statement();
@@ -2678,7 +2678,7 @@ yyreduce:
     break;
 
   case 61: /* logical_AND_expression: inclusive_OR_expression  */
-#line 848 "asgn5_20CS30030_20CS30024.y"
+#line 788 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("logical_AND_expression => inclusive_OR_expression"); 
             (yyval.expression) = (yyvsp[0].expression);
@@ -2687,7 +2687,7 @@ yyreduce:
     break;
 
   case 62: /* logical_AND_expression: logical_AND_expression LOGICAL_AND M inclusive_OR_expression  */
-#line 853 "asgn5_20CS30030_20CS30024.y"
+#line 793 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("logical_AND_expression => logical_AND_expression && inclusive_OR_expression");
             (yyvsp[-3].expression)->toBool();
@@ -2702,7 +2702,7 @@ yyreduce:
     break;
 
   case 63: /* logical_OR_expression: logical_AND_expression  */
-#line 867 "asgn5_20CS30030_20CS30024.y"
+#line 807 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("logical_OR_expression => logical_AND_expression"); 
             (yyval.expression) = (yyvsp[0].expression);
@@ -2711,7 +2711,7 @@ yyreduce:
     break;
 
   case 64: /* logical_OR_expression: logical_OR_expression LOGICAL_OR M logical_AND_expression  */
-#line 872 "asgn5_20CS30030_20CS30024.y"
+#line 812 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("logical_OR_expression => logical_OR_expression || logical_AND_expression"); 
             (yyvsp[-3].expression)->toBool();
@@ -2726,7 +2726,7 @@ yyreduce:
     break;
 
   case 65: /* conditional_expression: logical_OR_expression  */
-#line 886 "asgn5_20CS30030_20CS30024.y"
+#line 826 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("conditional_expression => logical_OR_expression"); 
             (yyval.expression) = (yyvsp[0].expression);
@@ -2735,7 +2735,7 @@ yyreduce:
     break;
 
   case 66: /* conditional_expression: logical_OR_expression N QUESTION_MARK M expression N COLON M conditional_expression  */
-#line 891 "asgn5_20CS30030_20CS30024.y"
+#line 831 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("conditional_expression => logical_OR_expression ? expression : conditional_expression"); 
             (yyval.expression)->symbol = gentemp((yyvsp[-4].expression)->symbol->type->type);
@@ -2756,7 +2756,7 @@ yyreduce:
     break;
 
   case 67: /* assignment_expression: conditional_expression  */
-#line 911 "asgn5_20CS30030_20CS30024.y"
+#line 851 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("assignment_expression => conditional_expression"); 
             (yyval.expression) = (yyvsp[0].expression);
@@ -2765,7 +2765,7 @@ yyreduce:
     break;
 
   case 68: /* assignment_expression: unary_expression assignment_operator assignment_expression  */
-#line 916 "asgn5_20CS30030_20CS30024.y"
+#line 856 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("assignment_expression => unary_expression assignment_operator assignment_expression"); 
             if((yyvsp[-2].array)->type == Array::ARRAY) {
@@ -2787,7 +2787,7 @@ yyreduce:
     break;
 
   case 69: /* assignment_operator: ASSIGNMENT  */
-#line 937 "asgn5_20CS30030_20CS30024.y"
+#line 877 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("assignment_operator => ="); 
         }
@@ -2795,7 +2795,7 @@ yyreduce:
     break;
 
   case 70: /* assignment_operator: ASTERISK_ASSIGNMENT  */
-#line 941 "asgn5_20CS30030_20CS30024.y"
+#line 881 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("assignment_operator => *="); 
         }
@@ -2803,7 +2803,7 @@ yyreduce:
     break;
 
   case 71: /* assignment_operator: SLASH_ASSIGNMENT  */
-#line 945 "asgn5_20CS30030_20CS30024.y"
+#line 885 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("assignment_operator => /="); 
         }
@@ -2811,7 +2811,7 @@ yyreduce:
     break;
 
   case 72: /* assignment_operator: MODULO_ASSIGNMENT  */
-#line 949 "asgn5_20CS30030_20CS30024.y"
+#line 889 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("assignment_operator => %="); 
         }
@@ -2819,7 +2819,7 @@ yyreduce:
     break;
 
   case 73: /* assignment_operator: PLUS_ASSIGNMENT  */
-#line 953 "asgn5_20CS30030_20CS30024.y"
+#line 893 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("assignment_operator => += "); 
         }
@@ -2827,7 +2827,7 @@ yyreduce:
     break;
 
   case 74: /* assignment_operator: MINUS_ASSIGNMENT  */
-#line 957 "asgn5_20CS30030_20CS30024.y"
+#line 897 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("assignment_operator => -= "); 
         }
@@ -2835,7 +2835,7 @@ yyreduce:
     break;
 
   case 75: /* assignment_operator: LEFT_SHIFT_ASSIGNMENT  */
-#line 961 "asgn5_20CS30030_20CS30024.y"
+#line 901 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("assignment_operator => <<="); 
         }
@@ -2843,7 +2843,7 @@ yyreduce:
     break;
 
   case 76: /* assignment_operator: RIGHT_SHIFT_ASSIGNMENT  */
-#line 965 "asgn5_20CS30030_20CS30024.y"
+#line 905 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("assignment_operator => >>="); 
         }
@@ -2851,7 +2851,7 @@ yyreduce:
     break;
 
   case 77: /* assignment_operator: BITWISE_AND_ASSIGNMENT  */
-#line 969 "asgn5_20CS30030_20CS30024.y"
+#line 909 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("assignment_operator => &="); 
         }
@@ -2859,7 +2859,7 @@ yyreduce:
     break;
 
   case 78: /* assignment_operator: BITWISE_XOR_ASSIGNMENT  */
-#line 973 "asgn5_20CS30030_20CS30024.y"
+#line 913 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("assignment_operator => ^="); 
         }
@@ -2867,7 +2867,7 @@ yyreduce:
     break;
 
   case 79: /* assignment_operator: BITWISE_OR_ASSIGNMENT  */
-#line 977 "asgn5_20CS30030_20CS30024.y"
+#line 917 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("assignment_operator => |="); 
         }
@@ -2875,7 +2875,7 @@ yyreduce:
     break;
 
   case 80: /* expression: assignment_expression  */
-#line 984 "asgn5_20CS30030_20CS30024.y"
+#line 924 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("expression => assignment_expression"); 
             (yyval.expression) = (yyvsp[0].expression);
@@ -2884,7 +2884,7 @@ yyreduce:
     break;
 
   case 81: /* expression: expression COMMA assignment_expression  */
-#line 989 "asgn5_20CS30030_20CS30024.y"
+#line 929 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("expression => expression , assignment_expression"); 
         }
@@ -2892,7 +2892,7 @@ yyreduce:
     break;
 
   case 82: /* constant_expression: conditional_expression  */
-#line 996 "asgn5_20CS30030_20CS30024.y"
+#line 936 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("constant_expression => conditional_expression"); 
         }
@@ -2900,7 +2900,7 @@ yyreduce:
     break;
 
   case 83: /* declaration: declaration_specifiers init_declarator_list_opt SEMI_COLON  */
-#line 1005 "asgn5_20CS30030_20CS30024.y"
+#line 945 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("declaration => declaration_specifiers init_declarator_list_opt ;"); 
         }
@@ -2908,7 +2908,7 @@ yyreduce:
     break;
 
   case 84: /* init_declarator_list_opt: init_declarator_list  */
-#line 1012 "asgn5_20CS30030_20CS30024.y"
+#line 952 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("init_declarator_list_opt => init_declarator_list"); 
         }
@@ -2916,7 +2916,7 @@ yyreduce:
     break;
 
   case 85: /* init_declarator_list_opt: %empty  */
-#line 1016 "asgn5_20CS30030_20CS30024.y"
+#line 956 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("init_declarator_list_opt => epsilon"); 
         }
@@ -2924,7 +2924,7 @@ yyreduce:
     break;
 
   case 86: /* declaration_specifiers: storage_class_specifier declaration_specifiers_opt  */
-#line 1023 "asgn5_20CS30030_20CS30024.y"
+#line 963 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("declaration_specifiers => storage_class_specifier declaration_specifiers_opt"); 
         }
@@ -2932,7 +2932,7 @@ yyreduce:
     break;
 
   case 87: /* declaration_specifiers: type_specifier declaration_specifiers_opt  */
-#line 1027 "asgn5_20CS30030_20CS30024.y"
+#line 967 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("declaration_specifiers => type_specifier declaration_specifiers_opt"); 
         }
@@ -2940,7 +2940,7 @@ yyreduce:
     break;
 
   case 88: /* declaration_specifiers: type_qualifier declaration_specifiers_opt  */
-#line 1031 "asgn5_20CS30030_20CS30024.y"
+#line 971 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("declaration_specifiers => type_qualifier declaration_specifiers_opt"); 
         }
@@ -2948,7 +2948,7 @@ yyreduce:
     break;
 
   case 89: /* declaration_specifiers: function_specifier declaration_specifiers_opt  */
-#line 1035 "asgn5_20CS30030_20CS30024.y"
+#line 975 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("declaration_specifiers => function_specifier declaration_specifiers_opt"); 
         }
@@ -2956,7 +2956,7 @@ yyreduce:
     break;
 
   case 90: /* declaration_specifiers_opt: declaration_specifiers  */
-#line 1042 "asgn5_20CS30030_20CS30024.y"
+#line 982 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("declaration_specifiers_opt => declaration_specifiers"); 
         }
@@ -2964,7 +2964,7 @@ yyreduce:
     break;
 
   case 91: /* declaration_specifiers_opt: %empty  */
-#line 1046 "asgn5_20CS30030_20CS30024.y"
+#line 986 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("declaration_specifiers_opt => epsilon "); 
         }
@@ -2972,7 +2972,7 @@ yyreduce:
     break;
 
   case 92: /* init_declarator_list: init_declarator  */
-#line 1053 "asgn5_20CS30030_20CS30024.y"
+#line 993 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("init_declarator_list => init_declarator"); 
         }
@@ -2980,7 +2980,7 @@ yyreduce:
     break;
 
   case 93: /* init_declarator_list: init_declarator_list COMMA init_declarator  */
-#line 1057 "asgn5_20CS30030_20CS30024.y"
+#line 997 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("init_declarator_list => init_declarator_list , init_declarator"); 
         }
@@ -2988,7 +2988,7 @@ yyreduce:
     break;
 
   case 94: /* init_declarator: declarator  */
-#line 1064 "asgn5_20CS30030_20CS30024.y"
+#line 1004 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("init_declarator => declarator"); 
             (yyval.symbol) = (yyvsp[0].symbol);
@@ -2997,7 +2997,7 @@ yyreduce:
     break;
 
   case 95: /* init_declarator: declarator ASSIGNMENT initialiser  */
-#line 1069 "asgn5_20CS30030_20CS30024.y"
+#line 1009 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("init_declarator => declarator = initialiser");
             // if there is some initial value assign it 
@@ -3010,7 +3010,7 @@ yyreduce:
     break;
 
   case 96: /* storage_class_specifier: EXTERN  */
-#line 1081 "asgn5_20CS30030_20CS30024.y"
+#line 1021 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("storage_class_specifier => extern"); 
         }
@@ -3018,7 +3018,7 @@ yyreduce:
     break;
 
   case 97: /* storage_class_specifier: STATIC  */
-#line 1085 "asgn5_20CS30030_20CS30024.y"
+#line 1025 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("storage_class_specifier => static"); 
         }
@@ -3026,7 +3026,7 @@ yyreduce:
     break;
 
   case 98: /* storage_class_specifier: AUTO  */
-#line 1089 "asgn5_20CS30030_20CS30024.y"
+#line 1029 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("storage_class_specifier => auto"); 
         }
@@ -3034,7 +3034,7 @@ yyreduce:
     break;
 
   case 99: /* storage_class_specifier: REGISTER  */
-#line 1093 "asgn5_20CS30030_20CS30024.y"
+#line 1033 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("storage_class_specifier => register"); 
         }
@@ -3042,7 +3042,7 @@ yyreduce:
     break;
 
   case 100: /* type_specifier: VOID_TYPE  */
-#line 1100 "asgn5_20CS30030_20CS30024.y"
+#line 1040 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("type_specifier => void");
             currentType = SymbolType::VOID;
@@ -3051,7 +3051,7 @@ yyreduce:
     break;
 
   case 101: /* type_specifier: CHAR_TYPE  */
-#line 1105 "asgn5_20CS30030_20CS30024.y"
+#line 1045 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("type_specifier => char"); 
             currentType = SymbolType::CHAR;
@@ -3060,7 +3060,7 @@ yyreduce:
     break;
 
   case 102: /* type_specifier: SHORT  */
-#line 1110 "asgn5_20CS30030_20CS30024.y"
+#line 1050 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("type_specifier => short"); 
         }
@@ -3068,7 +3068,7 @@ yyreduce:
     break;
 
   case 103: /* type_specifier: INT_TYPE  */
-#line 1114 "asgn5_20CS30030_20CS30024.y"
+#line 1054 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("type_specifier => int"); 
             currentType = SymbolType::INT;
@@ -3077,7 +3077,7 @@ yyreduce:
     break;
 
   case 104: /* type_specifier: LONG  */
-#line 1119 "asgn5_20CS30030_20CS30024.y"
+#line 1059 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("type_specifier => long"); 
         }
@@ -3085,7 +3085,7 @@ yyreduce:
     break;
 
   case 105: /* type_specifier: FLOAT_TYPE  */
-#line 1123 "asgn5_20CS30030_20CS30024.y"
+#line 1063 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("type_specifier => float"); 
             currentType = SymbolType::FLOAT;
@@ -3094,7 +3094,7 @@ yyreduce:
     break;
 
   case 106: /* type_specifier: DOUBLE  */
-#line 1128 "asgn5_20CS30030_20CS30024.y"
+#line 1068 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("type_specifier => double"); 
         }
@@ -3102,7 +3102,7 @@ yyreduce:
     break;
 
   case 107: /* type_specifier: SIGNED  */
-#line 1132 "asgn5_20CS30030_20CS30024.y"
+#line 1072 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("type_specifier => signed"); 
         }
@@ -3110,7 +3110,7 @@ yyreduce:
     break;
 
   case 108: /* type_specifier: UNSIGNED  */
-#line 1136 "asgn5_20CS30030_20CS30024.y"
+#line 1076 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("type_specifier => unsigned"); 
         }
@@ -3118,7 +3118,7 @@ yyreduce:
     break;
 
   case 109: /* type_specifier: _BOOL  */
-#line 1140 "asgn5_20CS30030_20CS30024.y"
+#line 1080 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("type_specifier => _Bool"); 
         }
@@ -3126,7 +3126,7 @@ yyreduce:
     break;
 
   case 110: /* type_specifier: _COMPLEX  */
-#line 1144 "asgn5_20CS30030_20CS30024.y"
+#line 1084 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("type_specifier => _Complex"); 
         }
@@ -3134,7 +3134,7 @@ yyreduce:
     break;
 
   case 111: /* type_specifier: _IMAGINARY  */
-#line 1148 "asgn5_20CS30030_20CS30024.y"
+#line 1088 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("type_specifier => _Imaginary"); 
         }
@@ -3142,7 +3142,7 @@ yyreduce:
     break;
 
   case 112: /* type_specifier: enum_specifier  */
-#line 1152 "asgn5_20CS30030_20CS30024.y"
+#line 1092 "asgn5_20CS30030_20CS30024.y"
         {
                 yyinfo("type_specifier => enum_specifier"); 
         }
@@ -3150,7 +3150,7 @@ yyreduce:
     break;
 
   case 113: /* specifier_qualifier_list: type_specifier specifier_qualifier_list_opt  */
-#line 1159 "asgn5_20CS30030_20CS30024.y"
+#line 1099 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("specifier_qualifier_list => type_specifier specifier_qualifier_list_opt"); 
         }
@@ -3158,7 +3158,7 @@ yyreduce:
     break;
 
   case 114: /* specifier_qualifier_list: type_qualifier specifier_qualifier_list_opt  */
-#line 1163 "asgn5_20CS30030_20CS30024.y"
+#line 1103 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("specifier_qualifier_list => type_qualifier specifier_qualifier_list_opt"); 
         }
@@ -3166,7 +3166,7 @@ yyreduce:
     break;
 
   case 115: /* specifier_qualifier_list_opt: specifier_qualifier_list  */
-#line 1170 "asgn5_20CS30030_20CS30024.y"
+#line 1110 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("specifier_qualifier_list_opt => specifier_qualifier_list"); 
         }
@@ -3174,7 +3174,7 @@ yyreduce:
     break;
 
   case 116: /* specifier_qualifier_list_opt: %empty  */
-#line 1174 "asgn5_20CS30030_20CS30024.y"
+#line 1114 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("specifier_qualifier_list_opt => epsilon"); 
         }
@@ -3182,7 +3182,7 @@ yyreduce:
     break;
 
   case 117: /* enum_specifier: ENUM identifier_opt LEFT_CURLY_BRACKET enumerator_list RIGHT_CURLY_BRACKET  */
-#line 1181 "asgn5_20CS30030_20CS30024.y"
+#line 1121 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("enum_specifier => enum identifier_opt { enumerator_list }"); 
         }
@@ -3190,7 +3190,7 @@ yyreduce:
     break;
 
   case 118: /* enum_specifier: ENUM identifier_opt LEFT_CURLY_BRACKET enumerator_list COMMA RIGHT_CURLY_BRACKET  */
-#line 1185 "asgn5_20CS30030_20CS30024.y"
+#line 1125 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("enum_specifier => enum identifier_opt { enumerator_list , }"); 
         }
@@ -3198,7 +3198,7 @@ yyreduce:
     break;
 
   case 119: /* enum_specifier: ENUM IDENTIFIER  */
-#line 1189 "asgn5_20CS30030_20CS30024.y"
+#line 1129 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("enum_specifier => enum IDENTIFIER"); 
         }
@@ -3206,7 +3206,7 @@ yyreduce:
     break;
 
   case 120: /* identifier_opt: IDENTIFIER  */
-#line 1196 "asgn5_20CS30030_20CS30024.y"
+#line 1136 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("identifier_opt => IDENTIFIER"); 
         }
@@ -3214,7 +3214,7 @@ yyreduce:
     break;
 
   case 121: /* identifier_opt: %empty  */
-#line 1200 "asgn5_20CS30030_20CS30024.y"
+#line 1140 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("identifier_opt => epsilon"); 
         }
@@ -3222,7 +3222,7 @@ yyreduce:
     break;
 
   case 122: /* enumerator_list: enumerator  */
-#line 1207 "asgn5_20CS30030_20CS30024.y"
+#line 1147 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("enumerator_list => enumerator"); 
         }
@@ -3230,7 +3230,7 @@ yyreduce:
     break;
 
   case 123: /* enumerator_list: enumerator_list COMMA enumerator  */
-#line 1211 "asgn5_20CS30030_20CS30024.y"
+#line 1151 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("enumerator_list => enumerator_list , enumerator"); 
         }
@@ -3238,7 +3238,7 @@ yyreduce:
     break;
 
   case 124: /* enumerator: IDENTIFIER  */
-#line 1218 "asgn5_20CS30030_20CS30024.y"
+#line 1158 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("enumerator => ENUMERATION_CONSTANT"); 
         }
@@ -3246,7 +3246,7 @@ yyreduce:
     break;
 
   case 125: /* enumerator: IDENTIFIER ASSIGNMENT constant_expression  */
-#line 1222 "asgn5_20CS30030_20CS30024.y"
+#line 1162 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("enumerator => ENUMERATION_CONSTANT = constant_expression"); 
         }
@@ -3254,7 +3254,7 @@ yyreduce:
     break;
 
   case 126: /* type_qualifier: CONST  */
-#line 1229 "asgn5_20CS30030_20CS30024.y"
+#line 1169 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("type_qualifier => const"); 
         }
@@ -3262,7 +3262,7 @@ yyreduce:
     break;
 
   case 127: /* type_qualifier: RESTRICT  */
-#line 1233 "asgn5_20CS30030_20CS30024.y"
+#line 1173 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("type_qualifier => restrict"); 
         }
@@ -3270,7 +3270,7 @@ yyreduce:
     break;
 
   case 128: /* type_qualifier: VOLATILE  */
-#line 1237 "asgn5_20CS30030_20CS30024.y"
+#line 1177 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("type_qualifier => volatile"); 
         }
@@ -3278,7 +3278,7 @@ yyreduce:
     break;
 
   case 129: /* function_specifier: INLINE  */
-#line 1244 "asgn5_20CS30030_20CS30024.y"
+#line 1184 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("function_specifier => inline"); 
         }
@@ -3286,7 +3286,7 @@ yyreduce:
     break;
 
   case 130: /* declarator: pointer direct_declarator  */
-#line 1251 "asgn5_20CS30030_20CS30024.y"
+#line 1191 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("declarator => pointer direct_declarator"); 
             SymbolType *it = (yyvsp[-1].symbolType);
@@ -3299,7 +3299,7 @@ yyreduce:
     break;
 
   case 131: /* declarator: direct_declarator  */
-#line 1260 "asgn5_20CS30030_20CS30024.y"
+#line 1200 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("declarator => direct_declarator"); 
         }
@@ -3307,7 +3307,7 @@ yyreduce:
     break;
 
   case 132: /* change_scope: %empty  */
-#line 1266 "asgn5_20CS30030_20CS30024.y"
+#line 1206 "asgn5_20CS30030_20CS30024.y"
         {
             if(currentSymbol->nestedTable == NULL) {
                 changeTable(new SymbolTable(""));
@@ -3321,7 +3321,7 @@ yyreduce:
     break;
 
   case 133: /* direct_declarator: IDENTIFIER  */
-#line 1283 "asgn5_20CS30030_20CS30024.y"
+#line 1223 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("direct_declarator => IDENTIFIER"); 
             (yyval.symbol) = (yyvsp[0].symbol)->update(new SymbolType(currentType)); // update type to the last type seen
@@ -3331,7 +3331,7 @@ yyreduce:
     break;
 
   case 134: /* direct_declarator: LEFT_PARENTHESES declarator RIGHT_PARENTHESES  */
-#line 1289 "asgn5_20CS30030_20CS30024.y"
+#line 1229 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("direct_declarator => ( declarator )"); 
             (yyval.symbol) = (yyvsp[-1].symbol);
@@ -3340,7 +3340,7 @@ yyreduce:
     break;
 
   case 135: /* direct_declarator: direct_declarator LEFT_SQUARE_BRACKET type_qualifier_list assignment_expression RIGHT_SQUARE_BRACKET  */
-#line 1294 "asgn5_20CS30030_20CS30024.y"
+#line 1234 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("direct_declarator => direct_declarator [ type_qualifier_list assignment_expression ]"); 
         }
@@ -3348,7 +3348,7 @@ yyreduce:
     break;
 
   case 136: /* direct_declarator: direct_declarator LEFT_SQUARE_BRACKET type_qualifier_list RIGHT_SQUARE_BRACKET  */
-#line 1298 "asgn5_20CS30030_20CS30024.y"
+#line 1238 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("direct_declarator => direct_declarator [ type_qualifier_list ]"); 
         }
@@ -3356,7 +3356,7 @@ yyreduce:
     break;
 
   case 137: /* direct_declarator: direct_declarator LEFT_SQUARE_BRACKET assignment_expression RIGHT_SQUARE_BRACKET  */
-#line 1302 "asgn5_20CS30030_20CS30024.y"
+#line 1242 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("direct_declarator => direct_declarator [ assignment_expression ]"); 
             SymbolType *it1 = (yyvsp[-3].symbol)->type, *it2 = NULL;
@@ -3378,7 +3378,7 @@ yyreduce:
     break;
 
   case 138: /* direct_declarator: direct_declarator LEFT_SQUARE_BRACKET RIGHT_SQUARE_BRACKET  */
-#line 1320 "asgn5_20CS30030_20CS30024.y"
+#line 1260 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("direct_declarator => direct_declarator [ ]"); 
             // same as the previous rule, just we dont know the size so put it as 0
@@ -3401,7 +3401,7 @@ yyreduce:
     break;
 
   case 139: /* direct_declarator: direct_declarator LEFT_SQUARE_BRACKET STATIC type_qualifier_list assignment_expression RIGHT_SQUARE_BRACKET  */
-#line 1339 "asgn5_20CS30030_20CS30024.y"
+#line 1279 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("direct_declarator => direct_declarator [ static type_qualifier_list assignment_expression ]"); 
         }
@@ -3409,7 +3409,7 @@ yyreduce:
     break;
 
   case 140: /* direct_declarator: direct_declarator LEFT_SQUARE_BRACKET STATIC assignment_expression RIGHT_SQUARE_BRACKET  */
-#line 1343 "asgn5_20CS30030_20CS30024.y"
+#line 1283 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("direct_declarator => direct_declarator [ assignment_expression ]"); 
         }
@@ -3417,7 +3417,7 @@ yyreduce:
     break;
 
   case 141: /* direct_declarator: direct_declarator LEFT_SQUARE_BRACKET type_qualifier_list STATIC assignment_expression RIGHT_SQUARE_BRACKET  */
-#line 1347 "asgn5_20CS30030_20CS30024.y"
+#line 1287 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("direct_declarator => direct_declarator [ type_qualifier_list static assignment_expression ]"); 
         }
@@ -3425,7 +3425,7 @@ yyreduce:
     break;
 
   case 142: /* direct_declarator: direct_declarator LEFT_SQUARE_BRACKET type_qualifier_list ASTERISK RIGHT_SQUARE_BRACKET  */
-#line 1351 "asgn5_20CS30030_20CS30024.y"
+#line 1291 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("direct_declarator => direct_declarator [ type_qualifier_list * ]"); 
         }
@@ -3433,7 +3433,7 @@ yyreduce:
     break;
 
   case 143: /* direct_declarator: direct_declarator LEFT_SQUARE_BRACKET ASTERISK RIGHT_SQUARE_BRACKET  */
-#line 1355 "asgn5_20CS30030_20CS30024.y"
+#line 1295 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("direct_declarator => direct_declarator [ * ]"); 
         }
@@ -3441,7 +3441,7 @@ yyreduce:
     break;
 
   case 144: /* direct_declarator: direct_declarator LEFT_PARENTHESES change_scope parameter_type_list RIGHT_PARENTHESES  */
-#line 1359 "asgn5_20CS30030_20CS30024.y"
+#line 1299 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("direct_declarator => direct_declarator ( parameter_type_list )"); 
             // function declaration
@@ -3460,7 +3460,7 @@ yyreduce:
     break;
 
   case 145: /* direct_declarator: direct_declarator LEFT_PARENTHESES identifier_list RIGHT_PARENTHESES  */
-#line 1374 "asgn5_20CS30030_20CS30024.y"
+#line 1314 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("direct_declarator => direct_declarator ( identifier_list )"); 
         }
@@ -3468,7 +3468,7 @@ yyreduce:
     break;
 
   case 146: /* direct_declarator: direct_declarator LEFT_PARENTHESES change_scope RIGHT_PARENTHESES  */
-#line 1378 "asgn5_20CS30030_20CS30024.y"
+#line 1318 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("direct_declarator => direct_declarator ( )"); 
             // same as the previous rule
@@ -3487,7 +3487,7 @@ yyreduce:
     break;
 
   case 147: /* type_qualifier_list_opt: type_qualifier_list  */
-#line 1396 "asgn5_20CS30030_20CS30024.y"
+#line 1336 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("type_qualifier_list_opt => type_qualifier_list"); 
         }
@@ -3495,7 +3495,7 @@ yyreduce:
     break;
 
   case 148: /* type_qualifier_list_opt: %empty  */
-#line 1400 "asgn5_20CS30030_20CS30024.y"
+#line 1340 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("type_qualifier_list_opt => epsilon"); 
         }
@@ -3503,7 +3503,7 @@ yyreduce:
     break;
 
   case 149: /* pointer: ASTERISK type_qualifier_list_opt  */
-#line 1434 "asgn5_20CS30030_20CS30024.y"
+#line 1347 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("pointer => * type_qualifier_list_opt"); 
             // fresh pointer
@@ -3513,7 +3513,7 @@ yyreduce:
     break;
 
   case 150: /* pointer: ASTERISK type_qualifier_list_opt pointer  */
-#line 1440 "asgn5_20CS30030_20CS30024.y"
+#line 1353 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("pointer => * type_qualifier_list_opt pointer"); 
             // nested pointer
@@ -3523,7 +3523,7 @@ yyreduce:
     break;
 
   case 151: /* type_qualifier_list: type_qualifier  */
-#line 1449 "asgn5_20CS30030_20CS30024.y"
+#line 1362 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("type_qualifier_list => type_qualifier"); 
         }
@@ -3531,7 +3531,7 @@ yyreduce:
     break;
 
   case 152: /* type_qualifier_list: type_qualifier_list type_qualifier  */
-#line 1453 "asgn5_20CS30030_20CS30024.y"
+#line 1366 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("type_qualifier_list => type_qualifier_list type_qualifier"); 
         }
@@ -3539,7 +3539,7 @@ yyreduce:
     break;
 
   case 153: /* parameter_type_list: parameter_list  */
-#line 1460 "asgn5_20CS30030_20CS30024.y"
+#line 1373 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("parameter_type_list => parameter_list"); 
         }
@@ -3547,7 +3547,7 @@ yyreduce:
     break;
 
   case 154: /* parameter_type_list: parameter_list COMMA ELLIPSIS  */
-#line 1464 "asgn5_20CS30030_20CS30024.y"
+#line 1377 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("parameter_type_list => parameter_list , ..."); 
         }
@@ -3555,7 +3555,7 @@ yyreduce:
     break;
 
   case 155: /* parameter_list: parameter_declaration  */
-#line 1471 "asgn5_20CS30030_20CS30024.y"
+#line 1384 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("parameter_list => parameter_declaration"); 
         }
@@ -3563,7 +3563,7 @@ yyreduce:
     break;
 
   case 156: /* parameter_list: parameter_list COMMA parameter_declaration  */
-#line 1475 "asgn5_20CS30030_20CS30024.y"
+#line 1388 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("parameter_list => parameter_list , parameter_declaration"); 
         }
@@ -3571,7 +3571,7 @@ yyreduce:
     break;
 
   case 157: /* parameter_declaration: declaration_specifiers declarator  */
-#line 1482 "asgn5_20CS30030_20CS30024.y"
+#line 1395 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("parameter_declaration => declaration_specifiers declarator"); 
         }
@@ -3579,7 +3579,7 @@ yyreduce:
     break;
 
   case 158: /* parameter_declaration: declaration_specifiers  */
-#line 1486 "asgn5_20CS30030_20CS30024.y"
+#line 1399 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("parameter_declaration => declaration_specifiers"); 
         }
@@ -3587,7 +3587,7 @@ yyreduce:
     break;
 
   case 159: /* identifier_list: IDENTIFIER  */
-#line 1493 "asgn5_20CS30030_20CS30024.y"
+#line 1406 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("identifier_list => IDENTIFIER"); 
         }
@@ -3595,7 +3595,7 @@ yyreduce:
     break;
 
   case 160: /* identifier_list: identifier_list COMMA IDENTIFIER  */
-#line 1497 "asgn5_20CS30030_20CS30024.y"
+#line 1410 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("identifier_list => identifier_list , IDENTIFIER"); 
         }
@@ -3603,7 +3603,7 @@ yyreduce:
     break;
 
   case 161: /* type_name: specifier_qualifier_list  */
-#line 1504 "asgn5_20CS30030_20CS30024.y"
+#line 1417 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("type_name => specifier_qualifier_list"); 
         }
@@ -3611,7 +3611,7 @@ yyreduce:
     break;
 
   case 162: /* initialiser: assignment_expression  */
-#line 1511 "asgn5_20CS30030_20CS30024.y"
+#line 1424 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("initialiser => assignment_expression"); 
             (yyval.symbol) = (yyvsp[0].expression)->symbol;
@@ -3620,7 +3620,7 @@ yyreduce:
     break;
 
   case 163: /* initialiser: LEFT_CURLY_BRACKET initialiser_list RIGHT_CURLY_BRACKET  */
-#line 1516 "asgn5_20CS30030_20CS30024.y"
+#line 1429 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("initialiser => { initialiser_list }"); 
         }
@@ -3628,7 +3628,7 @@ yyreduce:
     break;
 
   case 164: /* initialiser: LEFT_CURLY_BRACKET initialiser_list COMMA RIGHT_CURLY_BRACKET  */
-#line 1520 "asgn5_20CS30030_20CS30024.y"
+#line 1433 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("initialiser => { initialiser_list , }"); 
         }
@@ -3636,7 +3636,7 @@ yyreduce:
     break;
 
   case 165: /* initialiser_list: designation_opt initialiser  */
-#line 1527 "asgn5_20CS30030_20CS30024.y"
+#line 1440 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("initialiser_list => designation_opt initialiser"); 
         }
@@ -3644,7 +3644,7 @@ yyreduce:
     break;
 
   case 166: /* initialiser_list: initialiser_list COMMA designation_opt initialiser  */
-#line 1531 "asgn5_20CS30030_20CS30024.y"
+#line 1444 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("initialiser_list => initialiser_list , designation_opt initialiser"); 
         }
@@ -3652,7 +3652,7 @@ yyreduce:
     break;
 
   case 167: /* designation_opt: designation  */
-#line 1538 "asgn5_20CS30030_20CS30024.y"
+#line 1451 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("designation_opt => designation"); 
         }
@@ -3660,7 +3660,7 @@ yyreduce:
     break;
 
   case 168: /* designation_opt: %empty  */
-#line 1542 "asgn5_20CS30030_20CS30024.y"
+#line 1455 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("designation_opt => epsilon"); 
         }
@@ -3668,7 +3668,7 @@ yyreduce:
     break;
 
   case 169: /* designation: designator_list ASSIGNMENT  */
-#line 1549 "asgn5_20CS30030_20CS30024.y"
+#line 1462 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("designation => designator_list ="); 
         }
@@ -3676,7 +3676,7 @@ yyreduce:
     break;
 
   case 170: /* designator_list: designator  */
-#line 1556 "asgn5_20CS30030_20CS30024.y"
+#line 1469 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("designator_list => designator"); 
         }
@@ -3684,7 +3684,7 @@ yyreduce:
     break;
 
   case 171: /* designator_list: designator_list designator  */
-#line 1560 "asgn5_20CS30030_20CS30024.y"
+#line 1473 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("designator_list => designator_list designator"); 
         }
@@ -3692,7 +3692,7 @@ yyreduce:
     break;
 
   case 172: /* designator: LEFT_SQUARE_BRACKET constant_expression RIGHT_SQUARE_BRACKET  */
-#line 1567 "asgn5_20CS30030_20CS30024.y"
+#line 1480 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("designator => [ constant_expression ]"); 
         }
@@ -3700,7 +3700,7 @@ yyreduce:
     break;
 
   case 173: /* designator: DOT IDENTIFIER  */
-#line 1571 "asgn5_20CS30030_20CS30024.y"
+#line 1484 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("designator => . IDENTIFIER"); 
         }
@@ -3708,7 +3708,7 @@ yyreduce:
     break;
 
   case 174: /* statement: labeled_statement  */
-#line 1580 "asgn5_20CS30030_20CS30024.y"
+#line 1493 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("statement => labeled_statement"); 
         }
@@ -3716,7 +3716,7 @@ yyreduce:
     break;
 
   case 175: /* statement: compound_statement  */
-#line 1584 "asgn5_20CS30030_20CS30024.y"
+#line 1497 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("statement => compound_statement");
             (yyval.statement) = (yyvsp[0].statement); 
@@ -3725,7 +3725,7 @@ yyreduce:
     break;
 
   case 176: /* statement: expression_statement  */
-#line 1589 "asgn5_20CS30030_20CS30024.y"
+#line 1502 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("statement => expression_statement"); 
             (yyval.statement) = new Statement();
@@ -3735,7 +3735,7 @@ yyreduce:
     break;
 
   case 177: /* statement: selection_statement  */
-#line 1595 "asgn5_20CS30030_20CS30024.y"
+#line 1508 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("statement => selection_statement"); 
             (yyval.statement) = (yyvsp[0].statement);
@@ -3744,7 +3744,7 @@ yyreduce:
     break;
 
   case 178: /* statement: iteration_statement  */
-#line 1600 "asgn5_20CS30030_20CS30024.y"
+#line 1513 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("statement => iteration_statement"); 
             (yyval.statement) = (yyvsp[0].statement);
@@ -3753,7 +3753,7 @@ yyreduce:
     break;
 
   case 179: /* statement: jump_statement  */
-#line 1605 "asgn5_20CS30030_20CS30024.y"
+#line 1518 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("statement => jump_statement"); 
             (yyval.statement) = (yyvsp[0].statement);
@@ -3762,7 +3762,7 @@ yyreduce:
     break;
 
   case 180: /* labeled_statement: IDENTIFIER COLON statement  */
-#line 1613 "asgn5_20CS30030_20CS30024.y"
+#line 1526 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("labeled_statement => IDENTIFIER : statement"); 
         }
@@ -3770,7 +3770,7 @@ yyreduce:
     break;
 
   case 181: /* labeled_statement: CASE constant_expression COLON statement  */
-#line 1617 "asgn5_20CS30030_20CS30024.y"
+#line 1530 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("labeled_statement => case constant_expression : statement"); 
         }
@@ -3778,7 +3778,7 @@ yyreduce:
     break;
 
   case 182: /* labeled_statement: DEFAULT COLON statement  */
-#line 1621 "asgn5_20CS30030_20CS30024.y"
+#line 1534 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("labeled_statement => default : statement"); 
         }
@@ -3786,7 +3786,7 @@ yyreduce:
     break;
 
   case 183: /* change_block: %empty  */
-#line 1632 "asgn5_20CS30030_20CS30024.y"
+#line 1541 "asgn5_20CS30030_20CS30024.y"
         {
             string name = currentTable->name + "_" + toString(tableCount);
             tableCount++;
@@ -3799,7 +3799,7 @@ yyreduce:
     break;
 
   case 184: /* compound_statement: LEFT_CURLY_BRACKET change_block change_scope block_item_list_opt RIGHT_CURLY_BRACKET  */
-#line 1644 "asgn5_20CS30030_20CS30024.y"
+#line 1553 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("compound_statement => { block_item_list_opt }"); 
             (yyval.statement) = (yyvsp[-1].statement);
@@ -3809,7 +3809,7 @@ yyreduce:
     break;
 
   case 185: /* block_item_list_opt: block_item_list  */
-#line 1653 "asgn5_20CS30030_20CS30024.y"
+#line 1562 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("block_item_list_opt => block_item_list"); 
             (yyval.statement) = (yyvsp[0].statement);
@@ -3818,7 +3818,7 @@ yyreduce:
     break;
 
   case 186: /* block_item_list_opt: %empty  */
-#line 1658 "asgn5_20CS30030_20CS30024.y"
+#line 1567 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("block_item_list_opt => epsilon"); 
             (yyval.statement) = new Statement();
@@ -3827,7 +3827,7 @@ yyreduce:
     break;
 
   case 187: /* block_item_list: block_item  */
-#line 1666 "asgn5_20CS30030_20CS30024.y"
+#line 1575 "asgn5_20CS30030_20CS30024.y"
         {
             yyinfo("block_item_list => block_item"); 
             (yyval.statement) = (yyvsp[0].statement);
@@ -3836,7 +3836,7 @@ yyreduce:
     break;
 
   case 188: /* block_item_list: block_item_list M block_item  */
-#line 1671 "asgn5_20CS30030_20CS30024.y"
+#line 1580 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("block_item_list => block_item_list block_item"); 
             (yyval.statement) = (yyvsp[0].statement);
@@ -3847,7 +3847,7 @@ yyreduce:
     break;
 
   case 189: /* block_item: declaration  */
-#line 1681 "asgn5_20CS30030_20CS30024.y"
+#line 1590 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("block_item => declaration"); 
             (yyval.statement) = new Statement();
@@ -3856,7 +3856,7 @@ yyreduce:
     break;
 
   case 190: /* block_item: statement  */
-#line 1686 "asgn5_20CS30030_20CS30024.y"
+#line 1595 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("block_item => statement"); 
             (yyval.statement) = (yyvsp[0].statement);
@@ -3865,7 +3865,7 @@ yyreduce:
     break;
 
   case 191: /* expression_statement: expression_opt SEMI_COLON  */
-#line 1694 "asgn5_20CS30030_20CS30024.y"
+#line 1603 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("expression_statement => expression_opt ;"); 
             (yyval.expression) = (yyvsp[-1].expression);
@@ -3874,7 +3874,7 @@ yyreduce:
     break;
 
   case 192: /* expression_opt: expression  */
-#line 1702 "asgn5_20CS30030_20CS30024.y"
+#line 1611 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("expression_opt => expression"); 
             (yyval.expression) = (yyvsp[0].expression);
@@ -3883,7 +3883,7 @@ yyreduce:
     break;
 
   case 193: /* expression_opt: %empty  */
-#line 1707 "asgn5_20CS30030_20CS30024.y"
+#line 1616 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("expression_opt => epsilon"); 
             (yyval.expression) = new Expression();
@@ -3892,7 +3892,7 @@ yyreduce:
     break;
 
   case 194: /* selection_statement: IF LEFT_PARENTHESES expression RIGHT_PARENTHESES M statement N  */
-#line 1728 "asgn5_20CS30030_20CS30024.y"
+#line 1625 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("selection_statement => if ( expression ) statement"); 
             (yyval.statement) = new Statement();
@@ -3904,7 +3904,7 @@ yyreduce:
     break;
 
   case 195: /* selection_statement: IF LEFT_PARENTHESES expression RIGHT_PARENTHESES M statement N ELSE M statement  */
-#line 1736 "asgn5_20CS30030_20CS30024.y"
+#line 1633 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("selection_statement => if ( expression ) statement else statement"); 
             (yyval.statement) = new Statement();
@@ -3917,7 +3917,7 @@ yyreduce:
     break;
 
   case 196: /* selection_statement: SWITCH LEFT_PARENTHESES expression RIGHT_PARENTHESES statement  */
-#line 1745 "asgn5_20CS30030_20CS30024.y"
+#line 1642 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("selection_statement => switch ( expression ) statement"); 
         }
@@ -3925,7 +3925,7 @@ yyreduce:
     break;
 
   case 197: /* iteration_statement: WHILE M LEFT_PARENTHESES expression RIGHT_PARENTHESES M statement  */
-#line 1771 "asgn5_20CS30030_20CS30024.y"
+#line 1651 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("iteration_statement => while ( expression ) statement"); 
             (yyval.statement) = new Statement();
@@ -3939,7 +3939,7 @@ yyreduce:
     break;
 
   case 198: /* iteration_statement: DO M statement M WHILE LEFT_PARENTHESES expression RIGHT_PARENTHESES SEMI_COLON  */
-#line 1781 "asgn5_20CS30030_20CS30024.y"
+#line 1661 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("iteration_statement => do statement while ( expression ) ;"); 
             (yyval.statement) = new Statement();
@@ -3952,7 +3952,7 @@ yyreduce:
     break;
 
   case 199: /* iteration_statement: FOR LEFT_PARENTHESES expression_opt SEMI_COLON M expression_opt SEMI_COLON M expression_opt N RIGHT_PARENTHESES M statement  */
-#line 1790 "asgn5_20CS30030_20CS30024.y"
+#line 1670 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("iteration_statement => for ( expression_opt ; expression_opt ; expression_opt ) statement"); 
             (yyval.statement) = new Statement();
@@ -3967,7 +3967,7 @@ yyreduce:
     break;
 
   case 200: /* iteration_statement: FOR LEFT_PARENTHESES declaration expression_opt SEMI_COLON expression_opt RIGHT_PARENTHESES statement  */
-#line 1801 "asgn5_20CS30030_20CS30024.y"
+#line 1681 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("iteration_statement => for ( declaration expression_opt ; expression_opt ) statement"); 
         }
@@ -3975,7 +3975,7 @@ yyreduce:
     break;
 
   case 201: /* jump_statement: GOTO IDENTIFIER SEMI_COLON  */
-#line 1808 "asgn5_20CS30030_20CS30024.y"
+#line 1688 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("jump_statement => goto IDENTIFIER ;"); 
         }
@@ -3983,7 +3983,7 @@ yyreduce:
     break;
 
   case 202: /* jump_statement: CONTINUE SEMI_COLON  */
-#line 1812 "asgn5_20CS30030_20CS30024.y"
+#line 1692 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("jump_statement => continue ;"); 
         }
@@ -3991,7 +3991,7 @@ yyreduce:
     break;
 
   case 203: /* jump_statement: BREAK SEMI_COLON  */
-#line 1816 "asgn5_20CS30030_20CS30024.y"
+#line 1696 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("jump_statement => break ;"); 
         }
@@ -3999,12 +3999,12 @@ yyreduce:
     break;
 
   case 204: /* jump_statement: RETURN expression_opt SEMI_COLON  */
-#line 1820 "asgn5_20CS30030_20CS30024.y"
+#line 1700 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("jump_statement => return expression_opt ;"); 
             (yyval.statement) = new Statement();
             if((yyvsp[-1].expression)->symbol != NULL) {
-                emit("return", (yyvsp[-1].expression)->symbol->name); // emit the current symbol name at return if it exists otherwise empty
+                emit("return", (yyvsp[-1].expression)->symbol->name); 
             } else {
                 emit("return", "");
             }
@@ -4013,7 +4013,7 @@ yyreduce:
     break;
 
   case 205: /* translation_unit: external_declaration  */
-#line 1835 "asgn5_20CS30030_20CS30024.y"
+#line 1715 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("translation_unit => external_declaration"); 
         }
@@ -4021,7 +4021,7 @@ yyreduce:
     break;
 
   case 206: /* translation_unit: translation_unit external_declaration  */
-#line 1839 "asgn5_20CS30030_20CS30024.y"
+#line 1719 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("translation_unit => translation_unit external_declaration"); 
         }
@@ -4029,7 +4029,7 @@ yyreduce:
     break;
 
   case 207: /* external_declaration: function_definition  */
-#line 1846 "asgn5_20CS30030_20CS30024.y"
+#line 1726 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("external_declaration => function_definition"); 
         }
@@ -4037,7 +4037,7 @@ yyreduce:
     break;
 
   case 208: /* external_declaration: declaration  */
-#line 1850 "asgn5_20CS30030_20CS30024.y"
+#line 1730 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("external_declaration => declaration"); 
         }
@@ -4045,7 +4045,7 @@ yyreduce:
     break;
 
   case 209: /* function_definition: declaration_specifiers declarator declaration_list_opt change_scope LEFT_CURLY_BRACKET block_item_list_opt RIGHT_CURLY_BRACKET  */
-#line 1858 "asgn5_20CS30030_20CS30024.y"
+#line 1737 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("function_definition => declaration_specifiers declarator declaration_list_opt compound_statement"); 
             tableCount = 0;
@@ -4056,7 +4056,7 @@ yyreduce:
     break;
 
   case 210: /* declaration_list_opt: declaration_list  */
-#line 1868 "asgn5_20CS30030_20CS30024.y"
+#line 1747 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("declaration_list_opt => declaration_list"); 
         }
@@ -4064,7 +4064,7 @@ yyreduce:
     break;
 
   case 211: /* declaration_list_opt: %empty  */
-#line 1872 "asgn5_20CS30030_20CS30024.y"
+#line 1751 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("declaration_list_opt => epsilon"); 
         }
@@ -4072,7 +4072,7 @@ yyreduce:
     break;
 
   case 212: /* declaration_list: declaration  */
-#line 1879 "asgn5_20CS30030_20CS30024.y"
+#line 1758 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("declaration_list => declaration"); 
         }
@@ -4080,7 +4080,7 @@ yyreduce:
     break;
 
   case 213: /* declaration_list: declaration_list declaration  */
-#line 1883 "asgn5_20CS30030_20CS30024.y"
+#line 1762 "asgn5_20CS30030_20CS30024.y"
         { 
             yyinfo("declaration_list => declaration_list declaration"); 
         }
@@ -4281,7 +4281,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 1888 "asgn5_20CS30030_20CS30024.y"
+#line 1767 "asgn5_20CS30030_20CS30024.y"
 
 
 void yyerror(string s) {
