@@ -1,14 +1,16 @@
 int main() {
     int i, j, k, l;
     if(i < j && k > l) {
-        j = i;
         l = k;
+        j = i;
         if(i <= l || j >= k)
             j = k;
         else if(i == j && k != l)
             i = l;
-        else
+        else if(true || false)
             i = k;
+        else i = j;
     }
+
     return 0;
 }

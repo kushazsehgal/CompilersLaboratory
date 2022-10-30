@@ -1,5 +1,4 @@
-
-int mod;
+int mod = 1000000007;
 
 int binpow(int a, int b) {
 	int ans = 1;

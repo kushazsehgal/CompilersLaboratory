@@ -1,27 +1,23 @@
-int add_loop(int a[],int n)
-{
-    int csum=0;
-    int i;
-	for (i=0;i<n;i++)
-        csum=csum+a[i];
-    return csum;
+int calc_10_power(int a){
+	int b = 0;
+	while(a % 10){
+		a /= 10;
+		b++;
+	}
+	return b;
 }
 int main(){
-    //minimum number of additional elements required to be added to the array to convert a given array (a) into an array whose average is 1
-    int n = 10;
-	int a[n];
-    int ans;
-    int csum=add_loop(a,n);
-	if(csum==n)
-	{
-		ans=0;
+    int a = 4000;
+	int b = 1150;
+	int ans;
+	if(calc_10_power(a) > calc_10_power(b)){
+		ans = -1;
 	}
-	else if(csum>n)
-	{
-		ans=csum-n;
+	else if(calc_10_power(a) < calc_10_power(b)){
+		ans = 1;
 	}
 	else{
-        ans=1;
-    }
+		ans = 0;
+	}
 	return 0;
 }

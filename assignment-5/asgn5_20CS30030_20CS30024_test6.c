@@ -12,6 +12,11 @@ int main() {
         j--;
     }
 
+    while(true) {
+        int j = 10125, k = 10125, t; // this will initialize the variables j & k of main ST to 10125
+        return 0;                    // and make temporary variables t1 and t2 in the current ST
+    }
+
     // do while loop
     do {
         i = k++;
