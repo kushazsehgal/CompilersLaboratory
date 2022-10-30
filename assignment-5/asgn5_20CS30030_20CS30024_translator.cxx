@@ -1,20 +1,30 @@
 #include "asgn5_20CS30030_20CS30024_translator.h"
 
-// Global Variables
+/*********************GLOBAL VARIABLES**********************/
 vector<Quad *> quadArray;  // Quad Array
 SymbolTable *currentTable, *globalTable, *parentTable;  // Symbol Tables
 Symbol *currentSymbol;  // Current Symbol
 SymbolType::typeEnum currentType;  // Current Type
 int tableCount, temporaryCount;  // Counts of number of tables and number of temps generated
-
-// Implementation of symbol type class
+/************************************************************/
+/**
+ * @brief Parameterized Constructor for SymbolType
+ * 
+ * @param type 
+ * @param arrayType 
+ * @param width 
+ */
 SymbolType::SymbolType(typeEnum type, SymbolType *arrayType, int width) : type(type), width(width), arrayType(arrayType) {}
 
-// Implementation of sizes for symbol types
+/**
+ * @brief takes in type as an ENUM (typeEnum defined in header file)
+ * 
+ * @return int --> size of datatype
+ */
 int SymbolType::getSize()
 {
     if (type == CHAR)
-        return 1;
+        return 1; 
     else if (type == INT || type == POINTER)
         return 4;
     else if (type == FLOAT)
@@ -24,8 +34,11 @@ int SymbolType::getSize()
     else
         return 0;
 }
-
-// Function to print symbol type
+/**
+ * @brief Takes in tupe Enum and returns symbol type as a string
+ * 
+ * @return string 
+ */
 string SymbolType::toString()
 {
     if(this->type == SymbolType::VOID)
@@ -44,12 +57,23 @@ string SymbolType::toString()
         return "array(" + to_string(this->width) + ", " + this->arrayType->toString() + ")";
     else if(this->type ==  SymbolType::BLOCK)
         return "block";
-    return "error";
+    return "error"; // Recieved invalid enum in this->type
 }
 
-// Implementation of symbol table class
+/**
+ * @brief Parameterized Constructor for SymbolTable
+ * 
+ * @param name 
+ * @param parent 
+ */
 SymbolTable::SymbolTable(string name, SymbolTable *parent) : name(name), parent(parent) {}
 
+/**
+ * @brief Implements lookup --> returns pointer to symbol table to a variable with name string name
+ * 
+ * @param name 
+ * @return Symbol* --> pointer to variable in symbol table
+ */
 Symbol *SymbolTable::lookup(string name)
 {
 
@@ -72,7 +96,11 @@ Symbol *SymbolTable::lookup(string name)
     return ret_ptr;
 }
 
-// Update the symbol table and its children with offsets
+
+/**
+ * @brief Updates the symbol table with its child tables with the offsets
+ * 
+ */
 void SymbolTable::update()
 {
     vector<SymbolTable *> visited; // vector to keep track of children tables to visit
@@ -105,9 +133,9 @@ void SymbolTable::print()
 {
 
     // pretty print 
-    cout << string(140, '=') << endl;
+    cout << string(150, '*') << endl;
     cout << "Table Name: " << this->name <<"\t\t Parent Name: "<< ((this->parent)?this->parent->name:"None") << endl;
-    cout << string(140, '=') << endl;
+    cout << string(150, '*') << endl;
     cout << setw(20) << "Name" << setw(40) << "Type" << setw(20) << "Initial Value" << setw(20) << "Offset" << setw(20) << "Size" << setw(20) << "Child" << "\n" << endl;
     // cout<<"Name\t Type\t InitialValue\t Offset\t Size\n";
     vector<SymbolTable *> tovisit;
@@ -128,19 +156,31 @@ void SymbolTable::print()
     }
     cout << string(140, '-') << endl;
     cout << "\n" << endl;
-    // print nested tables
+    // print nested tables (child tables)
     for (auto &table : tovisit)
     {
         table->print();
     }
 }
 
-// Implementation of symbol class
+/**
+ * @brief Parameterized Constructor for Symbol
+ * 
+ * @param name 
+ * @param type 
+ * @param init 
+ */
 Symbol::Symbol(string name, SymbolType::typeEnum type, string init) : name(name), type(new SymbolType(type)), offset(0), nestedTable(NULL), initialValue(init), isFunction(false)
 {
     size = this->type->getSize();
 }
-// update type of the symbol
+
+/**
+ * @brief Updates the type of symbol pointer with the specified type
+ * 
+ * @param type 
+ * @return Symbol* (updated symbol pointer)
+ */
 Symbol *Symbol::update(SymbolType *type)
 {
     this->type = type;
@@ -159,7 +199,7 @@ Symbol *Symbol::convert(SymbolType::typeEnum type_)
         {
             // generate symbol of new type
             Symbol *fin_ = gentemp(type_);
-            emit("=", fin_->name, "Float_TO_Int(" + this->name + ")");
+            emit("=", fin_->name, "FLOAT_TO_INT(" + this->name + ")");
             return fin_;
         }
         // if the target type is char 
@@ -167,7 +207,7 @@ Symbol *Symbol::convert(SymbolType::typeEnum type_)
         {
             // generate symbol of new type
             Symbol *fin_ = gentemp(type_);
-            emit("=", fin_->name, "Float_TO_Char(" + this->name + ")");
+            emit("=", fin_->name, "FLOAT_TO_CHAR(" + this->name + ")");
             return fin_;
         }
         // reutrn orignal symbol if the final type is not int or char 
@@ -181,7 +221,7 @@ Symbol *Symbol::convert(SymbolType::typeEnum type_)
         {
             // generate symbol of new type
             Symbol *fin_ = gentemp(type_);
-            emit("=", fin_->name, "INT_TO_Float(" + this->name + ")");
+            emit("=", fin_->name, "INT_TO_FLOAT(" + this->name + ")");
             return fin_;
         }
         // if the target type is char
@@ -189,7 +229,7 @@ Symbol *Symbol::convert(SymbolType::typeEnum type_)
         {
             // generate symbol of new type
             Symbol *fin_ = gentemp(type_);
-            emit("=", fin_->name, "INT_TO_Char(" + this->name + ")");
+            emit("=", fin_->name, "INT_TO_CHAR(" + this->name + ")");
             return fin_;
         }
         // reutrn orignal symbol if the final type is not float or char
@@ -203,7 +243,7 @@ Symbol *Symbol::convert(SymbolType::typeEnum type_)
         {
             // generate symbol of new type
             Symbol *fin_ = gentemp(type_);
-            emit("=", fin_->name, "Char_TO_Int(" + this->name + ")");
+            emit("=", fin_->name, "CHAR_TO_INT(" + this->name + ")");
             return fin_;
         }
         // if the target type is float
@@ -211,7 +251,7 @@ Symbol *Symbol::convert(SymbolType::typeEnum type_)
         {
             // generate symbol of new type
             Symbol *fin_ = gentemp(type_);
-            emit("=", fin_->name, "Char_TO_Float(" + this->name + ")");
+            emit("=", fin_->name, "CHAR_TO_FLOAT(" + this->name + ")");
             return fin_;
         }
         // reutrn orignal symbol if the final type is not int or float
