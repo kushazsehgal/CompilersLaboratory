@@ -193,8 +193,8 @@ symbolType = recent most type encountered
     M
 
 %%
-// All variables are identifiers stored in symbol table
-// All constants are stored as temporary variables in the symbol table
+// Symbol table stores all variables as identifiers
+// Symbol table stores all constants as temporary variable 
 /* Expressions */
 
 
@@ -456,15 +456,6 @@ cast_expression:
         }
     ;
 
-/*
-This is a very crucial step in the translation, here an array goes to a expression
-As a first step we extract the base type of the array, then if the type is array we obtain the value by indexing
-by using the symbol name, the temporary used to calculate the location and assign it to the newly generated temporary
-If it is a pointer or normal array then simply equate the symbol
-Once this is done we apply the necessary operation that is *,/ or % after proper type checking
-Below this for additive and shift expressions simply follow the same procedure, check types, generate temporary and store the result of
-the operation in the newly generated temporary
-*/
 multiplicative_expression:
     cast_expression
         { 
@@ -613,10 +604,8 @@ shift_expression:
         }
     ;
 /*
-For the next set of translations, boolean expression is made, 
-appropriate operation is applied,
-here the trueList and falseList are also made which will be later used 
-and backpatched with appropriate destinations
+Truelist and Falselist are generated here which will be used later.
+and then backpatched at appropriate destinations
 */
 
 relational_expression:
@@ -722,15 +711,6 @@ equality_expression:
             }
         }
     ;
-
-/*
-For the next set of translations, non boolean expression is made, 
-type conversion is done, expression now represents INT type
-here the trueList and falseList are now invalid,
-a new temporary is generated,
-appropriate operations are applied and result is stored in the newly
-generated temporary
-*/
 
 AND_expression:
     equality_expression
