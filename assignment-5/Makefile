@@ -1,3 +1,10 @@
+##################################################################
+# Instructions -->
+# make --> creates parser.out
+# make test --> tests all 8 test-files to generate quad.out files
+# make clean --> removes all .o, .out and other intermediate files
+##################################################################
+
 parser.out: lex.yy.o y.tab.o asgn5_20CS30030_20CS30024_translator.o
 	g++ lex.yy.o y.tab.o asgn5_20CS30030_20CS30024_translator.o -lfl -o parser.out
 

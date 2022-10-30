@@ -154,7 +154,7 @@ void SymbolTable::print()
             tovisit.push_back(map_entry.second.nestedTable);
         }
     }
-    cout << string(140, '-') << endl;
+    cout << string(150, '-') << endl;
     cout << "\n" << endl;
     // print nested tables (child tables)
     for (auto &table : tovisit)
