@@ -44,6 +44,7 @@ string SymbolType::toString()
         return "array(" + to_string(this->width) + ", " + this->arrayType->toString() + ")";
     else if(this->type ==  SymbolType::BLOCK)
         return "block";
+    return "error";
 }
 
 // Implementation of symbol table class

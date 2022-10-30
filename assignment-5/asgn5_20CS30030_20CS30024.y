@@ -8,20 +8,20 @@
 %}
 /*
 identifierVal = name of identifier in symbol table
-instructionNumber for backpatching
-parameterCount = number of parameters passed to function
+instruction_number for backpatching
+parameter_count = number of parameters passed to function
 symbolType = recent most type encountered
 */
 
 %union {
-    int intVal;
-    char *floatVal;
-    char *charVal;
-    char *stringVal;
-    char *identifierVal; 
-    char *unaryOperator;
-    int instructionNumber;
-    int parameterCount;
+    int int_val;
+    char *float_val;
+    char *char_val;
+    char *string_val;
+    char *identifier_val; 
+    char *unary_operator;
+    int instruction_number;
+    int parameter_count;
     Expression *expression;
     Statement *statement;
     Array *array;
@@ -33,7 +33,7 @@ symbolType = recent most type encountered
 %token AUTO
 %token BREAK
 %token CASE
-%token CHARTYPE
+%token CHAR_TYPE
 %token CONST
 %token CONTINUE
 %token DEFAULT
@@ -42,12 +42,12 @@ symbolType = recent most type encountered
 %token ELSE
 %token ENUM
 %token EXTERN
-%token FLOATTYPE
+%token FLOAT_TYPE
 %token FOR
 %token GOTO
 %token IF
 %token INLINE
-%token INTTYPE
+%token INT_TYPE
 %token LONG
 %token REGISTER
 %token RESTRICT
@@ -61,7 +61,7 @@ symbolType = recent most type encountered
 %token TYPEDEF
 %token UNION
 %token UNSIGNED
-%token VOIDTYPE
+%token VOID_TYPE
 %token VOLATILE
 %token WHILE
 %token _BOOL
@@ -70,10 +70,10 @@ symbolType = recent most type encountered
 
 
 %token<symbol> IDENTIFIER
-%token<intVal> INTEGER_CONSTANT
-%token<floatVal> FLOATING_CONSTANT
-%token<charVal> CHARACTER_CONSTANT
-%token<stringVal> STRING_LITERAL
+%token<int_val> INTEGER_CONST
+%token<float_val> FLOAT_CONST
+%token<char_val> CHAR_CONST
+%token<string_val> STRING_LITERAL
 
 %token LEFT_SQUARE_BRACKET
 %token INCREMENT
@@ -130,11 +130,11 @@ symbolType = recent most type encountered
 
 
 // Store unary operator as character
-%type<unaryOperator> 
+%type<unary_operator> 
     unary_operator
 
 // Store parameter count as integer
-%type<parameterCount> 
+%type<parameter_count> 
     argument_expression_list 
     argument_expression_list_opt
 
@@ -189,7 +189,7 @@ symbolType = recent most type encountered
 
 // Instruction number for backpatching
 // M = next instruction
-%type <instructionNumber> 
+%type <instruction_number> 
     M
 
 %%
@@ -210,23 +210,23 @@ primary_expression:
                             $$->symbol = $1;
                             $$->type = Expression::NONBOOLEAN; 
                         }
-                    | INTEGER_CONSTANT 
+                    | INTEGER_CONST 
                         { 
-                            yyinfo("primary_expression => INTEGER_CONSTANT"); 
+                            yyinfo("primary_expression => INTEGER_CONST"); 
                             $$ = new Expression();
                             $$->symbol = gentemp(SymbolType::INT, toString($1));
                             emit("=", $$->symbol->name, $1);
                         }
-                    | FLOATING_CONSTANT 
+                    | FLOAT_CONST 
                         { 
-                            yyinfo("primary_expression => FLOATING_CONSTANT"); 
+                            yyinfo("primary_expression => FLOAT_CONST"); 
                             $$ = new Expression();
                             $$->symbol = gentemp(SymbolType::FLOAT, $1);
                             emit("=", $$->symbol->name, $1);
                         }
-                    | CHARACTER_CONSTANT 
+                    | CHAR_CONST 
                         { 
-                            yyinfo("primary_expression => CHARACTER_CONSTANT"); 
+                            yyinfo("primary_expression => CHAR_CONST"); 
                             $$ = new Expression();
                             $$->symbol = gentemp(SymbolType::CHAR, $1);
                             emit("=", $$->symbol->name, $1);
@@ -1096,12 +1096,12 @@ storage_class_specifier:
                         ;
 
 type_specifier:
-                VOIDTYPE
+                VOID_TYPE
                     { 
                         yyinfo("type_specifier => void");
                         currentType = SymbolType::VOID;
                     }
-                | CHARTYPE
+                | CHAR_TYPE
                     { 
                         yyinfo("type_specifier => char"); 
                         currentType = SymbolType::CHAR;
@@ -1110,7 +1110,7 @@ type_specifier:
                     {
                          yyinfo("type_specifier => short"); 
                     }
-                | INTTYPE
+                | INT_TYPE
                     { 
                         yyinfo("type_specifier => int"); 
                         currentType = SymbolType::INT;
@@ -1119,7 +1119,7 @@ type_specifier:
                     {
                          yyinfo("type_specifier => long"); 
                     }
-                | FLOATTYPE
+                | FLOAT_TYPE
                     { 
                         yyinfo("type_specifier => float"); 
                         currentType = SymbolType::FLOAT;
@@ -1888,11 +1888,11 @@ declaration_list:
 %%
 
 void yyerror(string s) {
-    printf("error occured at line #%d : %s\n", yylineno, s);
+    printf("error occured at line #%d : %s\n", yylineno, s.c_str());
 }
 
 void yyinfo(string s) {
     #ifdef _DEBUG
-        printf("line #%d : %s\n", yylineno, s);
+        printf("line #%d : %s\n", yylineno, s.c_str());
     #endif
 }

@@ -1,8 +1,8 @@
 %{
     #include <stdio.h>
     #include <stdlib.h>
-    #include "y.tab.h"
     #include "asgn5_20CS30030_20CS30024_translator.h"
+    #include "y.tab.h"
 %}
 
 %option yylineno
@@ -42,7 +42,7 @@ NEWLINE							\n
 "auto"                          { return AUTO; }
 "break"                         { return BREAK; }
 "case"                          { return CASE; }
-"char"                          { return CHAR; }
+"char"                          { return CHAR_TYPE; }
 "const"                         { return CONST; }
 "continue"                      { return CONTINUE; }
 "default"                       { return DEFAULT; }
@@ -51,12 +51,12 @@ NEWLINE							\n
 "else"                          { return ELSE; }
 "enum"                          { return ENUM; }
 "extern"                        { return EXTERN; }
-"float"                         { return FLOAT; }
+"float"                         { return FLOAT_TYPE; }
 "for"                           { return FOR; }
 "goto"                          { return GOTO; }
 "if"                            { return IF; }
 "inline"                        { return INLINE; }
-"int"                           { return INT; }
+"int"                           { return INT_TYPE; }
 "long"                          { return LONG; }
 "register"                      { return REGISTER; }
 "restrict"                      { return RESTRICT; }
@@ -70,16 +70,16 @@ NEWLINE							\n
 "typedef"                       { return TYPEDEF; }
 "union"                         { return UNION; }
 "unsigned"                      { return UNSIGNED; }
-"void"                          { return VOID; }
+"void"                          { return VOID_TYPE; }
 "volatile"                      { return VOLATILE; }
 "while"                         { return WHILE; }
 "_Bool"                         { return _BOOL; }
 "_Complex"                      { return _COMPLEX; }
 "_Imaginary"                    { return _IMAGINARY; }
 
-{IDENTIFIER}                    {  yylval.symbol = currentTable->lookup(yytext);return IDENTIFIER; }
+{IDENTIFIER}                    { yylval.symbol = currentTable->lookup(yytext);return IDENTIFIER; }
 {INTEGER_CONST}                 { yylval.int_val = atoi(yytext);return INTEGER_CONST; }
-{FLOAT_CONST}                   { yylval.float_val = atof(yytext);return FLOAT_CONST; }
+{FLOAT_CONST}                   { yylval.float_val = strdup(yytext);return FLOAT_CONST; }
 {CHAR_CONST}                    { yylval.char_val = strdup(yytext);return CHAR_CONST; }
 {STRING_LITERAL}                { yylval.string_val = strdup(yytext);return STRING_LITERAL; }
 

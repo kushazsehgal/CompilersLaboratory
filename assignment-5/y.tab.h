@@ -57,7 +57,7 @@ extern int yydebug;
     AUTO = 258,                    /* AUTO  */
     BREAK = 259,                   /* BREAK  */
     CASE = 260,                    /* CASE  */
-    CHARTYPE = 261,                /* CHARTYPE  */
+    CHAR_TYPE = 261,               /* CHAR_TYPE  */
     CONST = 262,                   /* CONST  */
     CONTINUE = 263,                /* CONTINUE  */
     DEFAULT = 264,                 /* DEFAULT  */
@@ -66,12 +66,12 @@ extern int yydebug;
     ELSE = 267,                    /* ELSE  */
     ENUM = 268,                    /* ENUM  */
     EXTERN = 269,                  /* EXTERN  */
-    FLOATTYPE = 270,               /* FLOATTYPE  */
+    FLOAT_TYPE = 270,              /* FLOAT_TYPE  */
     FOR = 271,                     /* FOR  */
     GOTO = 272,                    /* GOTO  */
     IF = 273,                      /* IF  */
     INLINE = 274,                  /* INLINE  */
-    INTTYPE = 275,                 /* INTTYPE  */
+    INT_TYPE = 275,                /* INT_TYPE  */
     LONG = 276,                    /* LONG  */
     REGISTER = 277,                /* REGISTER  */
     RESTRICT = 278,                /* RESTRICT  */
@@ -85,16 +85,16 @@ extern int yydebug;
     TYPEDEF = 286,                 /* TYPEDEF  */
     UNION = 287,                   /* UNION  */
     UNSIGNED = 288,                /* UNSIGNED  */
-    VOIDTYPE = 289,                /* VOIDTYPE  */
+    VOID_TYPE = 289,               /* VOID_TYPE  */
     VOLATILE = 290,                /* VOLATILE  */
     WHILE = 291,                   /* WHILE  */
     _BOOL = 292,                   /* _BOOL  */
     _COMPLEX = 293,                /* _COMPLEX  */
     _IMAGINARY = 294,              /* _IMAGINARY  */
     IDENTIFIER = 295,              /* IDENTIFIER  */
-    INTEGER_CONSTANT = 296,        /* INTEGER_CONSTANT  */
-    FLOATING_CONSTANT = 297,       /* FLOATING_CONSTANT  */
-    CHARACTER_CONSTANT = 298,      /* CHARACTER_CONSTANT  */
+    INTEGER_CONST = 296,           /* INTEGER_CONST  */
+    FLOAT_CONST = 297,             /* FLOAT_CONST  */
+    CHAR_CONST = 298,              /* CHAR_CONST  */
     STRING_LITERAL = 299,          /* STRING_LITERAL  */
     LEFT_SQUARE_BRACKET = 300,     /* LEFT_SQUARE_BRACKET  */
     INCREMENT = 301,               /* INCREMENT  */
@@ -156,7 +156,7 @@ extern int yydebug;
 #define AUTO 258
 #define BREAK 259
 #define CASE 260
-#define CHARTYPE 261
+#define CHAR_TYPE 261
 #define CONST 262
 #define CONTINUE 263
 #define DEFAULT 264
@@ -165,12 +165,12 @@ extern int yydebug;
 #define ELSE 267
 #define ENUM 268
 #define EXTERN 269
-#define FLOATTYPE 270
+#define FLOAT_TYPE 270
 #define FOR 271
 #define GOTO 272
 #define IF 273
 #define INLINE 274
-#define INTTYPE 275
+#define INT_TYPE 275
 #define LONG 276
 #define REGISTER 277
 #define RESTRICT 278
@@ -184,16 +184,16 @@ extern int yydebug;
 #define TYPEDEF 286
 #define UNION 287
 #define UNSIGNED 288
-#define VOIDTYPE 289
+#define VOID_TYPE 289
 #define VOLATILE 290
 #define WHILE 291
 #define _BOOL 292
 #define _COMPLEX 293
 #define _IMAGINARY 294
 #define IDENTIFIER 295
-#define INTEGER_CONSTANT 296
-#define FLOATING_CONSTANT 297
-#define CHARACTER_CONSTANT 298
+#define INTEGER_CONST 296
+#define FLOAT_CONST 297
+#define CHAR_CONST 298
 #define STRING_LITERAL 299
 #define LEFT_SQUARE_BRACKET 300
 #define INCREMENT 301
@@ -251,14 +251,14 @@ union YYSTYPE
 {
 #line 16 "asgn5_20CS30030_20CS30024.y"
 
-    int intVal;
-    char *floatVal;
-    char *charVal;
-    char *stringVal;
-    char *identifierVal; 
-    char *unaryOperator;
-    int instructionNumber;
-    int parameterCount;
+    int int_val;
+    char *float_val;
+    char *char_val;
+    char *string_val;
+    char *identifier_val; 
+    char *unary_operator;
+    int instruction_number;
+    int parameter_count;
     Expression *expression;
     Statement *statement;
     Array *array;

@@ -123,7 +123,7 @@ extern int yydebug;
     AUTO = 258,                    /* AUTO  */
     BREAK = 259,                   /* BREAK  */
     CASE = 260,                    /* CASE  */
-    CHARTYPE = 261,                /* CHARTYPE  */
+    CHAR_TYPE = 261,               /* CHAR_TYPE  */
     CONST = 262,                   /* CONST  */
     CONTINUE = 263,                /* CONTINUE  */
     DEFAULT = 264,                 /* DEFAULT  */
@@ -132,12 +132,12 @@ extern int yydebug;
     ELSE = 267,                    /* ELSE  */
     ENUM = 268,                    /* ENUM  */
     EXTERN = 269,                  /* EXTERN  */
-    FLOATTYPE = 270,               /* FLOATTYPE  */
+    FLOAT_TYPE = 270,              /* FLOAT_TYPE  */
     FOR = 271,                     /* FOR  */
     GOTO = 272,                    /* GOTO  */
     IF = 273,                      /* IF  */
     INLINE = 274,                  /* INLINE  */
-    INTTYPE = 275,                 /* INTTYPE  */
+    INT_TYPE = 275,                /* INT_TYPE  */
     LONG = 276,                    /* LONG  */
     REGISTER = 277,                /* REGISTER  */
     RESTRICT = 278,                /* RESTRICT  */
@@ -151,16 +151,16 @@ extern int yydebug;
     TYPEDEF = 286,                 /* TYPEDEF  */
     UNION = 287,                   /* UNION  */
     UNSIGNED = 288,                /* UNSIGNED  */
-    VOIDTYPE = 289,                /* VOIDTYPE  */
+    VOID_TYPE = 289,               /* VOID_TYPE  */
     VOLATILE = 290,                /* VOLATILE  */
     WHILE = 291,                   /* WHILE  */
     _BOOL = 292,                   /* _BOOL  */
     _COMPLEX = 293,                /* _COMPLEX  */
     _IMAGINARY = 294,              /* _IMAGINARY  */
     IDENTIFIER = 295,              /* IDENTIFIER  */
-    INTEGER_CONSTANT = 296,        /* INTEGER_CONSTANT  */
-    FLOATING_CONSTANT = 297,       /* FLOATING_CONSTANT  */
-    CHARACTER_CONSTANT = 298,      /* CHARACTER_CONSTANT  */
+    INTEGER_CONST = 296,           /* INTEGER_CONST  */
+    FLOAT_CONST = 297,             /* FLOAT_CONST  */
+    CHAR_CONST = 298,              /* CHAR_CONST  */
     STRING_LITERAL = 299,          /* STRING_LITERAL  */
     LEFT_SQUARE_BRACKET = 300,     /* LEFT_SQUARE_BRACKET  */
     INCREMENT = 301,               /* INCREMENT  */
@@ -222,7 +222,7 @@ extern int yydebug;
 #define AUTO 258
 #define BREAK 259
 #define CASE 260
-#define CHARTYPE 261
+#define CHAR_TYPE 261
 #define CONST 262
 #define CONTINUE 263
 #define DEFAULT 264
@@ -231,12 +231,12 @@ extern int yydebug;
 #define ELSE 267
 #define ENUM 268
 #define EXTERN 269
-#define FLOATTYPE 270
+#define FLOAT_TYPE 270
 #define FOR 271
 #define GOTO 272
 #define IF 273
 #define INLINE 274
-#define INTTYPE 275
+#define INT_TYPE 275
 #define LONG 276
 #define REGISTER 277
 #define RESTRICT 278
@@ -250,16 +250,16 @@ extern int yydebug;
 #define TYPEDEF 286
 #define UNION 287
 #define UNSIGNED 288
-#define VOIDTYPE 289
+#define VOID_TYPE 289
 #define VOLATILE 290
 #define WHILE 291
 #define _BOOL 292
 #define _COMPLEX 293
 #define _IMAGINARY 294
 #define IDENTIFIER 295
-#define INTEGER_CONSTANT 296
-#define FLOATING_CONSTANT 297
-#define CHARACTER_CONSTANT 298
+#define INTEGER_CONST 296
+#define FLOAT_CONST 297
+#define CHAR_CONST 298
 #define STRING_LITERAL 299
 #define LEFT_SQUARE_BRACKET 300
 #define INCREMENT 301
@@ -317,14 +317,14 @@ union YYSTYPE
 {
 #line 16 "asgn5_20CS30030_20CS30024.y"
 
-    int intVal;
-    char *floatVal;
-    char *charVal;
-    char *stringVal;
-    char *identifierVal; 
-    char *unaryOperator;
-    int instructionNumber;
-    int parameterCount;
+    int int_val;
+    char *float_val;
+    char *char_val;
+    char *string_val;
+    char *identifier_val; 
+    char *unary_operator;
+    int instruction_number;
+    int parameter_count;
     Expression *expression;
     Statement *statement;
     Array *array;
@@ -357,7 +357,7 @@ enum yysymbol_kind_t
   YYSYMBOL_AUTO = 3,                       /* AUTO  */
   YYSYMBOL_BREAK = 4,                      /* BREAK  */
   YYSYMBOL_CASE = 5,                       /* CASE  */
-  YYSYMBOL_CHARTYPE = 6,                   /* CHARTYPE  */
+  YYSYMBOL_CHAR_TYPE = 6,                  /* CHAR_TYPE  */
   YYSYMBOL_CONST = 7,                      /* CONST  */
   YYSYMBOL_CONTINUE = 8,                   /* CONTINUE  */
   YYSYMBOL_DEFAULT = 9,                    /* DEFAULT  */
@@ -366,12 +366,12 @@ enum yysymbol_kind_t
   YYSYMBOL_ELSE = 12,                      /* ELSE  */
   YYSYMBOL_ENUM = 13,                      /* ENUM  */
   YYSYMBOL_EXTERN = 14,                    /* EXTERN  */
-  YYSYMBOL_FLOATTYPE = 15,                 /* FLOATTYPE  */
+  YYSYMBOL_FLOAT_TYPE = 15,                /* FLOAT_TYPE  */
   YYSYMBOL_FOR = 16,                       /* FOR  */
   YYSYMBOL_GOTO = 17,                      /* GOTO  */
   YYSYMBOL_IF = 18,                        /* IF  */
   YYSYMBOL_INLINE = 19,                    /* INLINE  */
-  YYSYMBOL_INTTYPE = 20,                   /* INTTYPE  */
+  YYSYMBOL_INT_TYPE = 20,                  /* INT_TYPE  */
   YYSYMBOL_LONG = 21,                      /* LONG  */
   YYSYMBOL_REGISTER = 22,                  /* REGISTER  */
   YYSYMBOL_RESTRICT = 23,                  /* RESTRICT  */
@@ -385,16 +385,16 @@ enum yysymbol_kind_t
   YYSYMBOL_TYPEDEF = 31,                   /* TYPEDEF  */
   YYSYMBOL_UNION = 32,                     /* UNION  */
   YYSYMBOL_UNSIGNED = 33,                  /* UNSIGNED  */
-  YYSYMBOL_VOIDTYPE = 34,                  /* VOIDTYPE  */
+  YYSYMBOL_VOID_TYPE = 34,                 /* VOID_TYPE  */
   YYSYMBOL_VOLATILE = 35,                  /* VOLATILE  */
   YYSYMBOL_WHILE = 36,                     /* WHILE  */
   YYSYMBOL__BOOL = 37,                     /* _BOOL  */
   YYSYMBOL__COMPLEX = 38,                  /* _COMPLEX  */
   YYSYMBOL__IMAGINARY = 39,                /* _IMAGINARY  */
   YYSYMBOL_IDENTIFIER = 40,                /* IDENTIFIER  */
-  YYSYMBOL_INTEGER_CONSTANT = 41,          /* INTEGER_CONSTANT  */
-  YYSYMBOL_FLOATING_CONSTANT = 42,         /* FLOATING_CONSTANT  */
-  YYSYMBOL_CHARACTER_CONSTANT = 43,        /* CHARACTER_CONSTANT  */
+  YYSYMBOL_INTEGER_CONST = 41,             /* INTEGER_CONST  */
+  YYSYMBOL_FLOAT_CONST = 42,               /* FLOAT_CONST  */
+  YYSYMBOL_CHAR_CONST = 43,                /* CHAR_CONST  */
   YYSYMBOL_STRING_LITERAL = 44,            /* STRING_LITERAL  */
   YYSYMBOL_LEFT_SQUARE_BRACKET = 45,       /* LEFT_SQUARE_BRACKET  */
   YYSYMBOL_INCREMENT = 46,                 /* INCREMENT  */
@@ -952,24 +952,24 @@ static const char *yysymbol_name (yysymbol_kind_t yysymbol) YY_ATTRIBUTE_UNUSED;
 static const char *const yytname[] =
 {
   "\"end of file\"", "error", "\"invalid token\"", "AUTO", "BREAK",
-  "CASE", "CHARTYPE", "CONST", "CONTINUE", "DEFAULT", "DO", "DOUBLE",
-  "ELSE", "ENUM", "EXTERN", "FLOATTYPE", "FOR", "GOTO", "IF", "INLINE",
-  "INTTYPE", "LONG", "REGISTER", "RESTRICT", "RETURN", "SHORT", "SIGNED",
+  "CASE", "CHAR_TYPE", "CONST", "CONTINUE", "DEFAULT", "DO", "DOUBLE",
+  "ELSE", "ENUM", "EXTERN", "FLOAT_TYPE", "FOR", "GOTO", "IF", "INLINE",
+  "INT_TYPE", "LONG", "REGISTER", "RESTRICT", "RETURN", "SHORT", "SIGNED",
   "SIZEOF", "STATIC", "STRUCT", "SWITCH", "TYPEDEF", "UNION", "UNSIGNED",
-  "VOIDTYPE", "VOLATILE", "WHILE", "_BOOL", "_COMPLEX", "_IMAGINARY",
-  "IDENTIFIER", "INTEGER_CONSTANT", "FLOATING_CONSTANT",
-  "CHARACTER_CONSTANT", "STRING_LITERAL", "LEFT_SQUARE_BRACKET",
-  "INCREMENT", "SLASH", "QUESTION_MARK", "ASSIGNMENT", "COMMA",
-  "RIGHT_SQUARE_BRACKET", "LEFT_PARENTHESES", "LEFT_CURLY_BRACKET",
-  "RIGHT_CURLY_BRACKET", "DOT", "ARROW", "ASTERISK", "PLUS", "MINUS",
-  "TILDE", "EXCLAMATION", "MODULO", "LEFT_SHIFT", "RIGHT_SHIFT",
-  "LESS_THAN", "GREATER_THAN", "LESS_EQUAL_THAN", "GREATER_EQUAL_THAN",
-  "COLON", "SEMI_COLON", "ELLIPSIS", "ASTERISK_ASSIGNMENT",
-  "SLASH_ASSIGNMENT", "MODULO_ASSIGNMENT", "PLUS_ASSIGNMENT",
-  "MINUS_ASSIGNMENT", "LEFT_SHIFT_ASSIGNMENT", "HASH", "DECREMENT",
-  "RIGHT_PARENTHESES", "BITWISE_AND", "EQUALS", "BITWISE_XOR",
-  "BITWISE_OR", "LOGICAL_AND", "LOGICAL_OR", "RIGHT_SHIFT_ASSIGNMENT",
-  "NOT_EQUALS", "BITWISE_AND_ASSIGNMENT", "BITWISE_OR_ASSIGNMENT",
+  "VOID_TYPE", "VOLATILE", "WHILE", "_BOOL", "_COMPLEX", "_IMAGINARY",
+  "IDENTIFIER", "INTEGER_CONST", "FLOAT_CONST", "CHAR_CONST",
+  "STRING_LITERAL", "LEFT_SQUARE_BRACKET", "INCREMENT", "SLASH",
+  "QUESTION_MARK", "ASSIGNMENT", "COMMA", "RIGHT_SQUARE_BRACKET",
+  "LEFT_PARENTHESES", "LEFT_CURLY_BRACKET", "RIGHT_CURLY_BRACKET", "DOT",
+  "ARROW", "ASTERISK", "PLUS", "MINUS", "TILDE", "EXCLAMATION", "MODULO",
+  "LEFT_SHIFT", "RIGHT_SHIFT", "LESS_THAN", "GREATER_THAN",
+  "LESS_EQUAL_THAN", "GREATER_EQUAL_THAN", "COLON", "SEMI_COLON",
+  "ELLIPSIS", "ASTERISK_ASSIGNMENT", "SLASH_ASSIGNMENT",
+  "MODULO_ASSIGNMENT", "PLUS_ASSIGNMENT", "MINUS_ASSIGNMENT",
+  "LEFT_SHIFT_ASSIGNMENT", "HASH", "DECREMENT", "RIGHT_PARENTHESES",
+  "BITWISE_AND", "EQUALS", "BITWISE_XOR", "BITWISE_OR", "LOGICAL_AND",
+  "LOGICAL_OR", "RIGHT_SHIFT_ASSIGNMENT", "NOT_EQUALS",
+  "BITWISE_AND_ASSIGNMENT", "BITWISE_OR_ASSIGNMENT",
   "BITWISE_XOR_ASSIGNMENT", "INVALID_TOKEN", "THEN", "$accept",
   "primary_expression", "postfix_expression",
   "argument_expression_list_opt", "argument_expression_list",
@@ -1927,35 +1927,35 @@ yyreduce:
 #line 1928 "y.tab.c"
     break;
 
-  case 3: /* primary_expression: INTEGER_CONSTANT  */
+  case 3: /* primary_expression: INTEGER_CONST  */
 #line 214 "asgn5_20CS30030_20CS30024.y"
                         { 
-                            yyinfo("primary_expression => INTEGER_CONSTANT"); 
+                            yyinfo("primary_expression => INTEGER_CONST"); 
                             (yyval.expression) = new Expression();
-                            (yyval.expression)->symbol = gentemp(SymbolType::INT, toString((yyvsp[0].intVal)));
-                            emit("=", (yyval.expression)->symbol->name, (yyvsp[0].intVal));
+                            (yyval.expression)->symbol = gentemp(SymbolType::INT, toString((yyvsp[0].int_val)));
+                            emit("=", (yyval.expression)->symbol->name, (yyvsp[0].int_val));
                         }
 #line 1939 "y.tab.c"
     break;
 
-  case 4: /* primary_expression: FLOATING_CONSTANT  */
+  case 4: /* primary_expression: FLOAT_CONST  */
 #line 221 "asgn5_20CS30030_20CS30024.y"
                         { 
-                            yyinfo("primary_expression => FLOATING_CONSTANT"); 
+                            yyinfo("primary_expression => FLOAT_CONST"); 
                             (yyval.expression) = new Expression();
-                            (yyval.expression)->symbol = gentemp(SymbolType::FLOAT, (yyvsp[0].floatVal));
-                            emit("=", (yyval.expression)->symbol->name, (yyvsp[0].floatVal));
+                            (yyval.expression)->symbol = gentemp(SymbolType::FLOAT, (yyvsp[0].float_val));
+                            emit("=", (yyval.expression)->symbol->name, (yyvsp[0].float_val));
                         }
 #line 1950 "y.tab.c"
     break;
 
-  case 5: /* primary_expression: CHARACTER_CONSTANT  */
+  case 5: /* primary_expression: CHAR_CONST  */
 #line 228 "asgn5_20CS30030_20CS30024.y"
                         { 
-                            yyinfo("primary_expression => CHARACTER_CONSTANT"); 
+                            yyinfo("primary_expression => CHAR_CONST"); 
                             (yyval.expression) = new Expression();
-                            (yyval.expression)->symbol = gentemp(SymbolType::CHAR, (yyvsp[0].charVal));
-                            emit("=", (yyval.expression)->symbol->name, (yyvsp[0].charVal));
+                            (yyval.expression)->symbol = gentemp(SymbolType::CHAR, (yyvsp[0].char_val));
+                            emit("=", (yyval.expression)->symbol->name, (yyvsp[0].char_val));
                         }
 #line 1961 "y.tab.c"
     break;
@@ -1965,7 +1965,7 @@ yyreduce:
                         { 
                             yyinfo("primary_expression => STRING_LITERAL"); 
                             (yyval.expression) = new Expression();
-		                    (yyval.expression)->symbol = gentemp(SymbolType::POINTER, (yyvsp[0].stringVal));
+		                    (yyval.expression)->symbol = gentemp(SymbolType::POINTER, (yyvsp[0].string_val));
 		                    (yyval.expression)->symbol->type->arrayType = new SymbolType(SymbolType::CHAR);
                         }
 #line 1972 "y.tab.c"
@@ -2024,7 +2024,7 @@ yyreduce:
                             yyinfo("postfix_expression => postfix_expression ( argument_expression_list_opt )"); 
                             (yyval.array) = new Array();
                             (yyval.array)->symbol = gentemp((yyvsp[-3].array)->symbol->type->type);
-                            emit("call", (yyval.array)->symbol->name, (yyvsp[-3].array)->symbol->name, toString((yyvsp[-1].parameterCount)));
+                            emit("call", (yyval.array)->symbol->name, (yyvsp[-3].array)->symbol->name, toString((yyvsp[-1].parameter_count)));
                         }
 #line 2030 "y.tab.c"
     break;
@@ -2091,7 +2091,7 @@ yyreduce:
 #line 326 "asgn5_20CS30030_20CS30024.y"
                                     { 
                                         yyinfo("argument_expression_list_opt => argument_expression_list"); 
-                                        (yyval.parameterCount) = (yyvsp[0].parameterCount);
+                                        (yyval.parameter_count) = (yyvsp[0].parameter_count);
                                     }
 #line 2097 "y.tab.c"
     break;
@@ -2101,7 +2101,7 @@ yyreduce:
                                     { 
                                         // empty so 0 params
                                         yyinfo("argument_expression_list_opt => epsilon");
-                                        (yyval.parameterCount) = 0;
+                                        (yyval.parameter_count) = 0;
                                     }
 #line 2107 "y.tab.c"
     break;
@@ -2112,7 +2112,7 @@ yyreduce:
                                     // first param, initialise param count to 1
                                     yyinfo("argument_expression_list => assignment_expression"); 
                                     emit("param", (yyvsp[0].expression)->symbol->name);
-                                    (yyval.parameterCount) = 1;
+                                    (yyval.parameter_count) = 1;
                                 }
 #line 2118 "y.tab.c"
     break;
@@ -2123,7 +2123,7 @@ yyreduce:
                                     // one new param, add 1 to param count
                                     yyinfo("argument_expression_list => argument_expression_list , assignment_expression");
                                     emit("param", (yyvsp[0].expression)->symbol->name);
-                                    (yyval.parameterCount) = (yyvsp[-2].parameterCount) + 1; 
+                                    (yyval.parameter_count) = (yyvsp[-2].parameter_count) + 1; 
                                 }
 #line 2129 "y.tab.c"
     break;
@@ -2163,13 +2163,13 @@ yyreduce:
 #line 376 "asgn5_20CS30030_20CS30024.y"
                         { 
                             yyinfo("unary_expression => unary_operator cast_expression");
-                            if(strcmp((yyvsp[-1].unaryOperator), "&") == 0) {
+                            if(strcmp((yyvsp[-1].unary_operator), "&") == 0) {
                                 // addressing, this generates a pointer, the subArray type will thus be the symbol type of the cast_expression
                                 (yyval.array) = new Array();
                                 (yyval.array)->symbol = gentemp(SymbolType::POINTER);
                                 (yyval.array)->symbol->type->arrayType = (yyvsp[0].array)->symbol->type;
                                 emit("=&", (yyval.array)->symbol->name, (yyvsp[0].array)->symbol->name);
-                            } else if(strcmp((yyvsp[-1].unaryOperator), "*") == 0) {
+                            } else if(strcmp((yyvsp[-1].unary_operator), "*") == 0) {
                                 // dereferncing, this generates a pointer, a new temporary generated with type as the subarray type of the cast_expression
                                 // the subArray type will thus be one level deeper that of the cast_expression
                                 (yyval.array) = new Array();
@@ -2178,13 +2178,13 @@ yyreduce:
                                 (yyval.array)->temp->type->arrayType = (yyvsp[0].array)->temp->type->arrayType->arrayType;
                                 (yyval.array)->type = Array::POINTER;
                                 emit("=*", (yyval.array)->temp->name, (yyvsp[0].array)->temp->name);
-                            } else if(strcmp((yyvsp[-1].unaryOperator), "+") == 0) {
+                            } else if(strcmp((yyvsp[-1].unary_operator), "+") == 0) {
                                 (yyval.array) = (yyvsp[0].array);
                             } else { // for -, ~ and !
                                 // simply apply the operator on cast_expression
                                 (yyval.array) = new Array();
                                 (yyval.array)->symbol = gentemp((yyvsp[0].array)->symbol->type->type);
-                                emit((yyvsp[-1].unaryOperator), (yyval.array)->symbol->name, (yyvsp[0].array)->symbol->name);
+                                emit((yyvsp[-1].unary_operator), (yyval.array)->symbol->name, (yyvsp[0].array)->symbol->name);
                             }
                         }
 #line 2191 "y.tab.c"
@@ -2210,7 +2210,7 @@ yyreduce:
 #line 418 "asgn5_20CS30030_20CS30024.y"
                     { 
                         yyinfo("unary_operator => &"); 
-                        (yyval.unaryOperator) = strdup("&"); 
+                        (yyval.unary_operator) = strdup("&"); 
                     }
 #line 2216 "y.tab.c"
     break;
@@ -2219,7 +2219,7 @@ yyreduce:
 #line 423 "asgn5_20CS30030_20CS30024.y"
                     { 
                         yyinfo("unary_operator => *"); 
-                        (yyval.unaryOperator) = strdup("*"); 
+                        (yyval.unary_operator) = strdup("*"); 
                     }
 #line 2225 "y.tab.c"
     break;
@@ -2228,7 +2228,7 @@ yyreduce:
 #line 428 "asgn5_20CS30030_20CS30024.y"
                     { 
                         yyinfo("unary_operator => +"); 
-                        (yyval.unaryOperator) = strdup("+"); 
+                        (yyval.unary_operator) = strdup("+"); 
                     }
 #line 2234 "y.tab.c"
     break;
@@ -2237,7 +2237,7 @@ yyreduce:
 #line 433 "asgn5_20CS30030_20CS30024.y"
                     { 
                         yyinfo("unary_operator => -"); 
-                        (yyval.unaryOperator) = strdup("=-"); 
+                        (yyval.unary_operator) = strdup("=-"); 
                     }
 #line 2243 "y.tab.c"
     break;
@@ -2246,7 +2246,7 @@ yyreduce:
 #line 438 "asgn5_20CS30030_20CS30024.y"
                     { 
                         yyinfo("unary_operator => ~"); 
-                        (yyval.unaryOperator) = strdup("~"); 
+                        (yyval.unary_operator) = strdup("~"); 
                     }
 #line 2252 "y.tab.c"
     break;
@@ -2255,7 +2255,7 @@ yyreduce:
 #line 443 "asgn5_20CS30030_20CS30024.y"
                     { 
                         yyinfo("unary_operator => !"); 
-                        (yyval.unaryOperator) = strdup("!"); 
+                        (yyval.unary_operator) = strdup("!"); 
                     }
 #line 2261 "y.tab.c"
     break;
@@ -2661,7 +2661,7 @@ yyreduce:
 #line 803 "asgn5_20CS30030_20CS30024.y"
         {
             yyinfo("M => epsilon");
-            (yyval.instructionNumber) = nextInstruction();
+            (yyval.instruction_number) = nextInstruction();
         }
 #line 2667 "y.tab.c"
     break;
@@ -2694,7 +2694,7 @@ yyreduce:
                                 (yyvsp[0].expression)->toBool();
                                 (yyval.expression) = new Expression();
                                 (yyval.expression)->type = Expression::BOOLEAN;
-                                backpatch((yyvsp[-3].expression)->trueList, (yyvsp[-1].instructionNumber));
+                                backpatch((yyvsp[-3].expression)->trueList, (yyvsp[-1].instruction_number));
                                 (yyval.expression)->trueList = (yyvsp[0].expression)->trueList;
                                 (yyval.expression)->falseList = merge((yyvsp[-3].expression)->falseList, (yyvsp[0].expression)->falseList);
                             }
@@ -2718,7 +2718,7 @@ yyreduce:
                                 (yyvsp[0].expression)->toBool();
                                 (yyval.expression) = new Expression();
                                 (yyval.expression)->type = Expression::BOOLEAN;
-                                backpatch((yyvsp[-3].expression)->falseList, (yyvsp[-1].instructionNumber));
+                                backpatch((yyvsp[-3].expression)->falseList, (yyvsp[-1].instruction_number));
                                 (yyval.expression)->trueList = merge((yyvsp[-3].expression)->trueList, (yyvsp[0].expression)->trueList);
                                 (yyval.expression)->falseList = (yyvsp[0].expression)->falseList;
                             }
@@ -2748,8 +2748,8 @@ yyreduce:
                                 emit("goto", "");
                                 backpatch((yyvsp[-7].statement)->nextList, nextInstruction());
                                 (yyvsp[-8].expression)->toBool();
-                                backpatch((yyvsp[-8].expression)->trueList, (yyvsp[-5].instructionNumber));
-                                backpatch((yyvsp[-8].expression)->falseList, (yyvsp[-1].instructionNumber));
+                                backpatch((yyvsp[-8].expression)->trueList, (yyvsp[-5].instruction_number));
+                                backpatch((yyvsp[-8].expression)->falseList, (yyvsp[-1].instruction_number));
                                 backpatch(l, nextInstruction());
                             }
 #line 2756 "y.tab.c"
@@ -3041,7 +3041,7 @@ yyreduce:
 #line 3042 "y.tab.c"
     break;
 
-  case 100: /* type_specifier: VOIDTYPE  */
+  case 100: /* type_specifier: VOID_TYPE  */
 #line 1100 "asgn5_20CS30030_20CS30024.y"
                     { 
                         yyinfo("type_specifier => void");
@@ -3050,7 +3050,7 @@ yyreduce:
 #line 3051 "y.tab.c"
     break;
 
-  case 101: /* type_specifier: CHARTYPE  */
+  case 101: /* type_specifier: CHAR_TYPE  */
 #line 1105 "asgn5_20CS30030_20CS30024.y"
                     { 
                         yyinfo("type_specifier => char"); 
@@ -3067,7 +3067,7 @@ yyreduce:
 #line 3068 "y.tab.c"
     break;
 
-  case 103: /* type_specifier: INTTYPE  */
+  case 103: /* type_specifier: INT_TYPE  */
 #line 1114 "asgn5_20CS30030_20CS30024.y"
                     { 
                         yyinfo("type_specifier => int"); 
@@ -3084,7 +3084,7 @@ yyreduce:
 #line 3085 "y.tab.c"
     break;
 
-  case 105: /* type_specifier: FLOATTYPE  */
+  case 105: /* type_specifier: FLOAT_TYPE  */
 #line 1123 "asgn5_20CS30030_20CS30024.y"
                     { 
                         yyinfo("type_specifier => float"); 
@@ -3841,7 +3841,7 @@ yyreduce:
                         yyinfo("block_item_list => block_item_list block_item"); 
                         (yyval.statement) = (yyvsp[0].statement);
                         // after completion of block_item_list(1) we move to block_item(3)
-                        backpatch((yyvsp[-2].statement)->nextList,(yyvsp[-1].instructionNumber));
+                        backpatch((yyvsp[-2].statement)->nextList,(yyvsp[-1].instruction_number));
                     }
 #line 3847 "y.tab.c"
     break;
@@ -3897,7 +3897,7 @@ yyreduce:
                             yyinfo("selection_statement => if ( expression ) statement"); 
                             (yyval.statement) = new Statement();
                             (yyvsp[-4].expression)->toBool();
-                            backpatch((yyvsp[-4].expression)->trueList, (yyvsp[-2].instructionNumber)); // if true go to M
+                            backpatch((yyvsp[-4].expression)->trueList, (yyvsp[-2].instruction_number)); // if true go to M
                             (yyval.statement)->nextList = merge((yyvsp[-4].expression)->falseList, merge((yyvsp[-1].statement)->nextList, (yyvsp[0].statement)->nextList)); // exits
                         }
 #line 3904 "y.tab.c"
@@ -3909,8 +3909,8 @@ yyreduce:
                             yyinfo("selection_statement => if ( expression ) statement else statement"); 
                             (yyval.statement) = new Statement();
                             (yyvsp[-7].expression)->toBool();
-                            backpatch((yyvsp[-7].expression)->trueList, (yyvsp[-5].instructionNumber)); // if true go to M
-                            backpatch((yyvsp[-7].expression)->falseList, (yyvsp[-1].instructionNumber)); // if false go to else
+                            backpatch((yyvsp[-7].expression)->trueList, (yyvsp[-5].instruction_number)); // if true go to M
+                            backpatch((yyvsp[-7].expression)->falseList, (yyvsp[-1].instruction_number)); // if false go to else
                             (yyval.statement)->nextList = merge((yyvsp[0].statement)->nextList, merge((yyvsp[-4].statement)->nextList, (yyvsp[-3].statement)->nextList)); // exits
                         }
 #line 3917 "y.tab.c"
@@ -3930,10 +3930,10 @@ yyreduce:
                             yyinfo("iteration_statement => while ( expression ) statement"); 
                             (yyval.statement) = new Statement();
                             (yyvsp[-3].expression)->toBool();
-                            backpatch((yyvsp[0].statement)->nextList, (yyvsp[-5].instructionNumber)); // after statement go back to M1
-                            backpatch((yyvsp[-3].expression)->trueList, (yyvsp[-1].instructionNumber)); // if true go to M2
+                            backpatch((yyvsp[0].statement)->nextList, (yyvsp[-5].instruction_number)); // after statement go back to M1
+                            backpatch((yyvsp[-3].expression)->trueList, (yyvsp[-1].instruction_number)); // if true go to M2
                             (yyval.statement)->nextList = (yyvsp[-3].expression)->falseList; // exit if false
-                            emit("goto", toString((yyvsp[-5].instructionNumber)));
+                            emit("goto", toString((yyvsp[-5].instruction_number)));
                         }
 #line 3939 "y.tab.c"
     break;
@@ -3944,8 +3944,8 @@ yyreduce:
                             yyinfo("iteration_statement => do statement while ( expression ) ;"); 
                             (yyval.statement) = new Statement();
                             (yyvsp[-2].expression)->toBool();
-                            backpatch((yyvsp[-2].expression)->trueList, (yyvsp[-7].instructionNumber)); // if true go back to M1
-                            backpatch((yyvsp[-6].statement)->nextList, (yyvsp[-5].instructionNumber)); // after statement is executed go to M2
+                            backpatch((yyvsp[-2].expression)->trueList, (yyvsp[-7].instruction_number)); // if true go back to M1
+                            backpatch((yyvsp[-6].statement)->nextList, (yyvsp[-5].instruction_number)); // after statement is executed go to M2
                             (yyval.statement)->nextList = (yyvsp[-2].expression)->falseList; // exit if false
                         }
 #line 3952 "y.tab.c"
@@ -3957,10 +3957,10 @@ yyreduce:
                             yyinfo("iteration_statement => for ( expression_opt ; expression_opt ; expression_opt ) statement"); 
                             (yyval.statement) = new Statement();
                             (yyvsp[-7].expression)->toBool();
-                            backpatch((yyvsp[-7].expression)->trueList, (yyvsp[-1].instructionNumber)); // if true go to M3 (loop body)
-                            backpatch((yyvsp[-3].statement)->nextList, (yyvsp[-8].instructionNumber)); // after N go to M1 (condition check)
-                            backpatch((yyvsp[0].statement)->nextList, (yyvsp[-5].instructionNumber)); // after S1 (loop body) go to M2 (increment/decrement/any other operation)
-                            emit("goto", toString((yyvsp[-5].instructionNumber)));
+                            backpatch((yyvsp[-7].expression)->trueList, (yyvsp[-1].instruction_number)); // if true go to M3 (loop body)
+                            backpatch((yyvsp[-3].statement)->nextList, (yyvsp[-8].instruction_number)); // after N go to M1 (condition check)
+                            backpatch((yyvsp[0].statement)->nextList, (yyvsp[-5].instruction_number)); // after S1 (loop body) go to M2 (increment/decrement/any other operation)
+                            emit("goto", toString((yyvsp[-5].instruction_number)));
                             (yyval.statement)->nextList = (yyvsp[-7].expression)->falseList; // exit if false
                         }
 #line 3967 "y.tab.c"
@@ -4285,11 +4285,11 @@ yyreturnlab:
 
 
 void yyerror(string s) {
-    printf("error occured at line #%d : %s\n", yylineno, s);
+    printf("error occured at line #%d : %s\n", yylineno, s.c_str());
 }
 
 void yyinfo(string s) {
     #ifdef _DEBUG
-        printf("line #%d : %s\n", yylineno, s);
+        printf("line #%d : %s\n", yylineno, s.c_str());
     #endif
 }
