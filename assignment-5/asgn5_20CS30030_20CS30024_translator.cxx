@@ -10,9 +10,9 @@ int tableCount, temporaryCount;  // Counts of number of tables and number of tem
 /**
  * @brief Parameterized Constructor for SymbolType
  * 
- * @param type 
+ * @param type enum of given type
  * @param arrayType 
- * @param width 
+ * @param width width of given type
  */
 SymbolType::SymbolType(typeEnum type, SymbolType *arrayType, int width) : type(type), width(width), arrayType(arrayType) {}
 
@@ -63,15 +63,15 @@ string SymbolType::toString()
 /**
  * @brief Parameterized Constructor for SymbolTable
  * 
- * @param name 
- * @param parent 
+ * @param name Symbol Table Name
+ * @param parent parent Symbol Table
  */
 SymbolTable::SymbolTable(string name, SymbolTable *parent) : name(name), parent(parent) {}
 
 /**
  * @brief Implements lookup --> returns pointer to symbol table to a variable with name string name
  * 
- * @param name 
+ * @param name Name of Variable
  * @return Symbol* --> pointer to variable in symbol table
  */
 Symbol *SymbolTable::lookup(string name)
@@ -166,9 +166,9 @@ void SymbolTable::print()
 /**
  * @brief Parameterized Constructor for Symbol
  * 
- * @param name 
- * @param type 
- * @param init 
+ * @param name name of symbol
+ * @param type type of symbol
+ * @param init initial value of symbol
  */
 Symbol::Symbol(string name, SymbolType::typeEnum type, string init) : name(name), type(new SymbolType(type)), offset(0), nestedTable(NULL), initialValue(init), isFunction(false)
 {
@@ -181,15 +181,18 @@ Symbol::Symbol(string name, SymbolType::typeEnum type, string init) : name(name)
  * @param type 
  * @return Symbol* (updated symbol pointer)
  */
-Symbol *Symbol::update(SymbolType *type)
-{
+Symbol *Symbol::update(SymbolType *type){
     this->type = type;
     size = this->type->getSize();
     return this;
 }
-// convert the present symbol to different type, return old symbol if conversion not possible 
-Symbol *Symbol::convert(SymbolType::typeEnum type_)
-{
+/**
+ * @brief Converts symbol to given type, and returns the updated symbol
+ * 
+ * @param type_  new type of symbol
+ * @return Symbol* 
+ */
+Symbol *Symbol::convert(SymbolType::typeEnum type_){
 
     // if the current type is float
     if ((this->type)->type == SymbolType::typeEnum::FLOAT)
@@ -260,11 +263,32 @@ Symbol *Symbol::convert(SymbolType::typeEnum type_)
     return this;
 }
 
-// Implementation of quad class
+
+/**
+ * @brief Parameterized Constructor a for Quad
+ * 
+ * @param result 
+ * @param arg1 first argument 
+ * @param op   operator
+ * @param arg2 second argument
+ */
 Quad::Quad(string result, string arg1, string op, string arg2) : result(result), op(op), arg1(arg1), arg2(arg2) {}
+/**
+ * @brief Parameterized Constructor a for Quad
+ * 
+ * @param result 
+ * @param arg1 first argument 
+ * @param op   operator
+ * @param arg2 second argument
+ */
 Quad::Quad(string result, int arg1, string op, string arg2) : result(result), op(op), arg1(toString(arg1)), arg2(arg2) {}
 
-// print the quad 
+
+/**
+ * @brief Prints 3 Address Code quad format
+ * 
+ * @return * void 
+ */
 void Quad::print()
 {
     // if binary operations
@@ -357,7 +381,15 @@ void Quad::print()
     }
 }
 
-// Implementation of emit funtions
+
+/**
+ * @brief Generates Quad given the arguments and result
+ * 
+ * @param op operator
+ * @param result result
+ * @param arg1 first argument
+ * @param arg2 second argument
+ */
 void emit(string op, string result, string arg1, string arg2)
 {
     Quad *q = new Quad(result, arg1, op, arg2);
@@ -369,30 +401,45 @@ void emit(string op, string result, int arg1, string arg2)
     quadArray.push_back(q);
 }
 
-// Implementation of backpatching functions
-void backpatch(list<int> list_, int addr)
+/**
+ * @brief Implements Back Patch (patches given target address to all elements in given list)
+ * 
+ * @param list_ list of all places to patch
+ * @param addr  target address
+ */
+void backpatch(list<int> list_, int target_addr)
 {
     // for all the addresses in the list, add the target address 
     for (auto &i : list_)
-    {
-        quadArray[i-1]->result = toString(addr);
-    }
+        quadArray[i-1]->result = toString(target_addr);    
 }
-list<int> makeList(int base)
-{
-    // returns list with the base address as its only value
-    return {base};
+/**
+ * @brief Initliases list with given address
+ * 
+ * @param base_addr base address
+ * @return list<int> 
+ */
+list<int> makeList(int base_addr){
+    return {base_addr};
 }
-
-list<int> merge(list<int> first, list<int> second)
-{
+/**
+ * @brief Merges the 2 address lists and returns the merged list
+ * 
+ * @param first_list first list to merge
+ * @param second_list second list to merge
+ * @return list<int> 
+ */
+list<int> merge(list<int> first_list, list<int> second_list){
     // merge two lists
-    list<int> ret = first;
-    ret.merge(second);
+    list<int> ret = first_list;
+    ret.merge(second_list);
     return ret;
 }
-// Implementation of Expression class functions
 
+/**
+ * @brief Express Class method implementation 
+ * 
+ */
 void Expression::toInt()
 {
     // if the expression type is boolean
@@ -421,27 +468,47 @@ void Expression::toBool()
     }
 }
 
-// Implementation of other helper functions
+/**
+ * @brief Get Next Instruction 
+ * 
+ * @return int 
+ */
 int nextInstruction()
 {
     // returns the next instruction number
     return quadArray.size() + 1;
 }
 
-// generates temporary of given type with given value s
+/**
+ * @brief Generated new temporary variable and inserts it in current symbol table
+ * 
+ * @param type 
+ * @param s 
+ * @return Symbol* 
+ */
 Symbol *gentemp(SymbolType::typeEnum type, string s)
 {
     Symbol *temp = new Symbol("t" + toString(temporaryCount++), type, s);
     currentTable->symbols.insert({temp->name, *temp});
     return temp;
 }
-// change current table to specified table
+/**
+ * @brief Changes current table to given table
+ * 
+ * @param table new current table
+ */
 void changeTable(SymbolTable *table)
 {
     currentTable = table;
 }
 
-// code to check if a and b are of the same type, promotes to the higher type if feasible and if that makes the type of both the same
+/**
+ * @brief checks whether given symbols are of same type or if it feasible to make them the same type
+ * 
+ * @param a first Symbol
+ * @param b Second Symbol
+ * @return true/false --> valid symbols
+ */
 bool typeCheck(Symbol *&a, Symbol *&b)
 {
     // lambda function to check if a and b are of the same type 
@@ -473,9 +540,10 @@ bool typeCheck(Symbol *&a, Symbol *&b)
         return false;
     }
 }
-// Implementation of utility functions
-// overloaded toString function to maintain semantic consistency 
-// convert int to string
+/**
+ * @brief Utility functions to convert to string
+ * @return string 
+ */
 string toString(int i)
 {
     return to_string(i);

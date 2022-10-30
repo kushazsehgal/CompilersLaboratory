@@ -196,11 +196,6 @@ symbolType = recent most type encountered
 
 /* Expressions */
 
-/*
-For constants we simply create a temporary with that initial value and create a new expression 
-with the symbol pointing to the newly generated temporary, for identifiers it points to the
-identifier which in itself is a symbol
-*/
 
 primary_expression: 
     IDENTIFIER 
@@ -460,15 +455,6 @@ cast_expression:
         }
     ;
 
-/*
-This is a very crucial step in the translation, here an array goes to a expression
-As a first step we extract the base type of the array, then if the type is array we obtain the value by indexing
-by using the symbol name, the temporary used to calculate the location and assign it to the newly generated temporary
-If it is a pointer or normal array then simply equate the symbol
-Once this is done we apply the necessary operation that is *,/ or % after proper type checking
-Below this for additive and shift expressions simply follow the same procedure, check types, generate temporary and store the result of
-the operation in the newly generated temporary
-*/
 
 multiplicative_expression:
     cast_expression
@@ -618,12 +604,6 @@ shift_expression:
         }
     ;
 
-/*
-For the next set of translations, boolean expression is made, 
-appropriate operation is applied,
-here the trueList and falseList are also made which will be later used 
-and backpatched with appropriate destinations
-*/
 
 relational_expression:
     shift_expression
@@ -729,14 +709,7 @@ equality_expression:
         }
     ;
 
-/*
-For the next set of translations, non boolean expression is made, 
-type conversion is done, expression now represents INT type
-here the trueList and falseList are now invalid,
-a new temporary is generated,
-appropriate operations are applied and result is stored in the newly
-generated temporary
-*/
+
 
 AND_expression:
     equality_expression
@@ -792,13 +765,6 @@ inclusive_OR_expression:
         }
     ;
 
-/*
-Marker rule
-M -> stores the next instruction, the location of the quad generated at M, used for backpatching later
-Fall through guard rule
-N -> nextlist, list of indices of dangling exits at N
-*/
-
 M:  
         {
             yyinfo("M => epsilon");
@@ -815,33 +781,7 @@ N:
         }
 	;
 
-/*
-The backpatching and merge being done for the next three translations is as discussed in the class
-A conversion into BOOL is made and appropriate backpatching is carried out
-For logical and
-backpatch(B 1 .truelist, M.instr );
-B.truelist = B 2 .truelist;
-B.falselist = merge(B 1 .falselist, B 2 .falselist);
-For logical or
-backpatch(B 1 .falselist, M.instr );
-B.truelist = merge(B 1 .truelist, B 2 .truelist);
-B.falselist = B 2 .falselist;
-For ? :
-E .loc = gentemp();
-E .type = E 2 .type; // Assume E 2 .type = E 3 .type
-emit(E .loc ’=’ E 3 .loc); // Control gets here by fall-through
-l = makelist(nextinstr );
-emit(goto .... );
-backpatch(N 2 .nextlist, nextinstr );
-emit(E .loc ’=’ E 2 .loc);
-l = merge(l, makelist(nextinstr ));
-emit(goto .... );
-backpatch(N 1 .nextlist, nextinstr );
-convInt2Bool(E 1 );
-backpatch(E 1 .truelist, M 1 .instr );
-backpatch(E 1 .falselist, M 2 .instr );
-backpatch(l, nextinstr );
-*/
+
 
 logical_AND_expression:
     inclusive_OR_expression
@@ -1402,33 +1342,6 @@ type_qualifier_list_opt:
         }
     ;
 
-/* assignment_expression_opt:
-                            assignment_expression
-                                { 
-                                    yyinfo("assignment_expression_opt => assignment_expression"); 
-                                }
-                            |
-                                { 
-                                    yyinfo("assignment_expression_opt => epsilon"); 
-                                }
-                            ; */
-
-/* identifier_list_opt:
-                    identifier_list
-                        { 
-                            yyinfo("identifier_list_opt => identifier_list"); 
-                        }
-                    |
-                        { 
-                            yyinfo("identifier_list_opt => epsilon"); 
-                        }
-                    ; */
-
-/*
-Pointer declarations
-Generate new symbol with type pointer
-*/
-
 pointer:
     ASTERISK type_qualifier_list_opt
         { 
@@ -1623,10 +1536,6 @@ labeled_statement:
         }
     ;
 
-/*
-Used to change the symbol table when a new block is encountered
-Helps create a hierarchy of symbol tables
-*/
 
 change_block: 
         {
@@ -1710,18 +1619,6 @@ expression_opt:
         }
     ;
 
-/*
-IF ELSE
--> the %prec THEN is to remove conflicts during translation
-Markers M and guard N have been added as discussed in the class
-S -> if (B) M S1 N
-backpatch(B.truelist, M.instr )
-S.nextlist = merge(B.falselist, merge(S1.nextlist, N.nextlist))
-S -> if (B) M 1 S 1 N else M 2 S 2
-backpatch(B.truelist, M1.instr )
-backpatch(B.falselist, M2.instr )
-S.nextlist = merge(merge(S1.nextlist, N.nextlist), S2 .nextlist)
-*/
 
 selection_statement:
     IF LEFT_PARENTHESES expression RIGHT_PARENTHESES M statement N %prec THEN
@@ -1747,24 +1644,7 @@ selection_statement:
         }
     ;
 
-/*
-LOOPS
-while M1 (B) M2 S1
-backpatch(S1.nextlist, M1.instr );
-backpatch(B.truelist, M2.instr );
-S.nextlist = B.falselist;
-emit(”goto”, M1.instr );
-do M1 S1 M2 while ( B );
-backpatch(B.truelist, M1.instr );
-backpatch(S1 .nextlist, M2.instr );
-S.nextlist = B.falselist;
-for ( E1 ; M1 B ; M2 E2 N ) M3 S1
-backpatch(B.truelist, M3.instr );
-backpatch(N.nextlist, M1.instr );
-backpatch(S1.nextlist, M2.instr );
-emit(”goto” M2.instr );
-S.nextlist = B.falselist;
-*/
+
 
 iteration_statement:
     WHILE M LEFT_PARENTHESES expression RIGHT_PARENTHESES M statement
@@ -1821,7 +1701,7 @@ jump_statement:
             yyinfo("jump_statement => return expression_opt ;"); 
             $$ = new Statement();
             if($2->symbol != NULL) {
-                emit("return", $2->symbol->name); // emit the current symbol name at return if it exists otherwise empty
+                emit("return", $2->symbol->name); 
             } else {
                 emit("return", "");
             }
@@ -1852,8 +1732,7 @@ external_declaration:
         }
     ;
 
-function_definition: // to prevent block change here which is there in the compound statement grammar rule
-                     // this rule is slightly modified by expanding the original compound statement rule over here
+function_definition: 
     declaration_specifiers declarator declaration_list_opt change_scope LEFT_CURLY_BRACKET block_item_list_opt RIGHT_CURLY_BRACKET
         { 
             yyinfo("function_definition => declaration_specifiers declarator declaration_list_opt compound_statement"); 
