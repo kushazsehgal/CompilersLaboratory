@@ -1,5 +1,5 @@
 %{
-    #include "ass5_20CS30030_20CS30024_translator.h"
+    #include "asgn5_20CS30030_20CS30024_translator.h"
 	#include <stdio.h>
 	extern int yylex();
 	extern int yylineno;
@@ -128,8 +128,6 @@ symbolType = recent most type encountered
 %start translation_unit
 %right THEN ELSE
 
-%start translation_unit
-%right THEN ELSE
 
 // Store unary operator as character
 %type<unaryOperator> 
