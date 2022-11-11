@@ -49,10 +49,10 @@ class SymbolType {
         POINTER = 5, 
         ARRAY = 6, 
         BLOCK = 7} type;  
-        int width;   // width of the symbol
-        SymbolType *arrayType;  // type of the array elements
+        int width;   
+        SymbolType *arrayType;  
 
-        SymbolType(typeEnum, SymbolType * = NULL, int = 1);  // paramterized constructor
+        SymbolType(typeEnum, SymbolType * = NULL, int = 1);  
         int getSize();  /*returns the size(width) of the symbol*/
         string toString(); /*returns the string representation of the type*/ 
 };
@@ -64,13 +64,13 @@ class SymbolType {
  */
 class SymbolTable {
     public:
-        string name;  // name of the symbol table
-        map<string, Symbol> symbols;    // list of all symbols in this table, mapped by their names for fast access
-        SymbolTable *parent;            // parent symbol table of this symbol table
-        ActivationRecord *activationRecord;           // activation record of this symbol table
-        vector<string> parameters;    // list of parameters of the function, if any, in order
+        string name;  
+        map<string, Symbol> symbols;    
+        SymbolTable *parent;            
+        ActivationRecord *activationRecord;           
+        vector<string> parameters;    
        
-        SymbolTable(string = "null", SymbolTable * = NULL); // constructor
+        SymbolTable(string = "null", SymbolTable * = NULL); 
         Symbol *lookup(string); /*returns the symbol with the given name, adds new entry if not found*/ 
         void print();  /*prints the symbol table*/ 
         void update(); /*updates the symbol table*/ 
@@ -82,11 +82,11 @@ class SymbolTable {
  */
 class Symbol {
     public:
-        string name;  // name of the symbol
-        int size, offset; // size and offset of the symbol
-        SymbolType *type;  // type of the symbol
-        SymbolTable *nestedTable;  // pointer to the symbol table if it is a nested entry
-        string initialValue;  // initial value of the symbol
+        string name;  
+        int size, offset; 
+        SymbolType *type;  
+        SymbolTable *nestedTable;  
+        string initialValue;  
         enum Category {LOCAL, GLOBAL, PARAMETER, TEMPORARY, FUNCTION} category;
 
 
@@ -101,11 +101,11 @@ class Symbol {
  */
 class Quad {
     public:
-        string op, arg1, arg2, result;  // parameters of the quad
+        string op, arg1, arg2, result;  
 
-        Quad(string, string, string = "=", string = "");  // constructor
-        Quad(string, int, string = "=", string = ""); // constructor
-        void print();  // prints the quad
+        Quad(string, string, string = "=", string = "");  
+        Quad(string, int, string = "=", string = ""); 
+        void print();  
 };
 
 /**
@@ -114,7 +114,7 @@ class Quad {
  */
 class Expression {
     public:
-        Symbol *symbol;  // symbol of the expression
+        Symbol *symbol;  
         enum typeEnum {NONBOOLEAN, BOOLEAN} type;  /*type of the expression scoped enum*/ 
         list<int> trueList, falseList, nextList;  /*lists of quad numbers for next, true and false jumps*/ 
 
