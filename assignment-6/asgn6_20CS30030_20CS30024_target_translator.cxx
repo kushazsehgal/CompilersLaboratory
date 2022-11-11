@@ -59,13 +59,16 @@ string getStackLoc(string paramName) {
     return paramName;
 }
 
-// register to stack
+/**
+ * @param paramName
+ * @param paramNum
+ * This function makes space for the parameter in the memstack
+*/
 void loadParam(string paramName, int paramNum) {
     Symbol *symbol = currentTable->lookup(paramName);
     int size = symbol->size;
     SymbolType::typeEnum type = symbol->type->type;
     string movIns = "";
-    // if it is an array just store the address
     if(type == SymbolType::ARRAY) {
         movIns = "movq";
         size = 8;
@@ -80,13 +83,16 @@ void loadParam(string paramName, int paramNum) {
     assemblyFile << "\t" << setw(8) << movIns << reg << ", " << getStackLoc(paramName) << endl;
 }
 
-// stack to register
+/**
+ * @param paramName
+ * @param paramNum
+ * store the address of the variable in the stack memory
+*/
 void storeParam(string paramName, int paramNum) {
     Symbol *symbol = currentTable->lookup(paramName);
     int size = symbol->size;
     SymbolType::typeEnum type = symbol->type->type;
     string movIns = "";
-    // if it is an array just store the address
     if(type == SymbolType::ARRAY) {
         movIns = "leaq";
         size = 8;
@@ -137,7 +143,7 @@ void translate() {
         }
     }
 
-    // convert tac labels to assembly labels
+    // This piece of code converts the three address code labels to assembly labels
     map<int, string> labelMap;
     int quadNum = 1, labelNum = 0;
     for(auto &quad:quadArray) {
