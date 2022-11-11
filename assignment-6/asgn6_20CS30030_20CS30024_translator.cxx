@@ -1,24 +1,33 @@
 #include "asgn6_20CS30030_20CS30024_translator.h"
 
-// Global Variables
+/*********************GLOBAL VARIABLES**********************/
 vector<Quad *> quadArray;  // Quad Array
 SymbolTable *currentTable, *globalTable;  // Symbol Tables
 Symbol *currentSymbol;  // Current Symbol
 SymbolType::typeEnum currentType;  // Current Type
 int tableCount, temporaryCount;  // Counts of number of tables and number of temps generated
+/************************************************************/
 vector<string> stringLiterals;
-
 // Implementation of activation record class
 ActivationRecord::ActivationRecord() : totalDisplacement(0), displacement(map<string, int>()) {}  // start with an initial displacement of 0
-
-// Implementation of symbol type class
+/**
+ * @brief Parameterized Constructor for SymbolType
+ * 
+ * @param type enum of given type
+ * @param arrayType 
+ * @param width width of given type
+ */
 SymbolType::SymbolType(typeEnum type, SymbolType *arrayType, int width) : type(type), width(width), arrayType(arrayType) {}
 
-// Implementation of sizes for symbol types
+/**
+ * @brief takes in type as an ENUM (typeEnum defined in header file)
+ * 
+ * @return int --> size of datatype
+ */
 int SymbolType::getSize()
 {
     if (type == CHAR)
-        return 1;
+        return 1; 
     else if (type == INT)
         return 4;
     else if (type == FLOAT || type == POINTER)
@@ -28,8 +37,11 @@ int SymbolType::getSize()
     else
         return 0;
 }
-
-// Function to print symbol type
+/**
+ * @brief Takes in tupe Enum and returns symbol type as a string
+ * 
+ * @return string 
+ */
 string SymbolType::toString()
 {
     if(this->type == SymbolType::VOID)
@@ -48,11 +60,23 @@ string SymbolType::toString()
         return "array(" + to_string(this->width) + ", " + this->arrayType->toString() + ")";
     else if(this->type ==  SymbolType::BLOCK)
         return "block";
+    return "error"; // Recieved invalid enum in this->type
 }
 
-// Implementation of symbol table class
+/**
+ * @brief Parameterized Constructor for SymbolTable
+ * 
+ * @param name Symbol Table Name
+ * @param parent parent Symbol Table
+ */
 SymbolTable::SymbolTable(string name, SymbolTable *parent) : name(name), parent(parent) {}
 
+/**
+ * @brief Implements lookup --> returns pointer to symbol table to a variable with name string name
+ * 
+ * @param name Name of Variable
+ * @return Symbol* --> pointer to variable in symbol table
+ */
 Symbol *SymbolTable::lookup(string name)
 {
 
@@ -79,10 +103,13 @@ Symbol *SymbolTable::lookup(string name)
     return ret_ptr;
 }
 
-// Update the symbol table and its children with offsets
+
+/**
+ * @brief Updates the symbol table with its child tables with the offsets
+ * 
+ */
 void SymbolTable::update()
 {
-    // first update the current table
     vector<SymbolTable *> visited; // vector to keep track of children tables to visit
     int offset;
     for (auto &map_entry : (this)->symbols)  // for all symbols in the table
@@ -102,11 +129,7 @@ void SymbolTable::update()
             visited.push_back(map_entry.second.nestedTable);
         }
     }
-
-    // now prepare activation record for the current table
-
-    activationRecord = new ActivationRecord();
-
+        activationRecord = new ActivationRecord();
     // first stack the parameters
     for (auto map_entry : (this)->symbols)
     {
@@ -144,10 +167,10 @@ void SymbolTable::print()
 {
 
     // pretty print 
-    cout << string(140, '=') << endl;
+    cout << string(150, '*') << endl;
     cout << "Table Name: " << this->name <<"\t\t Parent Name: "<< ((this->parent)?this->parent->name:"None") << endl;
-    cout << string(140, '=') << endl;
-    cout << setw(20) << "Name" << setw(40) << "Type" << setw(20) << "Category" << setw(20) << "Initial Value" << setw(20) << "Offset" << setw(20) << "Size" << setw(20) << "Child" << "\n" << endl;
+    cout << string(150, '*') << endl;
+    cout << setw(20) << "Name" << setw(40) << "Type" << setw(20) << "Initial Value" << setw(20) << "Offset" << setw(20) << "Size" << setw(20) << "Child" << "\n" << endl;
     // cout<<"Name\t Type\t InitialValue\t Offset\t Size\n";
     vector<SymbolTable *> tovisit;
 
@@ -156,7 +179,7 @@ void SymbolTable::print()
     {
         cout << setw(20) << map_entry.first;
         fflush(stdout);
-        cout << setw(40) << map_entry.second.type->toString();
+                cout << setw(40) << map_entry.second.type->toString();
         cout << setw(20);
         if(map_entry.second.category == Symbol::LOCAL)
             cout << "local";
@@ -176,30 +199,45 @@ void SymbolTable::print()
             tovisit.push_back(map_entry.second.nestedTable);
         }
     }
-    cout << string(140, '-') << endl;
+    cout << string(150, '-') << endl;
     cout << "\n" << endl;
-    // print nested tables
+    // print nested tables (child tables)
     for (auto &table : tovisit)
     {
         table->print();
     }
 }
 
-// Implementation of symbol class
+/**
+ * @brief Parameterized Constructor for Symbol
+ * 
+ * @param name name of symbol
+ * @param type type of symbol
+ * @param init initial value of symbol
+ */
 Symbol::Symbol(string name, SymbolType::typeEnum type, string init) : name(name), type(new SymbolType(type)), offset(0), nestedTable(NULL), initialValue(init)
 {
     size = this->type->getSize();
 }
-// update type of the symbol
-Symbol *Symbol::update(SymbolType *type)
-{
+
+/**
+ * @brief Updates the type of symbol pointer with the specified type
+ * 
+ * @param type 
+ * @return Symbol* (updated symbol pointer)
+ */
+Symbol *Symbol::update(SymbolType *type){
     this->type = type;
     size = this->type->getSize();
     return this;
 }
-// convert the present symbol to different type, return old symbol if conversion not possible 
-Symbol *Symbol::convert(SymbolType::typeEnum type_)
-{
+/**
+ * @brief Converts symbol to given type, and returns the updated symbol
+ * 
+ * @param type_  new type of symbol
+ * @return Symbol* 
+ */
+Symbol *Symbol::convert(SymbolType::typeEnum type_){
 
     // if the current type is float
     if ((this->type)->type == SymbolType::typeEnum::FLOAT)
@@ -209,7 +247,7 @@ Symbol *Symbol::convert(SymbolType::typeEnum type_)
         {
             // generate symbol of new type
             Symbol *fin_ = gentemp(type_);
-            emit("=", fin_->name, "Float_TO_Int(" + this->name + ")");
+            emit("=", fin_->name, "FLOAT_TO_INT(" + this->name + ")");
             return fin_;
         }
         // if the target type is char 
@@ -217,7 +255,7 @@ Symbol *Symbol::convert(SymbolType::typeEnum type_)
         {
             // generate symbol of new type
             Symbol *fin_ = gentemp(type_);
-            emit("=", fin_->name, "Float_TO_Char(" + this->name + ")");
+            emit("=", fin_->name, "FLOAT_TO_CHAR(" + this->name + ")");
             return fin_;
         }
         // reutrn orignal symbol if the final type is not int or char 
@@ -231,7 +269,7 @@ Symbol *Symbol::convert(SymbolType::typeEnum type_)
         {
             // generate symbol of new type
             Symbol *fin_ = gentemp(type_);
-            emit("=", fin_->name, "INT_TO_Float(" + this->name + ")");
+            emit("=", fin_->name, "INT_TO_FLOAT(" + this->name + ")");
             return fin_;
         }
         // if the target type is char
@@ -239,7 +277,7 @@ Symbol *Symbol::convert(SymbolType::typeEnum type_)
         {
             // generate symbol of new type
             Symbol *fin_ = gentemp(type_);
-            emit("=", fin_->name, "INT_TO_Char(" + this->name + ")");
+            emit("=", fin_->name, "INT_TO_CHAR(" + this->name + ")");
             return fin_;
         }
         // reutrn orignal symbol if the final type is not float or char
@@ -253,7 +291,7 @@ Symbol *Symbol::convert(SymbolType::typeEnum type_)
         {
             // generate symbol of new type
             Symbol *fin_ = gentemp(type_);
-            emit("=", fin_->name, "Char_TO_Int(" + this->name + ")");
+            emit("=", fin_->name, "CHAR_TO_INT(" + this->name + ")");
             return fin_;
         }
         // if the target type is float
@@ -261,7 +299,7 @@ Symbol *Symbol::convert(SymbolType::typeEnum type_)
         {
             // generate symbol of new type
             Symbol *fin_ = gentemp(type_);
-            emit("=", fin_->name, "Char_TO_Float(" + this->name + ")");
+            emit("=", fin_->name, "CHAR_TO_FLOAT(" + this->name + ")");
             return fin_;
         }
         // reutrn orignal symbol if the final type is not int or float
@@ -270,11 +308,32 @@ Symbol *Symbol::convert(SymbolType::typeEnum type_)
     return this;
 }
 
-// Implementation of quad class
+
+/**
+ * @brief Parameterized Constructor a for Quad
+ * 
+ * @param result 
+ * @param arg1 first argument 
+ * @param op   operator
+ * @param arg2 second argument
+ */
 Quad::Quad(string result, string arg1, string op, string arg2) : result(result), op(op), arg1(arg1), arg2(arg2) {}
+/**
+ * @brief Parameterized Constructor a for Quad
+ * 
+ * @param result 
+ * @param arg1 first argument 
+ * @param op   operator
+ * @param arg2 second argument
+ */
 Quad::Quad(string result, int arg1, string op, string arg2) : result(result), op(op), arg1(toString(arg1)), arg2(arg2) {}
 
-// print the quad 
+
+/**
+ * @brief Prints 3 Address Code quad format
+ * 
+ * @return * void 
+ */
 void Quad::print()
 {
     // if binary operations
@@ -375,7 +434,15 @@ void Quad::print()
     }
 }
 
-// Implementation of emit funtions
+
+/**
+ * @brief Generates Quad given the arguments and result
+ * 
+ * @param op operator
+ * @param result result
+ * @param arg1 first argument
+ * @param arg2 second argument
+ */
 void emit(string op, string result, string arg1, string arg2)
 {
     Quad *q = new Quad(result, arg1, op, arg2);
@@ -387,14 +454,17 @@ void emit(string op, string result, int arg1, string arg2)
     quadArray.push_back(q);
 }
 
-// Implementation of backpatching functions
-void backpatch(list<int> list_, int addr)
+/**
+ * @brief Implements Back Patch (patches given target address to all elements in given list)
+ * 
+ * @param list_ list of all places to patch
+ * @param addr  target address
+ */
+void backpatch(list<int> list_, int target_addr)
 {
     // for all the addresses in the list, add the target address 
     for (auto &i : list_)
-    {
-        quadArray[i-1]->result = toString(addr);
-    }
+        quadArray[i-1]->result = toString(target_addr);    
 }
 
 void finalBackpatch()
@@ -418,21 +488,33 @@ void finalBackpatch()
     }
 }
 
-list<int> makeList(int base)
-{
-    // returns list with the base address as its only value
-    return {base};
+/**
+ * @brief Initliases list with given address
+ * 
+ * @param base_addr base address
+ * @return list<int> 
+ */
+list<int> makeList(int base_addr){
+    return {base_addr};
 }
-
-list<int> merge(list<int> first, list<int> second)
-{
+/**
+ * @brief Merges the 2 address lists and returns the merged list
+ * 
+ * @param first_list first list to merge
+ * @param second_list second list to merge
+ * @return list<int> 
+ */
+list<int> merge(list<int> first_list, list<int> second_list){
     // merge two lists
-    list<int> ret = first;
-    ret.merge(second);
+    list<int> ret = first_list;
+    ret.merge(second_list);
     return ret;
 }
-// Implementation of Expression class functions
 
+/**
+ * @brief Express Class method implementation 
+ * 
+ */
 void Expression::toInt()
 {
     // if the expression type is boolean
@@ -461,14 +543,24 @@ void Expression::toBool()
     }
 }
 
-// Implementation of other helper functions
+/**
+ * @brief Get Next Instruction 
+ * 
+ * @return int 
+ */
 int nextInstruction()
 {
     // returns the next instruction number
     return quadArray.size() + 1;
 }
 
-// generates temporary of given type with given value s
+/**
+ * @brief Generated new temporary variable and inserts it in current symbol table
+ * 
+ * @param type 
+ * @param s 
+ * @return Symbol* 
+ */
 Symbol *gentemp(SymbolType::typeEnum type, string s)
 {
     Symbol *temp = new Symbol("t" + toString(temporaryCount++), type, s);
@@ -476,13 +568,23 @@ Symbol *gentemp(SymbolType::typeEnum type, string s)
     currentTable->symbols.insert({temp->name, *temp});
     return temp;
 }
-// change current table to specified table
+/**
+ * @brief Changes current table to given table
+ * 
+ * @param table new current table
+ */
 void changeTable(SymbolTable *table)
 {
     currentTable = table;
 }
 
-// code to check if a and b are of the same type, promotes to the higher type if feasible and if that makes the type of both the same
+/**
+ * @brief checks whether given symbols are of same type or if it feasible to make them the same type
+ * 
+ * @param a first Symbol
+ * @param b Second Symbol
+ * @return true/false --> valid symbols
+ */
 bool typeCheck(Symbol *&a, Symbol *&b)
 {
     // lambda function to check if a and b are of the same type 
@@ -514,9 +616,10 @@ bool typeCheck(Symbol *&a, Symbol *&b)
         return false;
     }
 }
-// Implementation of utility functions
-// overloaded toString function to maintain semantic consistency 
-// convert int to string
+/**
+ * @brief Utility functions to convert to string
+ * @return string 
+ */
 string toString(int i)
 {
     return to_string(i);
@@ -531,3 +634,20 @@ string toString(char c)
 {
     return string(1, c);
 }
+
+// int main() {
+//     // initialization of global variables
+//     tableCount = 0;
+//     temporaryCount = 0;
+//     globalTable = new SymbolTable("global");
+//     currentTable = globalTable;
+//     cout << left; // left allign
+//     yyparse();
+//     globalTable->update();
+//     globalTable->print();
+//     int ins = 1;
+//     for(auto it : quadArray) {
+//         cout<<setw(4)<<ins++<<": "; it->print();
+//     }
+//     return 0;
+// }
