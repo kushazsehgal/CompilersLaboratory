@@ -1,83 +1,91 @@
 int printStr(char *s);
-int readInt(int *eP);
+int readInt(int *int_ptr);
 int printInt(int n);
 
 void testIncDec(int n) {
-    printStr("Value passed to function = ");
+    printStr("Given Value --> ");
     printInt(n);
 }
-
+int min(int num1, int num2) {
+    if (num1 < num2)
+        return num1;
+    else
+        return num2;
+}
 int main() {
     printStr("\n#### TEST 1 (Arithmetic operators) ####");
-    int n1, n2, n3, n4;
-    n1 = 30;
-    n2 = 16;
-    n3 = 7;
-    n4 = -22;
+    int a, b, c, d;
+    a = 11;
+    b = 7;
+    c = -24;
+    d = 100;
 
-    printStr("\nn1 = ");
-    printInt(n1);
-    printStr("\nn2 = ");
-    printInt(n2);
-    printStr("\nn3 = ");
-    printInt(n3);
-    printStr("\nn4 = ");
-    printInt(n4);
+    printStr("\na = ");
+    printInt(a);
+    printStr("\nb = ");
+    printInt(b);
+    printStr("\nc = ");
+    printInt(c);
+    printStr("\nd = ");
+    printInt(d);
 
-    int n5 = n1 + n2;
-    int n6 = n1 - n2;
-    int n7 = n1 * n2;
-    int n8 = n1 / n2;
-    int n9 = n1 % n2;
+    int e = a + b;
+    int f = a - b;
+    int g = a * b;
+    int h = a / b;
+    int i = a % b;
 
-    printStr("\nn1 + n2 = ");
-    printInt(n5);
-    printStr("\nn1 - n2 = ");
-    printInt(n6);
-    printStr("\nn1 * n2 = ");
-    printInt(n7);
-    printStr("\nn1 / n2 = ");
-    printInt(n8);
-    printStr("\nn1 % n2 = ");
-    printInt(n9);
+    printStr("\n a + b = ");
+    printInt(e);
+    printStr("\na - b = ");
+    printInt(f);
+    printStr("\na * b = ");
+    printInt(g);
+    printStr("\na / b = ");
+    printInt(h);
+    printStr("\na % b = ");
+    printInt(i);
 
-    int n10 = -n1 + n2 - n3 + n4 + 10;
-    int n11 = n1 * n2 / n3 + n4 - 10;
-    int n12 = n1 + n2 * n3 / n4 - 0;
-    int n13 = (n1 + n2) * (-n3 / n4) - 15;
-    printStr("\n-n1 + n2 - n3 + n4 + 10 = ");
-    printInt(n10);
-    printStr("\nn1 * n2 / n3 + n4 - 10 = ");
-    printInt(n11);
-    printStr("\nn1 + n2 * n3 / n4 - 0 = ");
-    printInt(n12);
-    printStr("\n(n1 + n2) * (n3 / n4) - 15 = ");
-    printInt(n13);
-    printStr("\n-n3 = ");
-    printInt(-n3);
-    printStr("\n-n4 = ");
-    printInt(-n4);
+    int a0 = -a + b - c + d + 10;
+    int a1 = a * b / c + d - 10;
+    int a2 = a + b * c / d - 0;
+    int a3 = (a + b) * (-c / d) - 15;
+    printStr("\n-a + b - c + d + 10 = ");
+    printInt(a0);
+    printStr("\na * b / c + d - 10 = ");
+    printInt(a1);
+    printStr("\na + b * c / d - 0 = ");
+    printInt(a2);
+    printStr("\n(a + b) * (c / d) - 15 = ");
+    printInt(a3);
+    printStr("\n-c = ");
+    printInt(-c);
+    printStr("\n-d = ");
+    printInt(-d);
 
     printStr("\nTest pre increment: ");
-    testIncDec(++n1);
+    testIncDec(++a);
     printStr(", Value after call = ");
-    printInt(n1);
+    printInt(a);
 
     printStr("\nTest post increment: ");
-    testIncDec(n1++);
+    testIncDec(a++);
     printStr(", Value after call = ");
-    printInt(n1);
+    printInt(a);
 
     printStr("\nTest pre decrement: ");
-    testIncDec(--n1);
+    testIncDec(--a);
     printStr(", Value after call = ");
-    printInt(n1);
+    printInt(a);
 
     printStr("\nTest post decrement: ");
-    testIncDec(n1--);
+    testIncDec(a--);
     printStr(", Value after call = ");
-    printInt(n1);
-    
+    printInt(a);
+    printStr("\nTesting Function :\nMinimum out of a and b : ");
+    printInt(min(a,b));
+    printStr("\n");
     printStr("\n\n");
+    
     return 0;
 }

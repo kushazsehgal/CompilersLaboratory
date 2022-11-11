@@ -1,6 +1,6 @@
 
 int printStr(char *s);
-int readInt(int *eP);
+int readInt(int *int_ptr);
 int printInt(int n);
 
 int testInt(int num) {
@@ -20,7 +20,7 @@ char *testCharPtr(char *cPtr) {
 }
 
 void testVoid() {
-    printStr("\nHello World, I am a void function. I don't return anything.");
+    printStr("\nExecuting Function returning VOID.");
     return;
 }
 
@@ -29,7 +29,7 @@ int main() {
     int n = 10;
     int *nPtr = &n;
     
-    printStr("\nTesting integer value return: ");
+    printStr("\nExecuting Function returning INT : ");
     int retInt = testInt(n);
     if (retInt == n) {
         printStr("Passed");
@@ -37,7 +37,7 @@ int main() {
         printStr("Failed");
     }
     
-    printStr("\nTesting integer pointer return: ");
+    printStr("\nExecuting Function returning INT* : ");
     int *retIntPtr = testIntPtr(nPtr);
     if (retIntPtr == nPtr) {
         printStr("Passed");
@@ -48,7 +48,7 @@ int main() {
     char c = 'm';
     char *cPtr = &c;
 
-    printStr("\nTesting character value return: ");
+    printStr("\nExecuting Function returning CHAR : ");
     char retChar = testChar(c);
     if (retChar == c) {
         printStr("Passed");
@@ -56,7 +56,7 @@ int main() {
         printStr("Failed");
     }
 
-    printStr("\nTesting character pointer return: ");
+    printStr("\nExecuting Function returning CHAR* : ");
     char *retCharPtr = testCharPtr(cPtr);
     if (retCharPtr == cPtr) {
         printStr("Passed");
@@ -65,13 +65,14 @@ int main() {
     }
 
     char *str = "Hello World, I am a string.";
-    printStr("\nTesting string return: ");
+    printStr("\nExecuting Function returning CHAR* :");
     char *retStr = testCharPtr(str);
     if (retStr == str) {
         printStr("Passed");
     } else {
         printStr("Failed");
     }
+    printStr("\n");
     printStr(" [ Passed string: ");
     printStr(str);
     printStr(" ], ");
@@ -79,7 +80,7 @@ int main() {
     printStr(retStr);
     printStr(" ]");
 
-    printStr("\nTesting void return: ");
+    printStr("\nExecuting Function returning VOID : ");
     testVoid();
     printStr("\n\n");
     return 0;

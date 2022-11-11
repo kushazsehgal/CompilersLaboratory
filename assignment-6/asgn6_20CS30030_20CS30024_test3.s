@@ -52,30 +52,32 @@
 #	t43: -276
 #	t44: -284
 #	t45: -288
-#	t46: -292
+#	t46: -296
 #	t47: -300
 #	t48: -304
 #	t49: -312
 #	t5: -320
 #	t50: -324
-#	t51: -328
+#	t51: -332
 #	t52: -336
 #	t53: -340
 #	t54: -348
 #	t55: -352
-#	t57: -360
-#	t58: -364
-#	t59: -368
-#	t6: -376
-#	t7: -380
-#	t8: -384
-#	t9: -392
+#	t56: -360
+#	t57: -364
+#	t59: -372
+#	t6: -380
+#	t60: -384
+#	t61: -388
+#	t7: -392
+#	t8: -396
+#	t9: -404
 #	printInt
 #	n: -4
 #	printStr
 #	s: -8
 #	readInt
-#	eP: -8
+#	int_ptr: -8
 #	testChar
 #	c: -1
 #	testCharPtr
@@ -90,29 +92,29 @@
 
 	.section	.rodata
 .LC0:
-	.string	"\nHello World, I am a void function. I don't return anything."
+	.string	"\nExecuting Function returning VOID."
 .LC1:
 	.string	"\n#### TEST 3 (Function calls and returns) ####"
 .LC2:
-	.string	"\nTesting integer value return: "
+	.string	"\nExecuting Function returning INT : "
 .LC3:
 	.string	"Passed"
 .LC4:
 	.string	"Failed"
 .LC5:
-	.string	"\nTesting integer pointer return: "
+	.string	"\nExecuting Function returning INT* : "
 .LC6:
 	.string	"Passed"
 .LC7:
 	.string	"Failed"
 .LC8:
-	.string	"\nTesting character value return: "
+	.string	"\nExecuting Function returning CHAR : "
 .LC9:
 	.string	"Passed"
 .LC10:
 	.string	"Failed"
 .LC11:
-	.string	"\nTesting character pointer return: "
+	.string	"\nExecuting Function returning CHAR* : "
 .LC12:
 	.string	"Passed"
 .LC13:
@@ -120,22 +122,24 @@
 .LC14:
 	.string	"Hello World, I am a string."
 .LC15:
-	.string	"\nTesting string return: "
+	.string	"\nExecuting Function returning CHAR* :"
 .LC16:
 	.string	"Passed"
 .LC17:
 	.string	"Failed"
 .LC18:
-	.string	" [ Passed string: "
+	.string	"\n"
 .LC19:
-	.string	" ], "
+	.string	" [ Passed string: "
 .LC20:
-	.string	"[ Returned string: "
+	.string	" ], "
 .LC21:
-	.string	" ]"
+	.string	"[ Returned string: "
 .LC22:
-	.string	"\nTesting void return: "
+	.string	" ]"
 .LC23:
+	.string	"\nExecuting Function returning VOID : "
+.LC24:
 	.string	"\n\n"
 	.text
 	.globl  testInt
@@ -255,7 +259,7 @@ main:
 	.cfi_offset 6, -16
 	movq    %rsp, %rbp
 	.cfi_def_cfa_register 6
-	subq    $392, %rsp
+	subq    $404, %rsp
 	movq    $.LC1, -126(%rbp)
 	movq    -126(%rbp), %rdi
 	call    printStr
@@ -267,22 +271,22 @@ main:
 	movq    %rax, -320(%rbp)
 	movq    -320(%rbp), %rax
 	movq    %rax, -21(%rbp)
-	movq    $.LC2, -376(%rbp)
-	movq    -376(%rbp), %rdi
+	movq    $.LC2, -380(%rbp)
+	movq    -380(%rbp), %rdi
 	call    printStr
-	movl    %eax, -380(%rbp)
+	movl    %eax, -392(%rbp)
 	movl    -13(%rbp), %edi
 	call    testInt
-	movl    %eax, -384(%rbp)
-	movl    -384(%rbp), %eax
+	movl    %eax, -396(%rbp)
+	movl    -396(%rbp), %eax
 	movl    %eax, -34(%rbp)
 	movl    -13(%rbp), %eax
 	cmpl    %eax, -34(%rbp)
 	je      .L6
 	jmp     .L7
 .L6:
-	movq    $.LC3, -392(%rbp)
-	movq    -392(%rbp), %rdi
+	movq    $.LC3, -404(%rbp)
+	movq    -404(%rbp), %rdi
 	call    printStr
 	movl    %eax, -62(%rbp)
 	jmp     .L8
@@ -406,35 +410,39 @@ main:
 	movq    -284(%rbp), %rdi
 	call    printStr
 	movl    %eax, -288(%rbp)
-	movq    -58(%rbp), %rdi
+	movq    $.LC19, -296(%rbp)
+	movq    -296(%rbp), %rdi
 	call    printStr
-	movl    %eax, -292(%rbp)
-	movq    $.LC19, -300(%rbp)
-	movq    -300(%rbp), %rdi
+	movl    %eax, -300(%rbp)
+	movq    -58(%rbp), %rdi
 	call    printStr
 	movl    %eax, -304(%rbp)
 	movq    $.LC20, -312(%rbp)
 	movq    -312(%rbp), %rdi
 	call    printStr
 	movl    %eax, -324(%rbp)
-	movq    -50(%rbp), %rdi
+	movq    $.LC21, -332(%rbp)
+	movq    -332(%rbp), %rdi
 	call    printStr
-	movl    %eax, -328(%rbp)
-	movq    $.LC21, -336(%rbp)
-	movq    -336(%rbp), %rdi
+	movl    %eax, -336(%rbp)
+	movq    -50(%rbp), %rdi
 	call    printStr
 	movl    %eax, -340(%rbp)
 	movq    $.LC22, -348(%rbp)
 	movq    -348(%rbp), %rdi
 	call    printStr
 	movl    %eax, -352(%rbp)
-	call    testVoid
 	movq    $.LC23, -360(%rbp)
 	movq    -360(%rbp), %rdi
 	call    printStr
 	movl    %eax, -364(%rbp)
-	movl    $0, -368(%rbp)
-	movl    -368(%rbp), %eax
+	call    testVoid
+	movq    $.LC24, -372(%rbp)
+	movq    -372(%rbp), %rdi
+	call    printStr
+	movl    %eax, -384(%rbp)
+	movl    $0, -388(%rbp)
+	movl    -388(%rbp), %eax
 .LFE5:
 	movq    %rbp, %rsp
 	popq    %rbp
