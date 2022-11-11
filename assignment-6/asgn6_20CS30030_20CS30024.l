@@ -1,7 +1,7 @@
 %{
     #include <stdio.h>
     #include <stdlib.h>
-    #include "asgn5_20CS30030_20CS30024_translator.h"
+    #include "asgn6_20CS30030_20CS30024_translator.h"
     #include "y.tab.h"
 %}
 
