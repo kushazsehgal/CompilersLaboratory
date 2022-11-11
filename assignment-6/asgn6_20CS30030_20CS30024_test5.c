@@ -2,45 +2,70 @@ int printStr(char *s);
 int readInt(int *int_ptr);
 int printInt(int n);
 
+void recursivePrintIntegers(int curr, int till) {
+    if (curr > till) {
+        return;
+    }
+    printInt(curr);
+    if(curr == till) {
+        printStr("\n");
+    } else {
+        printStr(" ");
+        recursivePrintIntegers(curr + 1, till);
+    }
+}
 
+int fibonacci(int n) {
+    if (n == 0) {
+        return 0;
+    } else if (n == 1) {
+        return 1;
+    } else {
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+}
 
 int main() {
-    printStr("\n#### TEST 5 (Loops) ####\n");
-    int pow2 = 1;
-    printStr("\nPowers of 2 using WHILE loop: ");
-    while(pow2 <= 1024) {
-        printInt(pow2);
-        printStr(" ");
-        pow2 = pow2 * 2;
+    printStr("\n#### TEST 5 (Recursive function calls) ####");
+    int start, end, int_ptr;
+    printStr("\nEnter start: ");
+    int_ptr = readInt(&start);
+    if (int_ptr != 1) {
+        printStr("Invalid start\n");
+        return 0;
     }
-    printStr("\n\n");
-    int i,j;
-    i = 0;
-    printStr("\nStar Patten using FOR loop: \n");
-    for(i = 0;i <= 10;i++){
-        for(j = i; j <= 10;j++){
-            printStr("*");
-        }
-        printStr("\n");
+    printStr("Enter end: ");
+    int_ptr = readInt(&end);
+    if (int_ptr != 1) {
+        printStr("Invalid end\n");
+        return 0;
     }
-    printStr("\n");
-    int iters, int_ptr;
-    printStr("\nTesting DO-WHILE loop:");
-    do {
-        if(i == 0) {
-            printStr("\nEntered do-while loop. Enter number of times you wish to run the loop after this: ");
-            int_ptr= readInt(&iters);
-            if(int_ptr != 1) {
-                printStr("\nInvalid input. Exiting...\n\n");
-                return 0;
-            }
-        } else {
-            printStr("\nIteration ");
-            printInt(i);
-            printStr("\n");
-        }
-    } while(i++ < iters);
+    if (start > end) {
+        printStr("Invalid range\n");
+        return 0;
+    }
+    printStr("Numbers from ");
+    printInt(start);
+    printStr(" to ");
+    printInt(end);
+    printStr(" are: ");
+    recursivePrintIntegers(start, end);
 
-    printStr("\n\n");
+    printStr("\n\nEnter value of n (<40) to find the nth fibonacci number: ");
+    int n;
+    int_ptr = readInt(&n);
+    if (int_ptr != 1) {
+        printStr("Invalid n\n\n");
+        return 0;
+    } else if (n >= 40) {
+        printStr("n should be less than 40\n\n");
+        return 0;
+    } else {
+        printStr("\nfib(");
+        printInt(n);
+        printStr(") = ");
+        printInt(fibonacci(n));
+        printStr("\n\n");
+    }
     return 0;
 }

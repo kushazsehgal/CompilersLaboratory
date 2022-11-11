@@ -37,7 +37,6 @@ test: parser.out libass2_20CS30030.a
 	./parser.out asgn6_20CS30030_20CS30024_test4 > asgn6_20CS30030_20CS30024_quads4.out
 	./parser.out asgn6_20CS30030_20CS30024_test5 > asgn6_20CS30030_20CS30024_quads5.out
 	./parser.out asgn6_20CS30030_20CS30024_test6 > asgn6_20CS30030_20CS30024_quads6.out
-	./parser.out asgn6_20CS30030_20CS30024_test7 > asgn6_20CS30030_20CS30024_quads7.out
 	@echo "Compiling assembly files\n"
 	gcc asgn6_20CS30030_20CS30024_test1.s -L. -lass2_20CS30030 -no-pie -o test1
 	gcc asgn6_20CS30030_20CS30024_test2.s -L. -lass2_20CS30030 -no-pie -o test2
@@ -45,7 +44,6 @@ test: parser.out libass2_20CS30030.a
 	gcc asgn6_20CS30030_20CS30024_test4.s -L. -lass2_20CS30030 -no-pie -o test4
 	gcc asgn6_20CS30030_20CS30024_test5.s -L. -lass2_20CS30030 -no-pie -o test5
 	gcc asgn6_20CS30030_20CS30024_test6.s -L. -lass2_20CS30030 -no-pie -o test6
-	gcc asgn6_20CS30030_20CS30024_test7.s -L. -lass2_20CS30030 -no-pie -o test7
 	@echo "Binaries generated. Run using ./test<num>\n\n"
 	@echo "Running test1:\n"
 	@./test1
@@ -59,5 +57,4 @@ test: parser.out libass2_20CS30030.a
 	@./test5
 	@echo "Running test6:\n"
 	@./test6
-	@echo "Running test7:\n"
-	@./test7
+	

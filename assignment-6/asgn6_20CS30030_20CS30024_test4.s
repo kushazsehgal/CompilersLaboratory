@@ -3,112 +3,59 @@
 #	Allocation of function variables and temporaries on the stack:
 
 #	main
-#	charL1: -1
-#	charL2: -2
-#	numL1: -6
-#	numL2: -10
-#	ptrL1: -18
-#	ptrL2: -26
-#	strL1: -34
-#	strL2: -42
-#	t10: -46
-#	t100: -50
-#	t11: -58
-#	t12: -62
-#	t13: -66
-#	t14: -74
-#	t15: -78
-#	t16: -82
-#	t17: -90
-#	t18: -94
-#	t19: -98
-#	t20: -106
-#	t21: -110
-#	t22: -114
-#	t23: -122
-#	t24: -130
-#	t25: -134
-#	t26: -142
-#	t27: -146
-#	t28: -150
-#	t29: -158
-#	t3: -166
-#	t30: -170
-#	t31: -174
-#	t32: -182
-#	t33: -186
-#	t34: -190
-#	t35: -198
-#	t36: -202
-#	t37: -206
-#	t38: -214
-#	t39: -218
-#	t4: -222
-#	t40: -230
-#	t41: -234
-#	t42: -242
-#	t43: -246
-#	t44: -250
-#	t45: -258
-#	t46: -262
-#	t47: -266
-#	t48: -274
-#	t49: -278
-#	t5: -282
-#	t50: -286
-#	t51: -294
-#	t52: -298
-#	t53: -302
-#	t54: -310
-#	t55: -314
-#	t56: -322
-#	t57: -326
-#	t58: -334
-#	t59: -338
-#	t6: -339
-#	t60: -347
-#	t61: -351
-#	t62: -359
-#	t63: -363
-#	t64: -367
-#	t65: -375
-#	t66: -379
-#	t67: -383
-#	t68: -391
-#	t69: -395
-#	t7: -403
-#	t70: -407
-#	t71: -415
-#	t72: -419
-#	t73: -423
-#	t74: -431
-#	t75: -435
-#	t76: -443
-#	t77: -447
-#	t78: -455
-#	t79: -459
-#	t8: -467
-#	t80: -475
-#	t81: -479
-#	t82: -487
-#	t83: -491
-#	t84: -495
-#	t85: -503
-#	t86: -507
-#	t87: -511
-#	t88: -519
-#	t89: -523
-#	t9: -531
-#	t90: -535
-#	t91: -543
-#	t92: -547
-#	t93: -551
-#	t94: -559
-#	t95: -563
-#	t96: -571
-#	t97: -575
-#	t98: -583
-#	t99: -587
+#	i: -4
+#	int_ptr: -8
+#	iters: -12
+#	j: -16
+#	mul13: -20
+#	t0: -28
+#	t1: -32
+#	t10: -36
+#	t11: -44
+#	t12: -48
+#	t13: -52
+#	t14: -60
+#	t15: -64
+#	t16: -68
+#	t17: -72
+#	t18: -76
+#	t19: -80
+#	t2: -84
+#	t20: -88
+#	t21: -96
+#	t22: -100
+#	t23: -108
+#	t24: -112
+#	t25: -120
+#	t26: -124
+#	t27: -128
+#	t28: -136
+#	t29: -140
+#	t3: -148
+#	t30: -152
+#	t31: -160
+#	t32: -164
+#	t33: -172
+#	t34: -176
+#	t35: -180
+#	t36: -188
+#	t37: -192
+#	t38: -196
+#	t39: -204
+#	t4: -208
+#	t40: -212
+#	t41: -216
+#	t42: -224
+#	t43: -228
+#	t44: -232
+#	t45: -240
+#	t46: -244
+#	t47: -248
+#	t5: -252
+#	t6: -256
+#	t7: -264
+#	t8: -268
+#	t9: -272
 #	printInt
 #	n: -4
 #	printStr
@@ -118,105 +65,33 @@
 
 	.section	.rodata
 .LC0:
-	.string	"Hello World, I am a global string."
+	.string	"\n#### TEST 4 (Loops) ####\n"
 .LC1:
-	.string	"\n#### TEST 4 (Global variables, pointers and addresses) ####"
+	.string	"\nMultiples of 13 using WHILE loop: "
 .LC2:
-	.string	"Hello World, I am a local string."
+	.string	" "
 .LC3:
-	.string	"\nLocal variables: "
-.LC4:
-	.string	"\nnumL1 = "
-.LC5:
-	.string	", charL1 (ascii value) = "
-.LC6:
-	.string	", ptrL1 (adress, truncated to first 32 bits only) = "
-.LC7:
-	.string	", strL1 = "
-.LC8:
-	.string	"\nGlobal variables: "
-.LC9:
-	.string	"\nnumG1 = "
-.LC10:
-	.string	", charG1 (ascii value) = "
-.LC11:
-	.string	", ptrG1 (adress, truncated to first 32 bits only) = "
-.LC12:
-	.string	", strG1 = "
-.LC13:
-	.string	"\n"
-.LC14:
-	.string	"\nAssigning locals to globals: "
-.LC15:
-	.string	"\nnumG2 = "
-.LC16:
-	.string	", charG2 (ascii value) = "
-.LC17:
-	.string	", ptrG2 (adress, truncated to first 32 bits only) = "
-.LC18:
-	.string	", strG2 = "
-.LC19:
-	.string	"\nSUCCESS: Local variables assigned to global variables."
-.LC20:
-	.string	"\nFAILURE: Local variables not assigned to global variables."
-.LC21:
-	.string	"\n"
-.LC22:
-	.string	"\nAssigning globals to locals: "
-.LC23:
-	.string	"\nnumL2 = "
-.LC24:
-	.string	", charL2 (ascii value) = "
-.LC25:
-	.string	", ptrL2 (adress, truncated to first 32 bits only) = "
-.LC26:
-	.string	", strL2 = "
-.LC27:
-	.string	"\nSUCCESS: Global variables assigned to local variables."
-.LC28:
-	.string	"\nFAILURE: Global variables not assigned to local variables."
-.LC29:
-	.string	"\n"
-.LC30:
-	.string	"\nAssigning globals to globals: "
-.LC31:
-	.string	"\nnumG2 = "
-.LC32:
-	.string	", charG2 (ascii value) = "
-.LC33:
-	.string	", ptrG2 (adress, truncated to first 32 bits only) = "
-.LC34:
-	.string	", strG2 = "
-.LC35:
-	.string	"\nSUCCESS: Global variables assigned to global variables."
-.LC36:
-	.string	"\nFAILURE: Global variables not assigned to global variables."
-.LC37:
 	.string	"\n\n"
-	.comm	charG2,1,1
-	.comm	numG2,4,4
-	.comm	ptrG1,8,8
-	.comm	ptrG2,8,8
-	.comm	strG2,8,8
-	.globl  numG1
-	.data   
-	.align  4
-	.type   numG1, @object
-	.size   numG1, 4
-numG1:
-	.long   20
-	.globl  charG1
-	.data   
-	.type   charG1, @object
-	.size   charG1, 1
-charG1:
-	.byte   98
-	.section	.data.rel.local
-	.align  8
-	.type   strG1, @object
-	.size   strG1, 8
-strG1:
-	.quad   .LC0
+.LC4:
+	.string	"\nStar Patten using FOR loop: \n"
+.LC5:
+	.string	"*"
+.LC6:
+	.string	"\n"
+.LC7:
+	.string	"\n"
+.LC8:
+	.string	"\nTesting DO-WHILE loop:"
+.LC9:
+	.string	"\nEntered do-while loop. Enter number of times you wish to run the loop after this: "
+.LC10:
+	.string	"\nInvalid input. Exiting...\n\n"
+.LC11:
+	.string	"\nIteration "
+.LC12:
+	.string	"\n"
+.LC13:
+	.string	"\n\n"
 	.text
 	.globl  main
 	.type   main, @function
@@ -228,323 +103,163 @@ main:
 	.cfi_offset 6, -16
 	movq    %rsp, %rbp
 	.cfi_def_cfa_register 6
-	subq    $587, %rsp
-	movq    $.LC1, -166(%rbp)
-	movq    -166(%rbp), %rdi
+	subq    $272, %rsp
+	movq    $.LC0, -28(%rbp)
+	movq    -28(%rbp), %rdi
 	call    printStr
-	movl    %eax, -222(%rbp)
-	movl    $5, -282(%rbp)
-	movl    -282(%rbp), %eax
-	movl    %eax, -6(%rbp)
-	movb    $97, -339(%rbp)
-	movb    -339(%rbp), %al
-	movb    %al, -1(%rbp)
-	leaq    -6(%rbp), %rax
-	movq    %rax, -403(%rbp)
-	movq    -403(%rbp), %rax
-	movq    %rax, -18(%rbp)
-	movq    $.LC2, -467(%rbp)
-	movq    -467(%rbp), %rax
-	movq    %rax, -34(%rbp)
-	movq    $.LC3, -531(%rbp)
-	movq    -531(%rbp), %rdi
+	movl    %eax, -32(%rbp)
+	movl    $13, -84(%rbp)
+	movl    -84(%rbp), %eax
+	movl    %eax, -20(%rbp)
+	movq    $.LC1, -148(%rbp)
+	movq    -148(%rbp), %rdi
 	call    printStr
-	movl    %eax, -46(%rbp)
-	movq    $.LC4, -58(%rbp)
-	movq    -58(%rbp), %rdi
-	call    printStr
-	movl    %eax, -62(%rbp)
-	movl    -6(%rbp), %edi
-	call    printInt
-	movl    %eax, -66(%rbp)
-	movq    $.LC5, -74(%rbp)
-	movq    -74(%rbp), %rdi
-	call    printStr
-	movl    %eax, -78(%rbp)
-	movb    -1(%rbp), %dil
-	call    printInt
-	movl    %eax, -82(%rbp)
-	movq    $.LC6, -90(%rbp)
-	movq    -90(%rbp), %rdi
-	call    printStr
-	movl    %eax, -94(%rbp)
-	movq    -18(%rbp), %rdi
-	call    printInt
-	movl    %eax, -98(%rbp)
-	movq    $.LC7, -106(%rbp)
-	movq    -106(%rbp), %rdi
-	call    printStr
-	movl    %eax, -110(%rbp)
-	movq    -34(%rbp), %rdi
-	call    printStr
-	movl    %eax, -114(%rbp)
-	leaq    numG1, %rax
-	movq    %rax, -122(%rbp)
-	movq    -122(%rbp), %rax
-	movq    %rax, ptrG1
-	movq    $.LC8, -130(%rbp)
-	movq    -130(%rbp), %rdi
-	call    printStr
-	movl    %eax, -134(%rbp)
-	movq    $.LC9, -142(%rbp)
-	movq    -142(%rbp), %rdi
-	call    printStr
-	movl    %eax, -146(%rbp)
-	movl    numG1, %edi
-	call    printInt
-	movl    %eax, -150(%rbp)
-	movq    $.LC10, -158(%rbp)
-	movq    -158(%rbp), %rdi
-	call    printStr
-	movl    %eax, -170(%rbp)
-	movb    charG1, %dil
-	call    printInt
-	movl    %eax, -174(%rbp)
-	movq    $.LC11, -182(%rbp)
-	movq    -182(%rbp), %rdi
-	call    printStr
-	movl    %eax, -186(%rbp)
-	movq    ptrG1, %rdi
-	call    printInt
-	movl    %eax, -190(%rbp)
-	movq    $.LC12, -198(%rbp)
-	movq    -198(%rbp), %rdi
-	call    printStr
-	movl    %eax, -202(%rbp)
-	movq    strG1, %rdi
-	call    printStr
-	movl    %eax, -206(%rbp)
-	movq    $.LC13, -214(%rbp)
-	movq    -214(%rbp), %rdi
-	call    printStr
-	movl    %eax, -218(%rbp)
-	movq    $.LC14, -230(%rbp)
-	movq    -230(%rbp), %rdi
-	call    printStr
-	movl    %eax, -234(%rbp)
-	movl    -6(%rbp), %eax
-	movl    %eax, numG2
-	movb    -1(%rbp), %al
-	movb    %al, charG2
-	movq    -18(%rbp), %rax
-	movq    %rax, ptrG2
-	movq    -34(%rbp), %rax
-	movq    %rax, strG2
-	movq    $.LC15, -242(%rbp)
-	movq    -242(%rbp), %rdi
-	call    printStr
-	movl    %eax, -246(%rbp)
-	movl    numG2, %edi
-	call    printInt
-	movl    %eax, -250(%rbp)
-	movq    $.LC16, -258(%rbp)
-	movq    -258(%rbp), %rdi
-	call    printStr
-	movl    %eax, -262(%rbp)
-	movb    charG2, %dil
-	call    printInt
-	movl    %eax, -266(%rbp)
-	movq    $.LC17, -274(%rbp)
-	movq    -274(%rbp), %rdi
-	call    printStr
-	movl    %eax, -278(%rbp)
-	movq    ptrG2, %rdi
-	call    printInt
-	movl    %eax, -286(%rbp)
-	movq    $.LC18, -294(%rbp)
-	movq    -294(%rbp), %rdi
-	call    printStr
-	movl    %eax, -298(%rbp)
-	movq    strG2, %rdi
-	call    printStr
-	movl    %eax, -302(%rbp)
-	movl    -6(%rbp), %eax
-	cmpl    %eax, numG2
-	je      .L1
+	movl    %eax, -208(%rbp)
+.L3:
+	movl    $130, -252(%rbp)
+	movl    -252(%rbp), %eax
+	cmpl    %eax, -20(%rbp)
+	jle     .L1
 	jmp     .L2
 .L1:
-	movb    -1(%rbp), %al
-	cmpb    %al, charG2
-	je      .L3
-	jmp     .L2
-.L3:
-	movq    -18(%rbp), %rax
-	cmpq    %rax, ptrG2
-	je      .L4
-	jmp     .L2
-.L4:
-	movq    -34(%rbp), %rax
-	cmpq    %rax, strG2
-	je      .L5
-	jmp     .L2
-.L5:
-	movq    $.LC19, -310(%rbp)
-	movq    -310(%rbp), %rdi
+	movl    -20(%rbp), %edi
+	call    printInt
+	movl    %eax, -256(%rbp)
+	movq    $.LC2, -264(%rbp)
+	movq    -264(%rbp), %rdi
 	call    printStr
-	movl    %eax, -314(%rbp)
-	jmp     .L6
+	movl    %eax, -268(%rbp)
+	movl    $13, -272(%rbp)
+	movl    -20(%rbp), %eax
+	addl    -272(%rbp), %eax
+	movl    %eax, -36(%rbp)
+	movl    -36(%rbp), %eax
+	movl    %eax, -20(%rbp)
+	jmp     .L3
 .L2:
-	movq    $.LC20, -322(%rbp)
-	movq    -322(%rbp), %rdi
+	movq    $.LC3, -44(%rbp)
+	movq    -44(%rbp), %rdi
 	call    printStr
-	movl    %eax, -326(%rbp)
+	movl    %eax, -48(%rbp)
+	movl    $0, -52(%rbp)
+	movl    -52(%rbp), %eax
+	movl    %eax, -4(%rbp)
+	movq    $.LC4, -60(%rbp)
+	movq    -60(%rbp), %rdi
+	call    printStr
+	movl    %eax, -64(%rbp)
+	movl    $0, -68(%rbp)
+	movl    -68(%rbp), %eax
+	movl    %eax, -4(%rbp)
 .L6:
-	movq    $.LC21, -334(%rbp)
-	movq    -334(%rbp), %rdi
-	call    printStr
-	movl    %eax, -338(%rbp)
-	movq    $.LC22, -347(%rbp)
-	movq    -347(%rbp), %rdi
-	call    printStr
-	movl    %eax, -351(%rbp)
-	movl    numG1, %eax
-	movl    %eax, -10(%rbp)
-	movb    charG1, %al
-	movb    %al, -2(%rbp)
-	movq    ptrG1, %rax
-	movq    %rax, -26(%rbp)
-	movq    strG1, %rax
-	movq    %rax, -42(%rbp)
-	movq    $.LC23, -359(%rbp)
-	movq    -359(%rbp), %rdi
-	call    printStr
-	movl    %eax, -363(%rbp)
-	movl    -10(%rbp), %edi
-	call    printInt
-	movl    %eax, -367(%rbp)
-	movq    $.LC24, -375(%rbp)
-	movq    -375(%rbp), %rdi
-	call    printStr
-	movl    %eax, -379(%rbp)
-	movb    -2(%rbp), %dil
-	call    printInt
-	movl    %eax, -383(%rbp)
-	movq    $.LC25, -391(%rbp)
-	movq    -391(%rbp), %rdi
-	call    printStr
-	movl    %eax, -395(%rbp)
-	movq    -26(%rbp), %rdi
-	call    printInt
-	movl    %eax, -407(%rbp)
-	movq    $.LC26, -415(%rbp)
-	movq    -415(%rbp), %rdi
-	call    printStr
-	movl    %eax, -419(%rbp)
-	movq    -42(%rbp), %rdi
-	call    printStr
-	movl    %eax, -423(%rbp)
-	movl    numG1, %eax
-	cmpl    %eax, -10(%rbp)
-	je      .L7
-	jmp     .L8
-.L7:
-	movb    charG1, %al
-	cmpb    %al, -2(%rbp)
-	je      .L9
-	jmp     .L8
+	movl    $10, -72(%rbp)
+	movl    -72(%rbp), %eax
+	cmpl    %eax, -4(%rbp)
+	jle     .L4
+	jmp     .L5
+.L11:
+	movl    -4(%rbp), %eax
+	movl    %eax, -76(%rbp)
+	incl    -4(%rbp)
+	jmp     .L6
+.L4:
+	movl    -4(%rbp), %eax
+	movl    %eax, -16(%rbp)
 .L9:
-	movq    ptrG1, %rax
-	cmpq    %rax, -26(%rbp)
-	je      .L10
+	movl    $10, -80(%rbp)
+	movl    -80(%rbp), %eax
+	cmpl    %eax, -16(%rbp)
+	jle     .L7
 	jmp     .L8
 .L10:
-	movq    strG1, %rax
-	cmpq    %rax, -42(%rbp)
-	je      .L11
-	jmp     .L8
-.L11:
-	movq    $.LC27, -431(%rbp)
-	movq    -431(%rbp), %rdi
+	movl    -16(%rbp), %eax
+	movl    %eax, -88(%rbp)
+	incl    -16(%rbp)
+	jmp     .L9
+.L7:
+	movq    $.LC5, -96(%rbp)
+	movq    -96(%rbp), %rdi
 	call    printStr
-	movl    %eax, -435(%rbp)
-	jmp     .L12
+	movl    %eax, -100(%rbp)
+	jmp     .L10
 .L8:
-	movq    $.LC28, -443(%rbp)
-	movq    -443(%rbp), %rdi
+	movq    $.LC6, -108(%rbp)
+	movq    -108(%rbp), %rdi
 	call    printStr
-	movl    %eax, -447(%rbp)
-.L12:
-	movq    $.LC29, -455(%rbp)
-	movq    -455(%rbp), %rdi
+	movl    %eax, -112(%rbp)
+	jmp     .L11
+.L5:
+	movq    $.LC7, -120(%rbp)
+	movq    -120(%rbp), %rdi
 	call    printStr
-	movl    %eax, -459(%rbp)
-	movq    $.LC30, -475(%rbp)
-	movq    -475(%rbp), %rdi
+	movl    %eax, -124(%rbp)
+	movl    $0, -128(%rbp)
+	movl    -128(%rbp), %eax
+	movl    %eax, -4(%rbp)
+	movq    $.LC8, -136(%rbp)
+	movq    -136(%rbp), %rdi
 	call    printStr
-	movl    %eax, -479(%rbp)
-	movl    numG1, %eax
-	movl    %eax, numG2
-	movb    charG1, %al
-	movb    %al, charG2
-	movq    ptrG1, %rax
-	movq    %rax, ptrG2
-	movq    strG1, %rax
-	movq    %rax, strG2
-	movq    $.LC31, -487(%rbp)
-	movq    -487(%rbp), %rdi
-	call    printStr
-	movl    %eax, -491(%rbp)
-	movl    numG2, %edi
-	call    printInt
-	movl    %eax, -495(%rbp)
-	movq    $.LC32, -503(%rbp)
-	movq    -503(%rbp), %rdi
-	call    printStr
-	movl    %eax, -507(%rbp)
-	movb    charG2, %dil
-	call    printInt
-	movl    %eax, -511(%rbp)
-	movq    $.LC33, -519(%rbp)
-	movq    -519(%rbp), %rdi
-	call    printStr
-	movl    %eax, -523(%rbp)
-	movq    ptrG2, %rdi
-	call    printInt
-	movl    %eax, -535(%rbp)
-	movq    $.LC34, -543(%rbp)
-	movq    -543(%rbp), %rdi
-	call    printStr
-	movl    %eax, -547(%rbp)
-	movq    strG2, %rdi
-	call    printStr
-	movl    %eax, -551(%rbp)
-	movl    numG1, %eax
-	cmpl    %eax, numG2
-	je      .L13
-	jmp     .L14
-.L13:
-	movb    charG1, %al
-	cmpb    %al, charG2
-	je      .L15
-	jmp     .L14
-.L15:
-	movq    ptrG1, %rax
-	cmpq    %rax, ptrG2
-	je      .L16
-	jmp     .L14
+	movl    %eax, -140(%rbp)
 .L16:
-	movq    strG1, %rax
-	cmpq    %rax, strG2
-	je      .L17
-	jmp     .L14
-.L17:
-	movq    $.LC35, -559(%rbp)
-	movq    -559(%rbp), %rdi
+	movl    $0, -152(%rbp)
+	movl    -152(%rbp), %eax
+	cmpl    %eax, -4(%rbp)
+	je      .L12
+	jmp     .L13
+.L12:
+	movq    $.LC9, -160(%rbp)
+	movq    -160(%rbp), %rdi
 	call    printStr
-	movl    %eax, -563(%rbp)
-	jmp     .L18
+	movl    %eax, -164(%rbp)
+	leaq    -12(%rbp), %rax
+	movq    %rax, -172(%rbp)
+	movq    -172(%rbp), %rdi
+	call    readInt
+	movl    %eax, -176(%rbp)
+	movl    -176(%rbp), %eax
+	movl    %eax, -8(%rbp)
+	movl    $1, -180(%rbp)
+	movl    -180(%rbp), %eax
+	cmpl    %eax, -8(%rbp)
+	jne     .L14
+	jmp     .L15
 .L14:
-	movq    $.LC36, -571(%rbp)
-	movq    -571(%rbp), %rdi
+	movq    $.LC10, -188(%rbp)
+	movq    -188(%rbp), %rdi
 	call    printStr
-	movl    %eax, -575(%rbp)
-.L18:
-	movq    $.LC37, -583(%rbp)
-	movq    -583(%rbp), %rdi
+	movl    %eax, -192(%rbp)
+	movl    $0, -196(%rbp)
+	movl    -196(%rbp), %eax
+	jmp     .LFE0
+	jmp     .L15
+	jmp     .L15
+.L13:
+	movq    $.LC11, -204(%rbp)
+	movq    -204(%rbp), %rdi
 	call    printStr
-	movl    %eax, -587(%rbp)
-	movl    $0, -50(%rbp)
-	movl    -50(%rbp), %eax
+	movl    %eax, -212(%rbp)
+	movl    -4(%rbp), %edi
+	call    printInt
+	movl    %eax, -216(%rbp)
+	movq    $.LC12, -224(%rbp)
+	movq    -224(%rbp), %rdi
+	call    printStr
+	movl    %eax, -228(%rbp)
+.L15:
+	movl    -4(%rbp), %eax
+	movl    %eax, -232(%rbp)
+	incl    -4(%rbp)
+	movl    -12(%rbp), %eax
+	cmpl    %eax, -232(%rbp)
+	jl      .L16
+	jmp     .L17
+.L17:
+	movq    $.LC13, -240(%rbp)
+	movq    -240(%rbp), %rdi
+	call    printStr
+	movl    %eax, -244(%rbp)
+	movl    $0, -248(%rbp)
+	movl    -248(%rbp), %eax
 .LFE0:
 	movq    %rbp, %rsp
 	popq    %rbp
