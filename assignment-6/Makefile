@@ -34,18 +34,18 @@ test: parser.out libass2_20CS30030.a
 	./parser.out asgn6_20CS30030_20CS30024_test1 > asgn6_20CS30030_20CS30024_quads1.out
 	./parser.out asgn6_20CS30030_20CS30024_test2 > asgn6_20CS30030_20CS30024_quads2.out
 	./parser.out asgn6_20CS30030_20CS30024_test3 > asgn6_20CS30030_20CS30024_quads3.out
-	./parser.out asgn6_20CS30030_20CS30024_test4 > asgn6_20CS30030_20CS30024_quads4.out
-	./parser.out asgn6_20CS30030_20CS30024_test5 > asgn6_20CS30030_20CS30024_quads5.out
-	./parser.out asgn6_20CS30030_20CS30024_test6 > asgn6_20CS30030_20CS30024_quads6.out
-	./parser.out asgn6_20CS30030_20CS30024_test7 > asgn6_20CS30030_20CS30024_quads7.out
+	# ./parser.out asgn6_20CS30030_20CS30024_test4 > asgn6_20CS30030_20CS30024_quads4.out
+	# ./parser.out asgn6_20CS30030_20CS30024_test5 > asgn6_20CS30030_20CS30024_quads5.out
+	# ./parser.out asgn6_20CS30030_20CS30024_test6 > asgn6_20CS30030_20CS30024_quads6.out
+	# ./parser.out asgn6_20CS30030_20CS30024_test7 > asgn6_20CS30030_20CS30024_quads7.out
 	@echo "Compiling assembly files\n"
 	gcc asgn6_20CS30030_20CS30024_test1.s -L. -lass2_20CS30030 -no-pie -o test1
 	gcc asgn6_20CS30030_20CS30024_test2.s -L. -lass2_20CS30030 -no-pie -o test2
 	gcc asgn6_20CS30030_20CS30024_test3.s -L. -lass2_20CS30030 -no-pie -o test3
-	gcc asgn6_20CS30030_20CS30024_test4.s -L. -lass2_20CS30030 -no-pie -o test4
-	gcc asgn6_20CS30030_20CS30024_test5.s -L. -lass2_20CS30030 -no-pie -o test5
-	gcc asgn6_20CS30030_20CS30024_test6.s -L. -lass2_20CS30030 -no-pie -o test6
-	gcc asgn6_20CS30030_20CS30024_test7.s -L. -lass2_20CS30030 -no-pie -o test7
+	# gcc asgn6_20CS30030_20CS30024_test4.s -L. -lass2_20CS30030 -no-pie -o test4
+	# gcc asgn6_20CS30030_20CS30024_test5.s -L. -lass2_20CS30030 -no-pie -o test5
+	# gcc asgn6_20CS30030_20CS30024_test6.s -L. -lass2_20CS30030 -no-pie -o test6
+	# gcc asgn6_20CS30030_20CS30024_test7.s -L. -lass2_20CS30030 -no-pie -o test7
 	@echo "Binaries generated. Run using ./test<num>\n\n"
 	@echo "Running test1:\n"
 	@./test1
@@ -53,11 +53,11 @@ test: parser.out libass2_20CS30030.a
 	@./test2
 	@echo "Running test3:\n"
 	@./test3
-	@echo "Running test4:\n"
-	@./test4
-	@echo "Running test5:\n"
-	@./test5
-	@echo "Running test6:\n"
-	@./test6
-	@echo "Running test7:\n"
-	@./test7
+	# @echo "Running test4:\n"
+	# @./test4
+	# @echo "Running test5:\n"
+	# @./test5
+	# @echo "Running test6:\n"
+	# @./test6
+	# @echo "Running test7:\n"
+	# @./test7
